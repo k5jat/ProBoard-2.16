@@ -1,0 +1,16 @@
+## Makefile for TwinSoftLib 1.xx
+
+MODEL = SMALL
+
+OBJS = date.obj     dirscan.obj  dstring.obj  crc.obj      bitarray.obj \
+       sound.obj    misc.obj     crc32.obj    fuzzy.obj    \
+       form.obj     fname.obj    file.obj     inivar.obj   dirfunc.obj  \
+       copyfile.obj
+
+TSLIB = 1
+
+tslibos2.lib: $(OBJS)
+ @erase $@
+ @$(DIR_BC_BIN)\tlib $@ /c +$(OBJS)
+ @copy $@ $(DIR_TSLIB_LIB)
+ @erase $@
