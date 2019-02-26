@@ -1,0 +1,9 @@
+l=*list
+list=d:\util\list.com
+dump=alias >c:\4dos602\alias.lst
+reload=alias /r c:\4dos602\alias.lst
+pb=cdd j:\proboard
+pbsrc=cdd j:\cpp\pb\proboard
+desktop=cdd "c:\windows\all users\desktop"
+sdk=cdd j:\cpp\pb\sdk
+pbcfg=cdd j:\cpp\pb\procfg
