@@ -1,0 +1,7 @@
+MODEL = LARGE
+
+OBJS = pag.obj
+
+TSLIB = 1
+
+pag.exe : $(OBJS)
