@@ -1,0 +1,7 @@
+MODEL = LARGE
+PEX   = 1
+TSLIB = 1
+
+OBJS = loc_prot.obj
+
+loc_prot.pex : $(OBJS)

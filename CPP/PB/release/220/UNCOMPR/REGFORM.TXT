@@ -1,0 +1,49 @@
+         ------------------------------------------------------------------
+               ProBoard version 2.16     ----     Registration Form
+         ------------------------------------------------------------------
+
+         Your Name    :  ______________________________________ (required!)
+
+         Company      :  __________________________________________________
+
+         Sysop Name   :  ______________________________________ (required!)
+
+         BBS name     :  ______________________________________ (required!)
+
+         Address      :  __________________________________________________
+
+                         __________________________________________________
+
+                         __________________________________________________
+
+         Voice Phone# :  __________________________________________________
+
+         BBS Phone#   :  __________________________________________________
+
+         Your FidoNet addresss (if applicable):  __________________________
+
+         Type of registration: ( ) Personal         ( ) With printed manual
+                               ( ) Commercial       ( ) On disk
+
+         Payment method      : ( ) Check/Cash       ( ) VISA
+                               ( ) Bank Transfer    ( ) Mastercard/Eurocard
+
+         Amount       : ______________ (in registration site's currency!!)
+
+
+         Credit Card #: _______________________________   Expires: ___/___
+
+         Name on card : _______________________________ (EXACTLY as it
+                                                         appears on the card)
+         Signature    : _______________________________
+
+
+         Your key file will be sent to you via FidoNet netmail or you can
+         download it from the registration site's BBS.  We can also send it
+         to you on a diskette, but this will delay your registration
+         considerably (and it will cost you extra).
+
+         Please select how you would like to receive your key below:
+
+         ( ) Netmail                     ( ) 3"1/2 Diskette (extra cost)
+         ( ) Download from our BBS       ( ) 5"1/4 Diskette (extra cost)

@@ -1,0 +1,7 @@
+MODEL = LARGE
+
+OBJS = _lc.obj
+
+PEX=1
+
+_lc.pex : $(OBJS)

@@ -1,0 +1,553 @@
+
+
+   ±±±±±±±±±Ü                 ±±±±±±±±±Ü
+    ±±Ûßßß±±Û                  ±±Ûßßß±±Û
+    ±±Û   ±±Û ±±±±±±Ü ±±±±±±Ü  ±±Û   ±±Û ±±±±±±Ü ±±±±±±Ü ±±±±±±Ü ±±±±±±±Ü
+    ±±±±±±±±Û ±±Ûß±±Û ±±Ûß±±Û  ±±±±±±±Ûß ±±Ûß±±Û ±±Ûß±±Û ±±Ûß±±Û  ±±Ûß±±Û
+    ±±Ûßßßßßß ±±±±±±Û ±±Û ±±Û  ±±Ûßßß±±Û ±±Û ±±Û ±±±±±±Û ±±±±±±Û  ±±Û ±±Û
+    ±±Û       ±±Û±±Ûß ±±Û ±±Û  ±±Û   ±±Û ±±Û ±±Û ±±Ûß±±Û ±±Û±±Ûß  ±±Û ±±Û
+   ±±±±Û      ±±Û ±±Û ±±±±±±Û ±±±±±±±±±Û ±±±±±±Û ±±Û ±±Û ±±Û ±±Û ±±±±±±±Û
+    ßßßß       ßß  ßß  ßßßßßß  ßßßßßßßßß  ßßßßßß  ßß  ßß  ßß  ßß  ßßßßßßß
+
+                        "The Choice of Professionals"
+                               Version 2.2 BETA
+
+                              (EXPIRES 9/1/2000)
+
+
+     (upgrade & installation instructions in INSTALL.TXT & UPGRADE.TXT)
+
+
+============================================================================
+INTRODUCTION
+============================================================================
+
+
+----------------
+BETA INFORMATION
+----------------
+
+This edition of ProBoard is a "beta version" to test Y2K compliance with
+actual customer systems.
+
+Bug reports should be sent to the senior TeleGrafix engineer at:
+
+        jeff.reeder@telegrafix.com (jreeder@telegrafix.com)
+
+If you send messages to support@telegrafix.com, they might take a bit of
+time to reach me.  Do not send messages to anybody at proboard.com.  We're
+struggling with Network Solutions to get "proboard.com" moved over to our
+server, but there are beurocratic complications that are gumming up the
+works.  We don't anticipate that proboard.com will be switched over to our
+server for several weeks at the least.  It will probably be well into
+January before we get the situation resolved.
+
+It is >critical< that we know if this software works functionally as v2.16
+did, with exception to the Y2K fixes.  Obviously if the Y2K fixes are 
+broken, we can't upgrade the beta to a release version.  If the Y2K issues
+look good, please concentrate your efforts on the basic functionality of the
+software.  If it operations the same as v2.16 in all other respects, please
+let us know.  There have been other small modifications as noted below that
+could affect the beta testing cycle, but they are relatively minor.  The
+biggest changes in non-Y2K issues are the changes to the PB SDK for v2.2
+compliance.  Turns out that the ProBoard SDK hasn't been updated in many
+years.  If we broke something with it, we need to know.  We did create
+several PEX modules for testing purposes "in-house", and they worked as they
+were supposed to.  From what we know, existing v2.16 compatible PEX modules
+shouldn't be affected.
+
+In either event, if something worked in v2.16, but doesn't in v2.2, please
+let us know!
+
+
+-----------
+BUG REPORTS
+-----------
+
+If you find a Y2K bug, please try to describe every possibly relevant piece
+of information about the bug, including what data entry fields don't work
+right, what quirky situations bomb-out, or any other relevant information.
+Remember, if we can't duplicate the problem, it'll be all that much harder
+to fix!
+
+We've made some visual changes to the ProCFG and the main system console.
+If you totally hate the new look, we'd appreciate knowing about it.  If you
+don't like the new appearance, please take a deep breath and ask yourself,
+"is it really offensive?", or is it just "different than what you're used 
+to?"
+
+
+============================================================================
+RELEASE INFORMATION
+============================================================================
+
+
+Below, you'll find changes to recent versions of ProBoard.  Each change has
+a notation to the left of it which identifes the type of change made to the
+software.  Those notations are as follows:
+
+         (-) Means a bug fix.             
+         (*) Means a new feature.         
+         (%) Means a change.              
+         (D) Means a documentation change.
+
+
+------------------------------
+ProBoard v2.20.00 (12/10/1999)
+------------------------------
+
+(%) ProBoard now has a new registration scheme.  It no longer uses the 
+    REGKEY.PB file to store your registration information.  Now, your
+    registration information is burned into the PROBOARD.EXE file itself.
+    I know there are going to be a lot of people out there who won't like
+    this change in the slightest, but it's really for new customers of
+    ProBoard.  With ProBoard v2.2, new customers don't automatically get
+    an unlimited node license when they buy a copy.  They purchase the
+    number of nodes they want to run.  The key is the serial number and
+    the activation code which is used to unlock the software.  This
+    information tells ProBoard how many nodes it will allow.  Now, for all
+    those people who already own existing copies of ProBoard, you will
+    automatically be upgraded to an unlimited node license as part of your
+    upgrade.
+    
+    How do I upgrade to v2.2, and get it registered?  It's a four-step
+    process.
+    
+    Step 1: Download ProBoard v2.2 (which you've already done, or you
+            wouldn't be seeing this file).
+    
+    Step 2: Run the program included with ProBoard 2.2 called REGINFO.EXE.
+            This will read your REGKEY.PB file, and extract out the old
+            registration information.  It will then display an eight-digit
+            code on the screen which is your Upgrade-ID code.  This code
+            will be crucial in the next step.
+    
+    Step 3: Visit the TeleGrafix Web site at http://www.telegrafix.com,
+            and purchase your upgrade.  While you're filling out the
+            upgrade form, you'll be asked for your Upgrade-ID code, the
+            name of the SysOp and the BBS name as they appear in ProCFG.
+            The Web site will compare this information against the data
+            encoded in your Upgrade-ID code, and if they match, you'll 
+            automatically be given your new registration information.
+    
+            NOTE: A single BBS can only be upgraded once, to prevent pirates
+                  from stealing your registration information!
+    
+    Step 4: Run the REGISTER.EXE program, and key-in the newly assigned
+            serial number and activation code.
+    
+    That's all there is to it.  You're ready to go online with a fully
+    functioning ProBoard system.
+
+(%) New look and feel for the main console.
+
+(-) Fixed a minor centering problem in the "last caller" field.
+ 
+(*) Added a new option to the status bar (ALT-J) to "Jump to DOS".  This
+    option was already available in the software, but it wasn't documented
+    on the main console screen.
+  
+(*) Added five new functions to the ProBoard PEX SDK:
+  
+         fileno()
+         getcurdir()
+         getdisk()
+         _dos_getftime()
+         _dos_setftime()
+
+(%) Changed message 361 in the language files to make room for the expanded
+    year string.
+
+(-) Updated ProCFG.EXE to properly handle four-byte year data entry.  The
+    expiration date can be set to "00/00/0000" to indicate no expiration
+    date.
+
+(-) The new user signup now allows you to select from the updated date
+    formats:
+  
+       MM/DD/YYYY
+       YYYY/MM/DD
+       DD/MM/YYYY
+
+(-) The new user signup now forces you to enter four-digit years when asked
+    to enter your date of birth.
+
+(-) The file system now forces you to enter four-digit years when entering a
+    date to search for files by.
+
+(-) Fixed a potentially serious bug with the birthdate asking code.  There
+    were circumstances when it might generate a garbled birthdate.
+
+(*) Added a new macro code to ".A?? File Control Codes".  The new code is
+    "^F;" (i.e., 06-59).  This code displays the user's password, or if the
+    "Hide Password" option is enabled in ProCFG, then this option will display
+    the password hiding character as defined in ProCFG.  
+  
+(-) The default SETUP.* menu files have been changed to use the new "^F;" 
+    macro code instead of "^FC" for the password display to properly support
+    the Hide Password option.
+
+(*) Changed the look and feel of the SysOp functions F1 and Shift-F1 to be
+    more consistent with the main console appearance.
+
+(%) Changed the color of the status line displayed on the main console when
+    a user is logged in.  The new color is more like the main console.
+
+(%) Changed the entire look and feel of ProCFG to be more similar to the BBS
+    main console.
+
+(-) Fixed a bug with ProCFG where if you make changes to the system
+    configuration data, the inappropriate action was taken when you chose to
+    save or cancel the changes when you exit.  I don't know if this was
+    present in the release version of v2.16, but in the code obtained from
+    the author, the exact opposite operation was performed.  If you decided 
+    to abandon the changes, they got saved instead, and vice-versa.
+
+(-) Updated the PB_SDK header, and the library.  Several of the data 
+    structures in PB_SDK.H have been updated to be accurate with regard to
+    ProBoard v2.2 compatibility.  The .LIB file has also been rebuilt to
+    be v2.2 compliant.
+
+
+---------------------------------------------
+ProBoard v2.16 (Changes since ProBoard v2.15)
+---------------------------------------------
+
+ NOTE: the new features in this release are not documented in
+       PB216.DOC.
+
+(-) When showing GIF file information, the more prompt is now
+    displayed correctly.
+
+(*) ProCFG allows you to insert, delete, move and sort message
+    areas and file areas.
+
+(*) Menu functions 49 and 54 (Select file and message area), now
+    accept a new parameter to set the number of columns to
+    display the areas in:
+
+(-) Erasing of the "More Y/N/Tag" prompt should now work ok.
+
+(-) ProBoard would say "No files received" twice after a null
+    upload.  This has been fixed.
+
+(-) When editing tagged files, a 'C' would be shown when typing
+    a 'U' to untag a single file.  Fixed.
+
+(-) The "inactive for xx seconds" prompt is now only shown once.
+
+(-) Tabs in FILES.BBS are converted to spaces instead of waiting
+    for <Enter>.
+
+(*) The color of the letters typed when tagging files is no longer
+    hardcoded to yellow.
+
+
+
+---------------------------------------------
+ProBoard v2.15 (Changes since ProBoard v2.12)
+---------------------------------------------
+
+(*) The biggest change in this version is the inclusion of an
+    internal fullscreen editor.  It's a stripped down version of
+    TheEdit, and it will be distributed with ProBoard free of
+    charge and fully functional.  To enable it, you have to
+    toggle "Use internal fullscreen editor" in
+    ProCFG/Options/Paths.
+
+    (NOTE: if you're using a PEX named FSED.PEX (like TheQuote),
+     the internal full-screen editor will NOT work!  Delete
+     FSED.PEX from your PEX directory to make it work)
+
+(*) The default language can now be specified.  This is the
+    language that will be used to prompt the users for their name
+    at login.  It's also used when the user's language is not
+    installed.
+
+(*) A semaphore file for shutting down ProBoard is now supported.
+    Just create a file called DOWN.#, and ProBoard will exit with
+    a specific errorlevel.
+
+(-) When a user's screen length is set to 0, ProBoard no longer
+    locks up when listing files.
+
+(*) Default protocols have been implemented.  There's a new menu
+    function to change the default protocol.  The user can select
+    any protocol or "No default protocol".  3 extra language
+    prompts have been added for this feature.
+
+(*) It is now possible to password-protect every menu item (see
+    the menu editor)
+
+(%) The default date for the new file check is no longer the date
+    of the last call, but the date of the last new file check.
+
+(*) 2 new menu functions have been added: "Change Message Area
+    Group" and "Change File Area Group".  This allows users to
+    select a new file/msg group without having to select a
+    file/msg area.
+
+(*) The functions "Keyword Search", "Filename search" and "New
+    file search" now accept a new parameter:
+      /FG    Only searches areas in the current file group
+      /FG=x  Only searches areas in the specified file group
+
+(*) For each menu item, you can now specify what nodes are
+    allowed to access it.
+
+(%) When you only have one language installed, or when all
+    languages share the same menus, ProCFG won't ask for a
+    language in the menu editor.
+
+(*) The background color for prompts can now be changed.  It's a
+    global setting in ProCFG/Options/Display.
+
+
+---------------------------------------------
+ProBoard v2.12 (Changes since ProBoard v2.10)
+---------------------------------------------
+
+(-) The installation utility will ask you if you want to
+    overwrite your old language files or not.  If you select
+    "No", any prompts that are missing in your old language
+    files will be updated with the default English prompts that
+    come with ProBoard.
+
+(-) The local protocol is no longer selectable when RIP is
+    enabled.
+
+(-) The local protocol is no longer selectable in the QWK PEX.
+
+(-) The language editor no longer shows funny characters when
+    pressing <PgDn> at the last screen.
+
+(*) When a user logs off, any files that were tagged and not
+    downloaded will still be tagged at the next logon.
+
+(%) The maximum number of AKAs has been increased to 50 (used to
+    be 20)
+
+(%) The RIP support has been reduced: the internal RIP prompts
+    and screens are no longer used by ProBoard.  There were too
+    many problems with it.  You can only have RIP MENUS now.
+
+(-) Putting a Ctrl-L in a language prompt no longer messes up the
+    screen.
+
+(-) When user's alias and real name are the same, ProBoard
+    would sometimes leave the "From" field blank when posting a
+    message.  This has been fixed.
+
+
+---------------------------------------------
+ProBoard v2.12 (Changes since ProBoard v2.01)
+---------------------------------------------
+
+(*) Modem connect strings have been added for the following baud
+    rates:
+
+       1200/75
+       21600
+       26400
+       31200
+       33600
+       36000
+       57600
+       64000
+       115200
+
+(*) It is now possible to run a PEX or display an ANSI/ASCII file
+    in any language prompt.
+
+(*) You can now define up to 6 user-defined baud rates and connect
+    strings.
+
+(*) Separate modem configurations for each node are now possible.
+
+(*) New option added to Menu Function 27 (Write a message) to send
+    netmail to a specified address/person.
+
+(%) The maximum # of security levels you can specify in ProBoard
+    is now 50 instead of 25.
+
+(*) Periods ('.') are now allowed as date seperators, for example,
+    06.14.57 is now considered a valid date.
+
+(-) On multi-node systems (running ProBoard standalone, without a
+    mailer) sometimes the modem failed to initialize properly or
+    would fall asleep while waiting for a call.  This has been
+    fixed by sending the initialization commands every 5 minutes.
+
+(*) Uploads can now be scanned for viruses by specifying an
+    external upload scanner.  You should be able to integrate any
+    available upload scanner into ProBoard.
+
+(*) New Switch in PBUTIL UK.  You can now specify a -L<level>, and
+    PBUTIL UK will only work on users with the level you specify.
+
+(-) The CONFIG.RA file created by CONVERT SIMUL2 was sometimes not
+    recognized by external utilities because file area names in it
+    were being truncated.  This has been fixed.
+
+(%) The QWK offline mail PEX will now update the users lastread
+    pointers BEFORE it waits for the user to press <ENTER>.
+
+(-) When compiling a nodelist (using PBUTIL NC), ProBoard would
+    display a negative number when the "xxx nodes compiled"
+    message was displayed.  This has been fixed.
+
+(%) The field lengths for the Message Areas have been increased.
+    The maximum length for an "area name" and "echomail tag" is
+    now 80 characters.
+
+(%) All of ProBoard's message area configurations are now stored
+    in the file "MESSAGES.PB" instead of, as in previous versions,
+    the file "MSGAREAS.PB".  This means that any external
+    utilities or programs you have that use the file "MSGAREAS.PB"
+    can not be used until they are updated to use the new
+    "MESSAGES.PB" file structure.
+
+(%) Any PEX files or doors that use the "MSGAREAS.PB" structure
+    will NOT work correctly.  They will have to be recompiled for
+    this version to support the new "MESSAGES.PB" file structure!
+
+(%) Any files contained in your file lists (FILES.BBS, etc.) that
+    are larger than 1 megabyte, (for example, a 1.4 megabyte
+    file), are now displayed as "1.4M" instead of "1400k" when the
+    file list is shown to your users.
+
+(%) When a "guest" user (GUEST flag set in their user record) logs
+    in, and he/she forgot the password, ProBoard will no longer
+    write a warning message.
+
+(%) ProBoard will no longer ask new users to select a language if
+    there's only one language file installed.
+
+(*) There is a new option in PROCFG/Options/System Options: "RIP
+    Graphics".  When set to "Disabled", ProBoard will not use RIP,
+    even if it was detected at login.
+
+(*) ProBoard now allows you to change the colors of your the file
+    listings and decide whether or not not you want to display the
+    file counters to your users.  (Refer to "PROCFG/Options/File
+    List Format" for more details).
+
+(*) ProBoard will now automatically enter the '/' for the users
+    when they enter a date.
+
+(*) While editing message/file areas in PROCFG, you can now jump to
+    the next or previous message/file area by pressing the <PgUp>
+    and <PgDn> keys.
+
+(-) Lastread pointers are now correctly maintained for message
+    areas greater than 1,000.
+
+(%) The "CD-ROM" flag in each file area's configuration has been
+    removed.  ProBoard will now determine the format of your
+    FILES.BBS itself (whether or not the date/time and size are
+    listed).  Refer to the PROCFG/FileAreas section of the 2.10
+    manual for more information.
+
+(*) A new flag has been added for each file area: "Copy Local".
+    When enabled, ProBoard will copy the file to a local directory
+    before starting a download.  Refer to the PROCFG/FileAreas
+    section of the 2.10 manual for more information.
+
+(*) The time-consuming process of creating the file "TOPS.PRO"
+    when the first caller of each new day logs in, has been moved
+    to PBUTIL.  As a result, there's a new option in PBUTIL: "DM"
+    (Daily Maintenance).  You should run this at least once a day
+    (as part of your nightly maintenance).
+
+(*) Menu Function 34 (View Archive) now supports RAR archived
+    files.
+
+(*) Handles (Aliases) are now supported in menu functions 13 (List
+    Users), 50 (Show Users Online), 51 (Last Callers) and 53
+    (MultiLine Chat).
+
+(%) Files listed in "FILES.BBS" can now start with a "!".  ProBoard
+    will determine if a line in "FILES.BBS" starting with a "!" is
+    a comment or a file name.
+
+(-) PROCFG will no longer lock up the system if you press the
+    <DEL> key when there are no entries shown in the Personal
+    Files window.
+
+(*) When running ProBoard in standalone mode (without a front-end
+    mailer system), when you're at the "waiting for call" screen,
+    you can now shell to DOS by pressing <ALT+J>.
+
+(%) The .A?? file control code for the user's address line 2 has
+    been changed from ^F% to ^F' (single quote).
+
+(%) The .A?? file control code for the user's country has been
+    changed from ^F@ to ^F" (double quote).
+
+(-) When you are replying to netmail from a point address,
+    ProBoard now correctly addresses the message to that point
+    address.
+
+(%) The file MODEM.PRO has been renamed to MODEM.PB  It is safe to
+    delete your old MODEM.PRO file -AFTER- you have run the
+    CONVERT PB routine (or the installation utility) as outlined
+    in UPGRADE.TXT.
+
+(-) The "In TOPFILES" flag is now saved correctly when editing
+    file area configurations.
+
+(-) The "@<LASTDATE>@" and "@<LASTTIME>@" text macros now work
+    correctly.
+
+(-) The "Hidden" flag in validation templates now correctly
+    toggles the "Hidden" flag in the user record instead of the
+    "Deleted" flag.
+
+(-) Files that are not valid .GIF files are not shown when using
+    Menu Function 55 (Show .GIF File Info).
+
+(%) The "BEFOREPW.A??" and "AFTERPW.A??" files are now also
+    displayed (if they exist) for BBS systems who are NOT using a
+    system password.
+
+(-) File counters for files that have been downloaded more than 99
+    times, are now displayed properly (alignment) when displaying
+    file lists.
+
+(-) The JAM lastread pointers in are now correctly updated when
+    running PBUTIL MP (Message Pack).
+
+(%) Users no longer can press <CTRL+G> to make the BBS beep when
+    they enter messages using ProBoard's internal message editor.
+
+(*) Personal files can now be sent from directories other than the
+    personal files directory as specified in ProCFG.
+
+(*) For every personal file, you can set whether ProBoard will
+    delete the file after it has been downloaded or not.
+
+(*) ProCFG now checks if directories you entered exist or not, and
+    asks the user if he/she would like to create them.  Paths are
+    created multiple levels deep.  For example, if you enter
+    "C:\PB\RIP\ICONS", and C:\PB\RIP does not exist,  ProCFG will
+    create "C:\PB\RIP" first, and then "C:\PB\RIP\ICONS" !
+
+(*) Menu function 44 (Global boards selection) now accepts the
+    parameter "/M" which allows the user to globally
+    select/unselect areas for mail check.
+
+(%) For each message area, you can now choose between the
+    following for "Name Options":
+       * Real Names Only
+       * Free Alias
+       * Fixed Alias (or real name)
+       * Fixed Alias (enforced)
+
+(*) Local Up/Downloads are now supported. (by using the supplied
+    PEX file LOC_PROT.PEX)
+
+(%) When searching for files, the area names are now shown on one
+    line, unless a match in found in an area.
+
+(*) You can now replace the login procedure with a PEX.  The old
+    LOGIN.PEX is no longer supported.

@@ -1,0 +1,19 @@
+[2J[1C[0;1;34;44mÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ[0;30;44m¿[40m
+ [1;34;44m³                      [33mProBoard Full Screen Editor - Help                    [0;30;44m³[40m
+ [1;34;44mÀ[0;30;44mÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ[40m
+ [1;34;44mÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ[0;30;44m¿[1;34mÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ[0;30;44m¿[40m
+ [1;34;44m³ [33mCtl-A  [35m^Left      [36mWord Left         [0;30;44m³[1;34m³ [33mCtl-O  [35mEscape  [36mCommand menu         [0;30;44m³[40m
+ [1;34;44m³ [33mCtl-B             [36mCenter Line       [0;30;44m³[1;34m³ [33mCtl-P  [35mEnd     [36mCursor End Of Line   [0;30;44m³[40m
+ [1;34;44m³ [33mCtl-C  [35mPage Down  [36mPage Down         [0;30;44m³[1;34m³ [33mCtl-Q          [36mToggle Quote/Msg     [0;30;44m³[40m
+ [1;34;44m³ [33mCtl-D  [35mRight      [36mCursor Right      [0;30;44m³[1;34m³ [33mCtl-R  [35mPage Up [36mPage Up              [0;30;44m³[40m
+ [1;34;44m³ [33mCtl-F  [35m^Right     [36mWord Right        [0;30;44m³[1;34m³ [33mCtl-S  [35mLeft    [36mCursor Left          [0;30;44m³[40m
+ [1;34;44m³ [33mCtl-G  [35mDel        [36mDel Current Char  [0;30;44m³[1;34m³ [33mCtl-T          [36mDelete Word Right    [0;30;44m³[40m
+ [1;34;44m³ [33mCtl-H  [35mBackspace  [36mDel Char To Left  [0;30;44m³[1;34m³ [33mCtl-U          [36mPaste Line           [0;30;44m³[40m
+ [1;34;44m³ [33mCtl-I  [35mTab        [36mGoto Next Tabstop [0;30;44m³[1;34m³ [33mCtl-V  [35mInsert  [36mToggle Insert Mode   [0;30;44m³[40m
+ [1;34;44m³ [33mCtl-K             [36mOpen/Close Quote  [0;30;44m³[1;34m³ [33mCtl-W  [35mHome    [36mCursor Start Of Line [0;30;44m³[40m
+ [1;34;44m³ [33mCtl-L             [36mRedraw The Screen [0;30;44m³[1;34m³ [33mCtl-X  [35mDown    [36mCursor Down          [0;30;44m³[40m
+ [1;34;44m³ [33mCtl-M  [35mEnter      [36mGoto Next Line    [0;30;44m³[1;34m³ [33mCtl-Y          [36mCut Current Line     [0;30;44m³[40m
+ [1;34;44m³ [33mCtl-N             [36mShow This Screen  [0;30;44m³[1;34m³ [33mCtl-Z  [35mEsc, S  [36mSave Message         [0;30;44m³[40m
+ [1;34;44mÀ[0;30;44mÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ[1;34mÀ[0;30;44mÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ[40m
+ [44m                          [1;32mPress any key to continue                           [40m
+[0m [D[0m

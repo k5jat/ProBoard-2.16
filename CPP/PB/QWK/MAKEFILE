@@ -1,0 +1,7 @@
+MODEL = LARGE
+PEX   = 1
+TSLIB = 1
+
+OBJS = qwk.obj
+
+qwk.pex : $(OBJS)

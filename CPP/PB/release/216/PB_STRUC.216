@@ -1,0 +1,686 @@
+/*
+                     旼컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴커
+                     � ProBoard v2.16 File Structures �
+                     읕컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴켸
+
+
+This document describes the file structures used by ProBoard version 2.15.
+For information on the structures of the RemoteAccess compatible files, refer
+to the RemoteAccess structures document. It can be obtained from any of the
+ProBoard distribution sites.
+
+-------------------------------------------------------------------------------
+
+The data-structures are C-structures, this means:
+
+- Strings are stored as an array of characters, terminated by a 0.
+- A date is stored as 3 bytes (day,month,year)
+- A time is stored as 3 bytes (hour,min,sec)
+
+The 'accessflags' are stored in a long integer, with bit 31 being flag 'A',
+bit 30 flag 'B' , ... Bit 5 is flag '1', bit 4 is flag '2', etc...
+I know this doesn't sound logical, but we had some good reasons for doing
+this :-).
+
+The combined boards are stored in 125 bytes (1000 bits). One bit per message
+area.
+*/
+
+typedef unsigned short word;
+typedef unsigned long  dword;
+typedef unsigned char  byte;
+typedef unsigned long  accessflags;
+typedef unsigned char  combinedboards[125];
+typedef unsigned char  bool;
+typedef unsigned char  Time[3];
+typedef unsigned char  Date[3];
+typedef unsigned char  TimeFrame[7][6];
+
+typedef struct
+  {
+    byte periods[7][6];   /* 7x48 periods of 1/2 hour = one week */
+  }
+  TimeFrame;
+
+
+typedef struct
+  {
+    word         minLevel;              /* 0 =           don't care     */
+    word         maxLevel;              /* 0 =           don't care     */
+    accessflags  flags;                 /* All off =     don't care     */
+    accessflags  flagsNot;              /* All off =     don't care     */
+    byte         minAge;                /* 0 =           don't care     */
+    byte         maxAge;                /* 0 =           don't care     */
+    byte         sex;                   /* 0 =           don't care     */
+    word         minTimeLeft;           /* 0 =           don't care     */
+    word         minTimeOnline;         /* 0 =           don't care     */
+    TimeFrame    timeFrame;             /* All on =      don't care     */
+    byte         terminals;             /* 0xFF =        don't care     */
+    dword        minSpeed;              /* 0 =           don't care     */
+    dword        maxSpeed;              /* 0 =           don't care     */
+
+    byte         extra[50];             /* Extra space                  */
+  }
+  AccessRecord;
+
+/*
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+ USERSPB.BBS
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+This file is tied to the files USERS.BBS and USERSXI.BBS. The records are
+stored in the same order as the records in USERS.BBS. The name of the user
+is duplicated in this file, so it is possible to fix the userfile after using
+a third-party userfile packer/sorter, which does not know about USERSPB.BBS.
+
+*/
+
+struct UsersPbBBS
+   {
+      char           name[36];
+      char           country[26];
+      char           state[26];
+      char           faxPhone[16];
+      char           passWord[16];
+      char           language[9];
+      Date           lastPwdChange;
+      Date           lastNewFilesCheck;
+      short          logLevel;
+      short          tbTimeBalance;
+      short          tbKbBalance;
+      short          tbTimeWithdrawn;
+      short          tbKbWithdrawn;
+      word           tbTimeDeposited;
+      word           tbKbDeposited;
+      word           tbTimeLoaned;
+      word           tbKbLoaned;
+      Date           tbTimePayback;
+      Date           tbKbPayback;
+      Date           tbLastUsed;
+      word           expLevel;
+      accessflags    expFlagsOn;
+      accessflags    expFlagsOff;
+      dword          uFlags;
+      combinedboards mailCheckBoards;
+      dword          totalTimeUsed;
+      word           qwkMaxMsgsPerArea;
+      word           qwkMaxMsgs;
+      byte           qwkArchiver;
+      byte           ripFont;
+      byte           checkMail;
+      byte           checkNewFiles;
+
+      byte           extra[398];
+  };
+
+/* These are the extra user-flags for 'uFlags': */
+
+#define RA_UFLAG_NOIBM        1
+#define RA_UFLAG_NOTOPS       2
+#define RA_UFLAG_AVTPLUS      4
+#define RA_UFLAG_ATTEN        8
+#define RA_UFLAG_NORIP       16
+#define RA_UFLAG_MULTILOGIN  32
+#define RA_UFLAG_FREECHAT    64
+#define RA_UFLAG_LOCALONLY  128
+
+/*
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+ CONFIG.PRO
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+*/
+
+struct CONFIG_PRO
+   {
+      char        shellmsg[81];         /* Message to show when shelling                */
+      char        sysopname[36];        /* Name of sysop                                */
+      char        txtpath[61];          /* Path for textfiles                           */
+      char        mnupath[61];          /* Path for menu-files                          */
+      char        msgpath[61];          /* Path for message base                        */
+      char        uploadpath[61];       /* Uploadpath                                   */
+      char        editorname[61];       /* Name of external editor                      */
+      word        newuserlevel;         /* Level for new user                           */
+      short       newuserloglevel;      /* Loglevel for new user                        */
+      accessflags newuserflags;         /* New user flags                               */
+      short       max_passinput;        /* Maximum attempts for password entry          */
+      short       min_passlength;       /* Minimum password length                      */
+      short       inactivity_time;      /* Inactivity time-out limit                    */
+      short       max_sysop_pages;      /* Maximum times sysop can be paged             */
+      short       pagebell_length;      /* Length of page-bell (secs)                   */
+      short       mailcheck;            /* Check for mail at logon?                     */
+      short       europe;               /* European date format?                        */
+      short       numnodes;             /* # nodes                                      */
+      bool        allowansi;            /* Allow ANSI?                                  */
+      bool        allowavatar;          /* Allow AVATAR?                                */
+      short       discrete;             /* Hide sysop activity?                         */
+      short       askphone;             /* Ask for phone number?                        */
+      short       allowoneword;         /* Allow one-word names                         */
+      unsigned    crashlevel;           /* Level needed for crashmail                   */
+      accessflags crashflags;           /* Flags needed for crashmail                   */
+      word        attachlevel;          /* Level needed for file attach                 */
+      accessflags attachflags;          /* Flags needed for file attach                 */
+      short       allowmsgupload;       /* Allow message uploads                        */
+      short       allowstacking;        /* Allow command stacking                       */
+      Time        page_start;           /* Paging hours start                           */
+      Time        page_end;             /* Paging hours end                             */
+      short       handshaking;          /* I/O Handshaking                              */
+      short       allowalias;           /* Allow alias for login                        */
+      short       loglocal;             /* Log local calls                              */
+      short       doswap;               /* Allow swapping                               */
+      char        originline[61];       /* Origin line                                  */
+      char        nodelistdir[61];      /* Nodelist directory                           */
+      char        sysopkeys[10][60];    /* Sysop hotkeys                                */
+      Time        dl_start;             /* Download hours start                         */
+      Time        dl_end;               /* Download hours end                           */
+      short       uploadspace;          /* Space needed for uploads                     */
+      char        pvtuploadpath[61];    /* Directory for files uploads                  */
+      char        quotestring[6];       /* String used for quoting                      */
+      bool        fastmode;             /* Use fast mode                                */
+      bool        extra_bool_1;
+      bool        killsent;             /* Kill netmail after sent                      */
+      bool        multiline;            /* Use message base sharing?                    */
+      bool        egamode;              /* Use 43/50 line mode                          */
+      bool        showuserinfo;         /* Show user info while in EGA mode?            */
+      char        pexpath[61];          /* Directory for PEX files                      */
+      bool        allowquicklogin;      /* Allow quick sysop login?                     */
+      bool        suspendmsgtime;       /* Suspend time when writing msgs               */
+      short       securityboard;        /* MsgBoard for security messages               */
+      bool        pwdmessages;          /* Write security-messages?                     */
+      bool        extra_bool_2;
+      char        bbsname[36];          /* Name of the BBS                              */
+      char        pwdchar;              /* Password character                           */
+      short       tb_maxtimedeposit;    /* Max time deposit per day (TimeBank)          */
+      short       tb_maxkbdeposit;      /* Max Kbytes deposit per day (TimeBank)        */
+      short       tb_maxtimewithdrawal; /* Max time withdrawal per day (TimeBank)       */
+      short       tb_maxkbwithdrawal;   /* Max Kbytes withdrawal per day (TimeBank)     */
+      short       usage_days;           /* Days to keep usage graphs                    */
+      char        systempwd[16];        /* System password                              */
+      bool        usesystempwd;         /* Use system password?                         */
+      bool        askbirthdate;         /* Ask Birth Date?                              */
+      short       binlogdays;           /* # days to log in BINLOG.PB                   */
+      bool        binloglocal;          /* Log local calls to BINLOG.PB yes/no          */
+      short       pageArea;             /* Area number for page messages                */
+      bool        indexfiles;           /* Use file indexing                            */
+      bool        checkdupes;           /* Check for dupes                              */
+      bool        killdupes;            /* Kill duplocate files                         */
+      bool        ignore_ext;           /* Ignore file extensions for dupe checking     */
+      char        RIPpath[61];          /* Path for RIP scripts                         */
+      char        iconspath[61];        /* Path for RIP icons                           */
+      char        location[36];         /* BBS Location (city)                          */
+      char        phone[26];            /* BBS Phone #                                  */
+      char        QWKid[9];             /* BBS QWK id                                   */
+      word        IObuffersize;         /* I/O buffer size in bytes                     */
+      TimeFrame   pagingHours;          /* Paging hours                                 */
+      char        defaultLanguage[9];   /* Default language                             */
+      bool        addUploaderName;      /* Add uploader's name to FILES.BBS             */
+      TimeFrame   downloadHours;        /* Download hours                               */
+      bool        askdataphone;         /* Ask data phone #                             */
+      bool        askfaxphone;          /* Ask fax phone #                              */
+      bool        askaddress;           /* Ask mailing address                          */
+      bool        asksex;               /* Ask sex                                      */
+      bool        askdateformat;        /* Ask date format                              */
+      bool        askstate;             /* Ask state                                    */
+      bool        askcountry;           /* Ask country                                  */
+      short       fuzzyRate;            /* Fuzzy search percentage for user editor      */
+      bool        hidePassword;         /* Hide password in user editor                 */
+      bool        valConfirm;           /* Confirm user validation                      */
+      char        extra_char_1[17];
+      char        extChat[81];          /* External chat program                        */
+      char        virScanCommand[61];   /* External upload scan command                 */
+      byte        virScanType;          /* External upload scan command (type)          */
+      char        virScanSemaphore[13]; /* External upload scan command (semaphore)     */
+      byte        listColorTag;         /* File list color (tag char)                   */
+      byte        listColorFileName;    /* File list color (file name)                  */
+      byte        listColorSize;        /* File list color (file size)                  */
+      byte        listColorDate;        /* File list color (file date)                  */
+      byte        listColorCounter;     /* File list color (file counter)               */
+      byte        listColorDesc;        /* File list color (description)                */
+      byte        listColorSeperator;   /* File list color (description seperator)      */
+      byte        listColorMissing;     /* File list color (missing indicator)          */
+      bool        hideFileCounter;      /* File list setup - hide file counter          */
+      bool        disableRIP;           /* TRUE = disable RIP completely                */
+      char        extra_char_2[81];
+      byte        virScanFailedAction;  /* External upload scan command (action)        */
+      word        virScanFailedArea;    /* External upload scan command (failed area)   */
+      byte        promptColor;          /* Prompt color (background)                    */
+      bool        internalfsed;         /* Set to 1 if internal fsed enabled            */
+
+      char        extra[3];
+   };
+
+
+/*
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+ TIMELOG.PRO
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+*/
+
+struct TIMELOG_PRO
+   {
+      short       numdays;              /* Number of days active                        */
+      Date        lastdate;             /* Last update                                  */
+      long        hours[24];            /* # minutes per hour usage (obsolete)          */
+      long        days[7];              /* # minutes per day usage  (obsolete)          */
+      long        weeks[53];            /* # minutes per week usage (obsolete)          */
+      long        totalcalls;           /* Total calls to system                        */
+  };
+
+
+/*
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+ FILECFG.PRO
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+*/
+
+struct FILECFG_PRO
+   {
+      char        name[80];             /* Name of file area                            */
+      char        listpath[80];         /* Path for file-list                           */
+      char        filepath[80];         /* Path for files                               */
+      word        level;                /* Level needed for access                      */
+      long        flags;                /* Flags needed for access                      */
+      char        type;                 /* 1 = CDROM File listing type                  */
+      short       maxfiles;             /* Max files per day in this area downloadable  */
+      short       maxkb;                /* Max Kbytes per day in this area              */
+      bool        notops;               /* Set to 1 -> should not be listed in TOPFILES */
+      bool        free;                 /* Set to 1 -> free area                        */
+      byte        groups[4];            /* Groups belonging to                          */
+      bool        allGroups;            /* Belongs to all groups                        */
+      byte        minAge;               /* Minimum age                                  */
+      long        flagsNot;             /* Access flags not allowed                     */
+      byte        dateFormat;           /* Date format (same as in user file)           */
+
+      byte        extra[2];
+  };
+
+
+/*
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+ MESSAGES.PB
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+*/
+
+struct MESSAGES_PB
+   {
+      word        areaNum;              /* # of message area (1-10000)                  */
+      word        hudsonBase;           /* Number of Hudson message base                */
+      char        name[81];             /* Name of message area                         */
+      byte        msgType;              /* Kind of message area (Net/Echo/Local)        */
+      byte        msgKind;              /* Type of message (Private only/Public only/.) */
+      byte        msgBaseType;          /* Type of message base                         */
+      char        path[81];             /* Path to Squish or *.MSG                      */
+      byte        flags;                /* Alias allowed/forced/prohibited              */
+      word        readLevel;            /* Minimum level needed to read msgs            */
+      accessflags readFlags;            /* flags needed to read msgs                    */
+      accessflags readFlagsNot;         /* flags non-grata to read msgs                 */
+      word        writeLevel;           /* Minimum level needed to write msgs           */
+      accessflags writeFlags;           /* flags needed to write msgs                   */
+      accessflags writeFlagsNot;        /* flags non-grata to read msgs                 */
+      word        sysopLevel;           /* Minimum level needed to change msgs          */
+      accessflags sysopFlags;           /* flags needed to change msgs                  */
+      accessflags sysopFlagsNot;        /* flags non-grata to read msgs                 */
+
+      char        origin[62];           /* Origin line                                  */
+      short       aka;                  /* AKA                                          */
+
+      word        rcvKillDays;          /* Kill received after xx days                  */
+      word        msgKillDays;          /* Kill after xx days                           */
+      word        maxMsgs;              /* Max # msgs                                   */
+
+      char        sysop[36];            /* Area Sysop                                   */
+      short       replyBoard;           /* Area number where replies should go          */
+
+      char        echoTag[61];          /* Echomail Tag Name                            */
+      char        qwkTag[13];           /* QWK Area Name                                */
+
+      byte        groups[4];            /* Groups belonging to                          */
+      bool        allGroups;            /* Belongs to all groups                        */
+      byte        minAge;               /* Minimum age for this area                    */
+
+      byte        extra[112];
+  };
+
+
+#define MSGTYPE_BOTH     0 /* Private/Public */
+#define MSGTYPE_PVT      1 /* Private Only   */
+#define MSGTYPE_PUBLIC   2 /* Public Only    */
+#define MSGTYPE_TOALL    3 /* To All         */
+
+#define MSGKIND_LOCAL    0 /* Local          */
+#define MSGKIND_NET      1 /* NetMail        */
+#define MSGKIND_ECHO     2 /* EchoMail       */
+#define MSGKIND_PVTECHO  3 /* Pvt EchoMail   */
+
+#define MSGBASE_HUDSON   0
+#define MSGBASE_SQUISH   1
+#define MSGBASE_SDM      2
+#define MSGBASE_JAM      3
+
+/*
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+ ONLINE.PRO
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+*/
+
+struct ONLINE_PRO
+   {
+      char        name[36];             /* Name of user online                          */
+      char        city[16];             /* City of user online                          */
+      word        baud;                 /* Baud rate of user                            */
+      short       status;               /* 0 -> online , <0 -> not online or unavailable*/
+
+      char        extra[8];
+   };
+
+
+
+/*
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+ TOPS.PB
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+*/
+
+struct TOPS_PB
+   {
+      char        name[36];             /* Name of user online                                 */
+      dword       n;                    /* Data (# kb/minutes/files/etc...)                    */
+   };
+
+
+
+/*
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+ PROTOCOL.PRO
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+*/
+
+struct PROTOCOL_PRO
+   {
+      char        name[50];             /* Name of protocol                             */
+      char        key;                  /* Hotkey for Protocol                          */
+      char        flags;                /* Protocol behavior                            */
+      char        logfile[60];          /* Logfile from protocol                        */
+      char        ctlfile[60];          /* Control file (redirection file)              */
+      char        dlcom[128];           /* Download command line                        */
+      char        ulcom[128];           /* Upload command line                          */
+      char        dlstring[80];         /* String to place in download control file     */
+      char        ulstring[80];         /* String to place in upload control file       */
+      char        dlkeyword[40];        /* Download keyword to search for in logfile    */
+      char        ulkeyword[40];        /* Upload keyword to search for in logfile      */
+      short       wordnr;               /* File name word nr after keyword (1-..)       */
+  };
+
+
+/* Flags: */
+
+#define PROT_BATCH   1    /* Batch protocol        */
+#define PROT_ENABLED 2    /* Enabled               */
+#define PROT_BOTH    4    /* Full-duplex protocol  */
+#define PROT_BIM     8    /* Bimodem-type ctl-file */
+#define PROT_LOCAL  16    /* Local only            */
+
+
+/*
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+ LIMITS.PRO
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+*/
+
+struct LIMITS_PRO
+   {
+      word        level;                /* Level                                        */
+      short       timelimit;            /* # minutes per day                            */
+      short       daily_klimit;         /* Kbytes per day allowed                       */
+      short       pre_download;         /* # minutes online before download             */
+      char        id[6];                /* Usergroup ID                                 */
+      word        free;                 /* Free upload in Kb.                           */
+      byte        factor;               /* Percentage upload required                   */
+      word        max_download;         /* Max download for this level                  */
+      short       fallto;               /* Fall to level x when max. reached            */
+      short       msgfactor;            /* # Kbytes granted per message written         */
+
+      char        extra[5];
+   };
+
+
+/*
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+ MODEM.PB
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+*/
+
+struct MODEM_PB
+   {
+      long        maxBps;               /* Maximum Baud Rate                         */
+      long        lockedBps;            /* Locked Baud Rate  (not used)              */
+      dword       flags;                /* Attributes (see below)                    */
+      short       port;                 /* COM port (1-8)                            */
+      short       commandDelay;         /* Delay in 1/10s between characters sent    */
+      short       answerDelay;          /* Delay in 1/10s before answer string sent  */
+      short       blankTime;            /* Time in seconds for screen blanker        */
+      char        msgCon300     [80];   /* Connect 300 string                        */
+      char        msgCon1200    [80];   /* Connect 1200 string                       */
+      char        msgCon1275    [80];   /* Connect 1275 string                       */
+      char        msgCon2400    [80];   /* Connect 2400 string                       */
+      char        msgCon4800    [80];   /* Connect 4800 string                       */
+      char        msgCon7200    [80];   /* Connect 7200 string                       */
+      char        msgCon9600    [80];   /* Connect 9600 string                       */
+      char        msgCon12000   [80];   /* Connect 12000 string                      */
+      char        msgCon14400   [80];   /* Connect 14400 string                      */
+      char        msgCon16800   [80];   /* Connect 16800 string                      */
+      char        msgCon19200   [80];   /* Connect 19200 string                      */
+      char        msgCon21600   [80];   /* Connect 21600 string                      */
+      char        msgCon24000   [80];   /* Connect 24000 string                      */
+      char        msgCon26400   [80];   /* Connect 26400 string                      */
+      char        msgCon28800   [80];   /* Connect 28800 string                      */
+      char        msgCon38400   [80];   /* Connect 38400 string                      */
+      char        msgCon57600   [80];   /* Connect 57600 string                      */
+      char        msgCon64000   [80];   /* Connect 64000 string                      */
+      char        msgCon115200  [80];   /* Connect 115200 string                     */
+      char        msgConExternal[80];   /* External/Fax connect string               */
+      char        msgRing       [80];   /* Ring string                               */
+      char        msgOk         [80];   /* "OK" string                               */
+      char        cmdInit1      [80];   /* Init command string 1                     */
+      char        cmdInit2      [80];   /* Init command string 2                     */
+      char        cmdInit3      [80];   /* Init command string 3                     */
+      char        cmdAnswer     [80];   /* Answer commnad string                     */
+      char        cmdOffHook    [80];   /* Off Hook command string                   */
+      char        cmdDown       [80];   /* BBS Down command string                   */
+      char        cmdAttention  [80];   /* Attention command string (usually "AT|")  */
+      short       externalErrorLevel;   /* Errorlevel for external/fax connect       */
+      char        msgCon31200   [80];   /* Connect 31200 string                      */
+      char        msgCon33600   [80];   /* Connect 33600 string                      */
+      char        msgCon36000   [80];   /* Connect 36000 string                      */
+
+      char        msgConUser1   [80];   /* User connect string #1                    */
+      long        userConBps1;          /* User connect bps #1                       */
+      char        msgConUser2   [80];   /* User connect string #2                    */
+      long        userConBps2;          /* User connect bps #2                       */
+      char        msgConUser3   [80];   /* User connect string #3                    */
+      long        userConBps3;          /* User connect bps #3                       */
+      char        msgConUser4   [80];   /* User connect string #4                    */
+      long        userConBps4;          /* User connect bps #4                       */
+      char        msgConUser5   [80];   /* User connect string #5                    */
+      long        userConBps5;          /* User connect bps #5                       */
+      char        msgConUser6   [80];   /* User connect string #6                    */
+      long        userConBps6;          /* User connect bps #6                       */
+
+      byte        extra[920];
+   };
+
+#define MODEM_LOCKED        (0x00000001L)
+#define MODEM_MANUAL_ANSWER (0x00000002L)
+
+
+/*
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+ BINLOG.PB
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+*/
+
+struct BINLOG_PB
+   {
+      Date        date;
+      Time        timeIn;
+      Time        timeOut;
+      char        name[36];
+      char        city[26];
+      char        country[26];
+      long        baud;
+      word        node;
+      long        kbDown;
+      long        kbUp;
+      word        yells;
+      word        level;
+      dword       uflags;
+      char        alias[36];
+      char        extra[45];
+  };
+
+
+/*
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+ FILESIDX.PB
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+*/
+
+struct FILESIDX_PB
+   {
+      char        filename[13];         /* Name of the file, with extension             */
+      word        area;                 /* File area number where file is located       */
+   };
+
+
+
+/*
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+ FGROUPS.PB / MGROUPS.PB
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+*/
+
+struct GROUPS_PB
+   {
+      char        name[80];
+      word        level;
+      long        flags;
+      long        flagsNot;
+
+      byte        extra[10];
+   };
+
+
+/*
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+ PVTFILES.PB
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+*/
+
+struct PVTFILES_PB
+   {
+      Date        date;
+      char        fname  [80];
+      char        to     [36];
+      char        from   [36];
+      char        desc   [80];
+
+      dword       attr;
+
+      byte        extra  [61];
+   };
+
+#define PVTFILE_KEEP (0x00000001L)
+
+
+/*
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+ *.PBM (ProBoard Menus)
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+*/
+
+
+#define MENU_RIP 1          /* menu header attribute */
+
+struct MENU_HEADER
+   {
+      dword attr;   // bit 0 = RIP menu
+      char prompt[200];
+      byte color;
+      byte highlight;
+      char RIPname[9];
+      byte extra[100];
+   };
+
+
+#define MENU_SHOWREMOTE 1   /* menu item attribute */
+#define MENU_SHOWLOCAL  2   /* menu item attribute */
+
+struct MENU_ITEM
+   {
+      dword attr;     // Show remote/local - reset RIP
+      char text[160];
+      char data[160];
+      byte color;
+      byte hotKey;
+      word function;
+      char password[16];
+
+      AccessRecord access;
+
+      byte extra[50];
+   };
+
+
+/*
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+ *.PBL (ProBoard Language Files)
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+*/
+
+
+struct LANG_HEADER
+   {
+      char        name[41];         /* Name of the language */
+      bool        avail;            /* TRUE = Available     */
+      word        level;            /* Level needed         */
+      accessflags flags;            /* Flags needed         */
+      char        menuPath[61];     /* Path for menus       */
+      char        txtPath[61];      /* Path for text files  */
+      char        questPath[61];    /* Path for Q-A files   */
+      char        copyright[81];    /* Copyright notice     */
+      byte        attrib;           /* Attribute (not used) */
+
+      byte        extra[500];
+   };
+
+#define LANG_PROMPT  1
+#define LANG_NOCOLOR 2
+
+struct LANG_PROMPT
+  {
+   word len;               /* Length of string (excl. terminating '\0') */
+   word numHotkeys;        /* # Hotkeys defined                         */
+   byte color;             /* Main color                                */
+   byte highlight;         /* Highlight color                           */
+   byte promptcolor;       /* Prompt color                              */
+   byte flags;             /* Prompt/NoColor                            */
+  };
+
+/*
+Each prompt consists of a LANG_PROMPT header, followed by 'len' characters
+for the prompt (not including the terminating zero), followed by
+'numHotkeys' characters for the hotkeys (if any).
+
+So a language file has the following structure:
+
+        LANG_HEADER
+        LANG_PROMPT 1
+        string 1
+        hotkeys 1
+        lANG_PROMPT 2
+        string 2
+        hotkeys 2
+        LANG_PROMPT 3
+        string 3
+        hotkeys 3
+        ....
+*/

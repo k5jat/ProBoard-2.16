@@ -1,0 +1,903 @@
+// ==========================================================================
+// GLOBAL DOCUMENT SPECIFICATIONS
+// ==========================================================================
+
+HeaderText  : ProBoard Advanced Message Editor version 2.00â3
+PageSize    :  60
+
+
+// ==========================================================================
+// THE FRONT PAGE
+// ==========================================================================
+
+WholePage   :
+SkipIndex   :
+Paragraph   :
+{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+      Þ±±±±±± Þ±±±              Þ±±±±±±±     Þ±±    Þ±±       Þ±       Þ±±
+      Þ±Þ±±Þ±  Þ±±               Þ±±  Þ±     Þ±±             Þ±±       Þ±±
+        Þ±±    Þ±±      Þ±±±±    Þ±±         Þ±±   Þ±±±     Þ±±±±      Þ±±
+        Þ±±    Þ±±±±±  Þ±± Þ±±   Þ±±±±    Þ±±±±±    Þ±±      Þ±±       Þ±±
+        Þ±±    Þ±± Þ±± Þ±±±±±±   Þ±±     Þ±± Þ±±    Þ±±      Þ±±       Þ±±
+        Þ±±    Þ±± Þ±± Þ±±       Þ±±  Þ± Þ±± Þ±±    Þ±±      Þ±±Þ±
+       Þ±±±±   Þ±± Þ±±  Þ±±±±±  Þ±±±±±±±  Þ±±±Þ±±   Þ±±±      Þ±±      Þ±±
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+
+               ProBoard Advanced Message Editor version 2.00â3
+
+                      Copyright (C) 1994 and written by
+                              Alain Schellinck
+
+
+
+                             All Rights reserved
+
+
+                          ** SHAREWARE SOFTWARE **
+}
+
+
+MainTitle   : A Gamma version
+Paragraph   :
+{
+    Since a few weeks, the beta testers listed below and me are working and
+    testing several beta's of TheEdit 2.00. I think the product is now stable
+    enough to be released as a gamma.
+}
+
+Paragraph   :
+{
+³    To make this document easy to read, new paragraphs will be marked with the
+³   '³' character at the left.
+}
+
+Paragraph   :
+{
+    You should be aware of a few things:
+}
+
+Paragraph   :
+{
+    1) It is still a product that is not fully tested. Some (small) problems
+       may still exist.
+}
+
+Paragraph   :
+{
+³   2) Beta versions are for the members of the beta crew, Gamma versions may
+³      be used by every ProBoard beta tester. Unlike ProBoard (where the gamma
+³      versions are almost the same as the final release), TheEdit can have
+³      some new features in every new gamma. You should tread gamma versions
+³      more like world-wide beta released.
+}
+
+Paragraph   :
+{
+    3) TheEdit is tested under ProBoard 2.02á and compiled with the SDK for
+       ProBoard 2.02. It may not work with versions prior to 2.02á.
+}
+
+Paragraph   :
+{
+    4) As for most programs, the final documentation is written after the
+       program is ready. The included documentation is the one for TheEdit
+       1.01.  There are a lot of things changed, so read the GAMMA.DOC
+       carefully!
+}
+
+Paragraph   :
+{
+    5) Every beta tester of ProBoard 2.02 may test TheEdit 2.00 gamma
+       releases, even the sysops that are not registered to TheEdit, but some
+       small features are not available in the unregistered version. I'm not
+       gonna enable them in gamma releases, so if you're not registered and
+       you don't want to test a program if it's not fully functional than
+       don't do it.
+}
+
+
+MainTitle   : Beta Testers
+Paragraph   :
+{
+    The sysops below are in my beta testers team. I would like to thank them
+    for the support and the idea's. I also would like to thank my son, Tim,
+    for keeping his fingers from my RESET button ;-)
+}
+
+Paragraph   :
+{
+    Jim Biggs           ( The O-Zone BBS    )
+    Philippe Leybaert   ( Home Of ProBoard  )
+    Peter Hampf         ( Granny's Inn      )
+    Tim De Meyer        ( MultiNet HomeBase )
+    Constantin Spiess   ( Dealer's          )
+}
+
+MainTitle   : What's new
+Paragraph   :
+{
+    You can find all changes since the last version in this section of the
+    document.
+}
+
+SubTitle    : Changed since gamma 2
+Paragraph   :
+{
+³   (AS)    New variable in the INI file:
+³
+³           [GENERAL]
+³           Printer    = LPT1
+}
+
+Paragraph   :
+{
+³           The sysop can use the ALT-P key to print the message to the
+³           printer specified in the INI file.
+}
+
+Paragraph   :
+{
+³   (AS)    Warning! The language file is changed. Don't forget to add a line
+³           for the "Binary characters found" prompt. See the example language
+³           files.
+}
+
+Paragraph   :
+{
+³   (AS)    After Import or Upload, TheEdit will check the temporary buffer
+³           (containing the imported file) if there are binary characters in
+³           it (valid characters are >= 32 or 13, 10, 9, 26 for the technical
+³           people).  If there are binary characters, the file will not be
+³           imported.
+}
+
+Paragraph   :
+{
+³   (AS)    The German language, header and help file are now included.
+³           Thanks Constantin!
+}
+
+SubTitle    : Bugfixes since gamma 2
+Paragraph   :
+{
+³           The previous version of TheEdit was checking the carrier, even
+³           when the sysop was using TheEdit in local mode. The result was
+³           that sysops using OS/2 had a conflict. Fixed!
+}
+
+Paragraph   :
+{
+³   (PH)    #&%?#@?$#@ (sorry...). A few minutes after gamma 2 was hatched,
+³           we found out that the ^T, ^LEFT and ^RIGHT are still not working
+³           as it should be. Fixed now (I hope).
+}
+
+SubTitle    : Changes since gamma 1
+Paragraph   :
+{
+    (AS)    Changed some code in the editor object so that it can be used for
+            TheChat 2.00.
+}
+
+Paragraph   :
+{
+    (AS)    The textmacro's you can use in the language file and banner line
+            are now translated on the fly. So, if you use the @<TIME>@ or
+            other macros with changing values, they will be updated everytime
+            the screen is updated.
+}
+
+Paragraph   :
+{
+    (AS)    When pressing a ALT-Fx key, TheEdit will check if there's a file
+            linked with the key. If not, TheEdit will get the sysop-macro
+            defined in ProCFG. If the macro is a "display" macro (if macro
+            starts with a ` character), the macro will be copied in the
+            message window at the current cursor position. For example, you
+            can define the string "`||CUL8R|@<SYSOPNAME>@||" to a macro.
+            TheEdit will translate this macro to "<enter><enter>CUL8R
+            <enter><your full name>".
+}
+
+SubTitle    : Bugfixes since gamma 1
+Paragraph   :
+{
+    (AS)    A bug in the wordwrap routine could cause the screen layout to be
+            destroyed and in some circumstances, the program will end in an
+            endless loop (hanging your system...). This happened when there
+            were a few lines with large words to wrap. Fixed!
+}
+
+Paragraph   :
+{
+    (PH)    Pressing ^T at the last word would lockup the system. In fact,
+            TheEdit was in an endless loop (searching for the next
+            character...). Fixed! Thanks, Peter!
+}
+
+Paragraph   :
+{
+    (PH)    Pressing ^LEFT and ^RIGHT didn't work as it should be. Fixed!
+}
+
+SubTitle    : Known bugs
+Paragraph   :
+{
+    (AS)    In local mode, the ProBoard status bar isn't update. Due to the
+            fact that almost no default SDK code is used in local mode,
+            ProBoard doesn't update the status line.
+}
+
+SubTitle    : Changes since the last beta
+Paragraph   :
+{
+    (AS)    You can now use the TEXT MACRO'S in the BANNERTEXT and LANGUAGE
+            FIELDS. You can find an example in the included language files.
+}
+
+Paragraph   :
+{
+    (AS)    Added new function: DELETE WORD (^T key)
+}
+
+Paragraph   :
+{
+    (AS)    There is a help screen, but most users don't use it. I've seen a
+            few users deleting whole screens with the DEL key instead of using
+            CTRL-Y to delete a whole line. Therefore, I've added a shortcut
+            for the help (CTRL-N) and added it in the included headers. Don't
+            blame me if they don't use it...
+}
+
+SubTitle    : bugfixes
+Paragraph   :
+{
+    (PH)    There was a bug in the function to parse the language file.
+            Therefore, the comment separator is changed from "/*" to ";"
+}
+
+MainTitle   : The history
+Paragraph   :
+{
+    TheEdit 1.00 was the first available message editor as a PEX. It had a lot
+    of functions still not found in any other editor.
+}
+
+Paragraph   :
+{
+    There were some things that could be better. Users asked me for a better
+    layout, multi language support, more functions and more speed.
+}
+
+Paragraph   :
+{
+    TheEdit 2.00 has it all. It is completely rewritten from scratch, using
+    highly optimized C++ and assemble code. Even with the extra functions,
+    TheEdit 2.00 is about 20Kb smaller than 1.01!
+}
+
+Paragraph   :
+{
+    The multi-language support is very easy to use. Every prompt on the screen
+    can be translated in any language you wish. Even the header and help
+    screens can be translated.
+}
+
+Paragraph   :
+{
+    Due to the use of highly optimized assemble code for the critical parts in
+    TheEdit, the editor is much faster than 1.xx
+}
+
+Paragraph   :
+{
+    TheEdit uses also optimized screen code depending on the terminal mode you
+    (or the user) using.
+}
+
+Paragraph   :
+{
+    If you are using TheEdit in local mode, all screen output is handled by
+    Direct Video Ram Access (fully desqview aware!).  Depending on the remote
+    terminal mode (ANSI or AVATAR), TheEdit will send different terminal
+    commands to the user his terminal program to scroll the screen, move the
+    cursor, change the color, ...
+}
+
+Paragraph   :
+{
+    An example? If your user is using AVATAR and is in 50-lines mode,
+    scrolling one line up means that +/- 44 lines (50 - header) needs to be
+    redrawed. TheEdit will send only 11 bytes to the terminal program and the
+    scrolling will be handled by the user his terminal program! In other
+    situations, programs should send the 44 lines back to the terminal
+    program.  If every line has something around 50 characters, that would be
+    +/- 3 Kb (cursor and color codes included). Can you imagine how fast
+    scrolling is handled in Avatar mode ?
+}
+
+Paragraph   :
+{
+    Editor like FullEdit and NSDEdit (witch used the code from FullEdit, it
+    has the same bugs...) need to constantly (after every keystroke) update
+    the cursor position. Depending on the terminal mode, this means that for
+    every character you type, these editors will send between 5 and 10
+    characters to the modem.
+}
+
+Paragraph   :
+{
+    TheEdit remembers the last cursor position and uses optimized code to
+    change it. In most situations, only one character is send to the modem
+    after a keystroke!
+}
+
+Paragraph   :
+{
+    Unlike TheEdit 1.x and the other editors, TheEdit 2.00 has no default
+    layout. The header displayed at the top of the screen is a ANSI file witch
+    can be modified with programs like TheDraw.
+}
+
+MainTitle   : What's new in 2.00
+Paragraph   :
+{
+    *   TheEdit is completely rewritten from scratch, using highly-optimized
+        C++ and assembly code, that produced a smaller and faster PEX file.
+}
+
+Paragraph   :
+{
+    *   Multi language support! TheEdit 2.00 will detect the language used
+        by the user and try to find the TheEdit control files for this
+        language. All prompts can be translated in any language. Even the
+        help screen can be translated.
+}
+
+Paragraph   :
+{
+    *   New quote system. TheEdit 2.00 has two quote systems: the
+        GoldEd-alike (complete original message quoted and the user has to
+        remove the lines he don't need) and a quote window (original
+        message in another window and the user has to select the lines he
+        wants in his answer).
+}
+
+Paragraph   :
+{
+    *   TheEdit can now be used to edit other files than messages. A user
+        asked my to add code to import a ASCII file, let the user edit it and
+        print it to the printer when he/she saves it. You can use the command
+        line parameters to specify the file TheEdit should load when it is
+        started and the filename it should use to save the text to.
+}
+
+Paragraph   :
+{
+    *   The messagebuffer in TheEdit 1.xx was only limited by the available
+        memory. In some situations, ProBoard had troubles saving large
+        messages (due to some problems in the original Squish API code).
+        TheEdit 2.00 has a 32K limit for the messages.
+}
+
+Paragraph   :
+{
+    *   TheEdit has a very fast WordWrap function. If you look in the source
+        code from the FullEdit editor's toolkit, the author writes that his
+        WordWrap function is the bottleneck of his program (and believe me,
+        it is!).  TheEdit uses an optimized piece of assemble code to perform
+        the WordWrap.
+}
+
+Paragraph   :
+{
+    *   User-definable layout. You can change the layout for TheEdit as you
+        like it. All colors can be redefined. Even the header at the top op
+        the screen can be redefined.
+}
+
+Paragraph   :
+{
+    *   Enhanced import system. You can link up to 10 files to your ALT-Fxx
+        keys. Pressing such a key will import the linked files in the message
+        window.  Great for default answers on frequently asked questions.
+}
+
+MainTitle   : Installation
+Paragraph   :
+{
+    TheEdit is very easy to install. The best way is to create a directory for
+    TheEdit (i.e. \Pb\Pex\TheEdit\) and unpack the archive in that directory.
+    Then, change the path to the external message editor in ProCFG:
+
+        Editor Cmd: @\Pb\Pex\TheEdit\TheEdit.Pex
+
+    That's all!
+}
+
+MainTitle   : Incompatibility with quoters
+Paragraph   :
+{
+    There are some PEX'es available to add a one-line quote at the end of
+    every message. Most of them don't support PEX message editors. For that
+    reason, you can't use ProTag together with TheEdit. There is nothing I
+    can do about it, the author of ProTag has to change his code to fix this
+    bug.
+}
+
+Paragraph   :
+{
+    One of my other PEX'es, TheQuote, has the same functions as ProTag, and
+    has more than 7.000 quotes. TheQuote (starting from 1.10) fully support
+    TheEdit and other PEX message editors. TheQuote is freeware software!
+}
+
+MainTitle   : The configuration file
+Paragraph   :
+{
+    As in most of my other PEX'es, TheEdit uses the domain principe in the
+    configuration file to keep is easy to understand and to manage.
+}
+
+Paragraph   :
+{
+    This section will describe the configuration file for TheEdit 2.00. The
+    text between brackets is de default value for the described variable.
+}
+
+SubTitle    : [General] domain
+Paragraph   :
+{
+    StopBanner  =  Yes/No       In registered version, you can stop the
+                                banner at the bottom of the screen. If you
+    (No)                        choose to stop the banner, you can still
+                                switch between all the lines in the banner by
+                                pressing ALT-B (b = banner).
+}
+
+Paragraph   :
+{
+    FastScroll  =  Yes/No       FastScroll will scroll the text a whole
+                                window when to top or bottom of the screen
+    (Yes)                       is reached. This will speed-up the screen in
+                                ANSI mode. FastScroll is always disabled in
+                                LOCAL or AVATAR mode, because it isn't needed
+                                in these modes.
+}
+
+Paragraph   :
+{
+    InsertMode  = On/Off        Set Insert-mode at startup ON or OFF. In
+                                insert mode, text will be inserted at the
+    (On)                        current cursor position.  In overwrite mode,
+                                the text at the current cursor position will
+                                be overwritten by the new characters you type.
+                                Here you specify the startup value. Once you
+                                are in TheEdit, you can choose between INSERT
+                                and OVERWRITE with the INSERT or ^V key.
+}
+
+Paragraph   :
+{
+    FullQuote   = On/Off        If FullQuote is enabled, a user can choose to
+                                use the GoldEd-style quoting system (described
+    (On)                        in this documentation).  When replying to a
+                                message, the user can select to import the
+                                whole quote in the message or to use a quote
+                                window. When FullQuote is disabled, the quote
+                                is always loaded in the quote window.
+}
+
+Paragraph   :
+{
+    BannerText  = ...           If the banner is enabled (StopBanner = No),
+                                the information displayed at the bottom of the
+    (no default)                screen is changed every 30 sends. In this
+                                variable, you can add one line for the banner.
+                                You can use the ProBoard text macro's (like
+                                @<FIRSTNAME>@) too.
+}
+
+Paragraph   :
+{
+³   Printer     = ...           The sysop can use the ALT-P key to print the
+³                               contents of the message buffer to the
+³   (no default)                specified printer.  Only the text is printed
+³                               (not the header of the message).
+}
+
+SubTitle    : [Shareware] domain
+Paragraph   :
+{
+    RegisterKey = ...           TheEdit is a shareware product, so you have to
+                                register it if you want to use it after the
+    (no default)                30-days evaluation period.  When we received
+                                your registration form and the money, the
+                                registration site will send you a message like
+                                this:
+}
+
+Paragraph   :
+{
+    To register TheEdit, you will have to add the following two lines to your
+    TheEdit.Ini configuration file:
+
+    [Shareware]
+    RegisterKey = 45424D29235D4D5842204653112B6F11716
+
+    Note:   This registration key is created for the following site informa-
+    =====   tion. If this is not the same as you've specified in ProCFG, it
+            won't work!
+
+            The site information is not case sensitive.
+
+                Sysop name ...: <your name here>
+                BBS name .....: <your BBS name>
+
+
+    Thank you for your support!
+}
+
+Paragraph   :
+{
+                                Follow the instructions in the message and you
+                                will have a registered version.
+}
+
+SubTitle    : [ImportFiles] domain
+Paragraph   :
+{
+    ALT-F1      = <filename>    You can link a filename to a ALT-Fxx function
+    ...                         key. Whenever the sysop is using TheEdit in
+    ALT-F10                     local mode, he/she can press the ALT-Fxx key
+    (no default)                to import the file.
+}
+
+SubTitle    : Coordinates
+Paragraph   :
+{
+    As stated at the beginning of this document, you can change the layout
+    completely. TheEdit has to know the coordinates for the data fields and
+    editor part. The following domains let you specify these coordinates.
+}
+
+Paragraph   :
+{
+    Please note that:
+
+    - the upper/left corner of the screen is 0/0, not 1/1!
+    - there are NO defaults for these fields, so if you don't include the
+      definitions for these fields in your configuration file, you will have
+      an empty header, no colors and no text window!
+}
+
+SubTitle    : [TextWindow] domain
+Paragraph   :
+{
+    Row         = 5             The Y coordinate where TheEdit should
+                                start the editor part. Remember that
+                                coordinates start at 0, so 5 means the
+                                6th line!
+}
+
+Paragraph   :
+{
+    ForeGround  = +White        Here, you can specify the foreground color
+                                for the normal text. You can use the full
+                                english name of the color (BLACK, BLUE,
+                                GREEN, RED, CYAN, MAGENTA, BROWN and WHITE).
+                                To use the highlighted equivalent of the
+                                color, add a '+' sign at the start of the
+                                name. So, use +BROWN if you want to use
+                                YELLOW.
+}
+
+Paragraph   :
+{
+    BackGround  = Black         Here, you can specify the background color
+                                for the normal text.
+
+                                To use the blinking equivalent of the
+                                foreground color, you must add the '+' sign to
+                                the background. Seems not so logical, but
+                                that's the same way the BIOS and VIDEORAM
+                                works.
+
+                                So, if you specify FOREGROUND = +RED and
+                                BACKGROUND = +CYAN, you will get
+                                highlighted-blinking-red characters on a
+                                CYAN background.
+}
+
+Paragraph   :
+{
+    QForeGround = +Magenta      This is the foreground used for quote text.
+}
+
+Paragraph   :
+{
+    QBackGround = Black         This is the background used for quote text.
+}
+
+SubTitle    : [MenuBar] domain
+Paragraph   :
+{
+    ForeGround  = Black         This is the foreground used for the menubar.
+}
+
+Paragraph   :
+{
+    BackGround  = White         This is the background used for the menubar
+}
+
+SubTitle    : Datafields
+Paragraph   :
+{
+    Every data field (from, to, subject, ...) has his own domain where you
+    can specify the X and Y coordinates, length and color. These are the
+    supported domains:
+
+    [From]       : Message 'From' data field    (name of the user           )
+    [To]         : Message 'To' data field      (name of the recipient      )
+    [Subject]    : Message 'Subject' field
+    [Area]       : Message 'Area' field         (name of the message area   )
+    [MsgNumber]  : Message 'Number' field       (the number of the message  )
+    [PrivateMsg] : Message 'Private' field      (Private message? YES or NO )
+    [InsertMode] : Editor 'Insert' mode         (in INSERT or OVERWRITE mode)
+    [RawKeys]    : Editor 'Raw' mode            (in RAW or NORMAL mode      )
+    [EscForMenu] : 'Press ESC for menu' prompt
+}
+
+SubTitle    : [ROW] variable
+Paragraph   :
+{
+    Row         = 0             This is the row (Y coordinate) where TheEdit
+                                will write the data for the current field.
+                                Remember that coordinates start at 0,0!
+}
+
+SubTitle    : [COLUMN] variable
+Paragraph   :
+{
+    Column      = 0             This is the column (X coordinate) where
+                                TheEdit will write the data for the current
+                                field.
+}
+
+SubTitle    : [LENGTH] variable
+Paragraph   :
+{
+    Length      = 14            This is the maximum size TheEdit should use
+                                to display the current field. Use this to
+                                make sure TheEdit won't overwrite text in your
+                                header. If you want to disable a field, set
+                                this to '0' (zero)
+}
+
+SubTitle    : [FOREGROUND] variable
+Paragraph   :
+{
+    see 'ForeGround' in the EDITWINDOW domain.
+}
+
+SubTitle    : [BACKGROUND] variable
+Paragraph   :
+{
+    see 'BackGround' in the EDITWINDOW domain.
+}
+
+SubTitle    : Example configuration file
+Paragraph   :
+{
+    You will find an example configuration file in the archive. This is the
+    configuration file as I use it.
+}
+
+MainTitle   : Multi-Language support
+Paragraph   :
+{
+    As far as I know, TheEdit is the first message editor for ProBoard that
+    supports multi-language. You can (but don't have to) redefine every prompt
+    in every language you which.
+}
+
+Paragraph   :
+{
+    Unlike ProBoard, TheEdit doesn't use binary language files. The language
+    file is a pure ASCII file with the language as basename and .LNG as
+    extension.
+}
+
+Paragraph   :
+{
+    Whenever TheEdit is starter, it will try to load the <language>.LNG file
+    (i.e. DUTCH.LNG). If the file doesn't exist, it will load the THEEDIT.LNG
+    file (english prompts). Please note that there are no defaults, so if
+    there's no language file, TheEdit won't run!
+}
+
+SubTitle    : Format of the language file
+Paragraph   :
+{
+    As described above, the language file is a pure ASCII file, with one line
+    for every prompt. All prompts should be defined, because there are no
+    defaults.
+}
+
+Paragraph   :
+{
+    You can include comments in the language file. Comment lines should start
+    with the ';' character, unless the comment is added after a prompt. In
+    that case, you should place a ";" between the prompt and the comment.
+}
+
+Paragraph   :
+{
+    You can't change the order of the prompts in the language file, unless you
+    want the wrong prompts on the wrong places ;-)
+}
+
+Paragraph   :
+{
+    Even the menubar can be redefined. The hotkey for every option should be
+    between brackets ([]). TheEdit will display the hotkey in uppercase.
+}
+
+Paragraph   :
+{
+    Be sure that the redefined menu-items fit on one line. TheEdit doesn't
+    check the length of the items and will overwrite parts of the screen is
+    the line is too long!
+}
+
+SubTitle    : Example language file
+Paragraph   :
+{
+    You can find two examples in the archive: THEEDIT.LNG (the default
+    prompts) and DUTCH.LNG (but the registrations site of your country may
+    have changed this).
+}
+
+MainTitle   : Header and Help files
+Paragraph   :
+{
+    As you already know, the header at the top of the screen and the help file
+    can be redefined. As for the language file, TheEdit will try to load
+    <language>.HED as the header and <language>.HLP as the help file. If the
+    file for that language doesn't exist, TheEdit will load the default ones
+    (TheEdit.Hed and TheEdit.Hlp).
+}
+
+Paragraph   :
+{
+    Please not that unlike TheEdit 1.xx, these text files should be in the
+    TheEdit directory, not in the TEXT directory!
+}
+
+Paragraph   :
+{
+    There are a few rules for the header file:
+}
+
+Paragraph   :
+{
+    *   Make it as small as possible. The less lines you use for your
+        header, the more lines there are available for the editor.
+}
+
+Paragraph   :
+{
+    *   Don't use the full 80 characters width. Some terminal programs will
+        wrap the cursor and TheEdit will screw up.
+}
+
+Paragraph   :
+{
+    *   Don't add clear-screen codes to the ANSI file. If you use TheDraw,
+        save it with "Home Cursor" codes instead of "Clear screen".
+}
+
+MainTitle   : What is RAW mode?
+Paragraph   :
+{
+    ProBoard uses the cursor keys (together with the CONTROL key) to change
+    the user's level and online time. The PageUp, PageDown and Home keys are
+    used to scroll the banner.
+}
+
+Paragraph   :
+{
+    TheEdit uses these keys too for the word-processing actions. Due to that,
+    you can't change a user's level or time if TheEdit is started.
+}
+
+Paragraph   :
+{
+    To make these functions available, TheEdit 2.00 has a so called RAW mode.
+    That is the mode that TheEdit won't handle the special keys from the
+    sysop's keyboard. So, if you are using TheEdit in RAW mode, you can use
+    the cursor keys to change the level and time and the PageUp/PageDown keys
+    to scroll banner (ProBoard status line) at the bottom of the screen.
+}
+
+Paragraph   :
+{
+    Once TheEdit is started, you can toggle between RAW and NORMAL mode with
+    the ALT-K (K = KEYBOARD) key.
+}
+
+Paragraph   :
+{
+    TheEdit will startup in NORMAL mode is you are using TheEdit locally. If a
+    user is starting TheEdit, it will startup in RAW mode.
+}
+
+MainTitle   : Command line parameters
+Paragraph   :
+{
+³   You can specify the default LOAD and SAVE name (not IMPORT and EXPORT!)
+³   for TheEdit. The LOAD filename is the file loaded when TheEdit starts. The
+³   SAVE filename is the name used for the file when the user selects the SAVE
+³   function.
+}
+
+Paragraph   :
+{
+³   Using this technique makes it possible to use a text the user should fill
+³   in and print it when the user selects the SAVE function.
+}
+
+Paragraph   :
+{
+³   In the next chapter, you will find the information about the command line
+³   parameters. TheEdit doesn't need any parameter to run in the default mode.
+³   You can use both parameters on the same command line.
+}
+
+SubTitle    : -L parameter
+Paragraph   :
+{
+³   Specify -L <filename> (note the space between the parameters!) on the
+³   commandline to force TheEdit to load <filename> when it starts up.
+³
+³   example: -L REGFORM.TXT
+}
+
+SubTitle    : -S parameter
+Paragraph   :
+{
+³   Specify -S <filename> on the commandline to force TheEdit to save the
+³   textbuffer as <filename>. You can use the name of a file or a device (i.e.
+³   LPT1:)
+³
+³   example: -S LPT1:
+}
+
+Paragraph   :
+{
+³   Warning: It is your responsibility that the file can be created. If you
+³   use LPT1: and there's no paper in the printer, your system can hang (Paper
+³   out, A)bort - R)etry - I)gnore at the DOS prompt). TheEdit doesn't check
+³   this at all!
+}

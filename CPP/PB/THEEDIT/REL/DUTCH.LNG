@@ -1,0 +1,40 @@
+; ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+; TheEdit language file.                      !!! NO BLANK LINES PLEASE !!!
+; ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+;
+; ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+J                                                       ; Character to answer 'Y'ES
+JA                                                      ; Full text for "YES"
+N                                                       ; Character to answer 'N'O
+NEE                                                     ; Full text for "NO"
+; ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Druk [ESCAPE]                                           ; "Press [escape] prompt to display the menu
+Geef bestandsnaam:                                      ; "Enter filename:" prompt to import/export
+Opslaan van het bericht...                              ; "Saving message..." prompt
+Sorry @<FirstName>@, het helpbestand bestaat niet...    ; "Sorry, no help" prompt
+Druk op een toets.                                      ; "Press any key" prompt
+@<FirstName>@, wil je het origineel bericht volledig inladen?   ; "Wanna load the quote" prompt
+Pas op! Bijna geen geheugen meer vrij!                  ; "Almost out of memory" prompt
+Er is geen geheugen meer vrij!                          ; "Out of memory" prompt
+Gelieve uw bericht nu te bewaren!                       ; "Save your message now!" prompt
+Quote scherm ÄÄ CTRL-K = open - sluiten ÄÄ CTRL-Q = kiezen tussen schermen
+Bestand heeft binaire tekens! Funktie wordt afgebroken! ; "File has binary characters! Function canceled!" prompt
+Afkortingen:                                            ; Abbreviations:
+Geen afkortingen gevonden!                              ; No abbreviations found!
+; ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+INVOEGEN                                                ; When we are in INSERT mode
+OVERSCHRIJVEN                                           ; When we are in OVERWRITE mode
+SPECIAAL                                                ; When PB should handle local keys
+ÄÄÄÄÄÄÄÄ                                                ; When TheEdit should handle them
+AFKORTING                                               ; When TheEdit handles abbreviations
+ÄÄÄÄÄÄÄÄÄ                                               ; When TheEdit handles no abbreviations
+; ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+[B]ewaar                                                ; [S]ave menu option.
+[S]top                                                  ; [A]bort menu option
+[H]elp                                                  ; [H]elp menu option
+Her[t]eken                                              ; [R]edraw menu option
+[O]pladen                                               ; [U]pload menu option
+[I]mport                                                ; [I]mport menu option
+[E]xport                                                ; [E]xport menu option
+Ori[G]ineel                                             ; [Q]uote
+Be[r]icht                                               ; [M]essage

@@ -1,0 +1,20 @@
+# 컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+# Makefile for the THEEDIT pex
+# 컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+# 컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+# Project settings
+# 컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+PEX = 1
+MODEL = LARGE
+
+OBJS = PBFSED.OBJ   ABBREV.OBJ   ANSI.OBJ     APPLICAT.OBJ AVATAR.OBJ   \
+       BANNER.OBJ   CLPBOARD.OBJ CONLINE.OBJ  CONSOLE.OBJ  CURSOR.OBJ   \
+       DATE.OBJ     EDITOR.OBJ   FORMAT.OBJ   HANDLER.OBJ  HEADER.OBJ   \
+       KEYBOARD.OBJ LANGUAGE.OBJ MENU.OBJ     MESSAGE.OBJ  QUEUE.OBJ    \
+       ROWS.OBJ     SCREEN.OBJ   SETUP.OBJ    TERMINAL.OBJ TEXT.OBJ     \
+       TIMER.OBJ    USESTAMP.OBJ VIDEO.OBJ    VIDEORAM.OBJ
+
+
+PBFSED.PEX : $(OBJS)

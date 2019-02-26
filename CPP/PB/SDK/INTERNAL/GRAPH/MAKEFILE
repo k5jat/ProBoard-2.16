@@ -1,0 +1,7 @@
+MODEL = LARGE
+
+OBJS = _graph.obj cppdate.obj
+
+PEX=1
+
+_graph.pex : $(OBJS)

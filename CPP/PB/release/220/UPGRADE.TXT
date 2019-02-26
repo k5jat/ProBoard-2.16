@@ -1,0 +1,99 @@
+              ( For installation instructions, refer to UPGRADE.TXT )
+
+         ( For instructions on how to convert from RA, refer to PB220.DOC )
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Prudence and courtesy dictate that we ask you to back up your
+         system before installing and/or upgrading to ProBoard v2.2.
+
+         Although every effort has been made to provide you with software
+         that will install/upgrade easily, due to the many different number
+         of possible hardware and software combinations, it's virtually
+         impossible to guarantee that a problem won't occur.  It's your
+         system, do what you like, but remember we did ask you to backup
+         first.
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+                         ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                         ³ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ ³
+                         ³ ³    ProBoard v2.xx    ³ ³
+                         ³ ³          to          ³ ³
+                         ³ ³     ProBoard v2.2    ³ ³
+                         ³ ³ Upgrade instructions ³ ³
+                         ³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ³
+                         ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+         Unpack the distribution archive in a temporary directory or to a
+         diskette and run INSTALL.EXE.  The installation utility will
+         detect if ProBoard is already installed and will ask you if you
+         want to update to the new version.  That's all there is to it.
+         The update process will run automatically.
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         The following section is intented for people who don't want to
+         use the automatic installation program for upgrading to
+         ProBoard v2.2.
+
+
+                         ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                         ³ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ ³
+                         ³ ³    ProBoard v2.xx    ³ ³
+                         ³ ³          to          ³ ³
+                         ³ ³     ProBoard v2.2    ³ ³
+                         ³ ³      * MANUAL *      ³ ³
+                         ³ ³ Upgrade Instructions ³ ³
+                         ³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ³
+                         ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+
+         1)  Remove the "read-only" attribute of your existing PROBOARD.EXE
+             by issuing the following DOS command:
+
+                ATTRIB -R PROBOARD.EXE
+
+             If your existing PROBOARD.EXE file was not marked "read-only"
+             to start with, remember that this is necessary for ProBoard
+             to run  correctly since it's an "overlayed" .EXE file.
+
+             You should issue the above command even if you're not sure
+             about the present attribute of your current PROBOARD.EXE file.
+
+             ÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+             ** Important **
+             ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+             If you do not remove the "read-only" attribute from your
+             PROBOARD.EXE file, then you will not be able to copy the new
+             PROBOARD.EXE file to the directory you are running ProBoard
+             from, and the v2.2 upgrade will fail.  Read the above, and be
+             sure you understand it before you proceed.
+
+         2)  Copy all executables (*.EXE) from PB_220.ZIP over your old
+             executables
+
+         3)  Set the read-only attribute of PROBOARD.EXE
+
+             ATTRIB +R PROBOARD.EXE
+
+         4)  Copy all *.PEX files from PB_220.ZIP in your PEX directory
+             (overwriting the existing PEXes that came with the previous
+             version)
+
+         5)  Copy all *.CPP, *.C, *.H, *.HPP, *.OBJ and  *.LIB files from
+             PB_220.ZIP in your SDK directory
+
+         6)  Copy all *.220, *.DOC and *.TXT files from PB_220.ZIP in your
+             documentation directory (or your system directory)
+
+         7)  Copy all *.PBL files from PB_220.ZIP in your system directory
+             (overwriting the existing language files that came with
+              the previous version)
+
+         8)  Copy DEFLANG.PB to your ProBoard system directory.
+
+         9)  Run "CONVERT PB" in your ProBoard system directory.
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+

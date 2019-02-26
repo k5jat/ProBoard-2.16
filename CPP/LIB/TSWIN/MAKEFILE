@@ -1,0 +1,15 @@
+MODEL = LARGE
+
+OBJS = error.obj init.obj keyboard.obj misc.obj popmenu.obj \
+       rectang.obj scan.obj select.obj viewlist.obj window.obj pws_asm.obj \
+       form.obj restore.obj editwin.obj gauge.obj savebuf.obj msgbox.obj \
+       selbox.obj tsw_asm.obj
+
+TSLIB = 1
+TSWIN = 1
+
+tswin_$(EXT).lib: $(OBJS)
+ @erase $@
+ @tlib $@ /c +$(OBJS)
+ @copy $@ $(DIR_TSWIN_LIB)
+ @erase $@

@@ -1,0 +1,162 @@
+                ( For upgrade instructions, refer to UPGRADE.TXT )
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Prudence and courtesy dictate that we ask you to back up your
+         system before installing and/or upgrading to ProBoard v2.2.
+
+         Although every effort has been made to provide you with software
+         that will install/upgrade easily, due to the many different number
+         of possible hardware and software combinations, it's virtually
+         impossible to guarantee that a problem won't occur.  It's your
+         system, do what you like, but remember we did ask you to backup
+         first.  Now, on to the good stuff!!
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+                       ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                       ³ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ ³
+                       ³ ³       ProBoard v2.2       ³ ³
+                       ³ ³ Installation instructions ³ ³
+                       ³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ³
+                       ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+         Unpack the distribution archive in a temporary directory or to a
+         diskette and run INSTALL.EXE.  You will be asked in which
+         directory you want to install ProBoard.  After confirmation, you
+         will get an input screen where you can enter the different
+         directories for ProBoard.  After you have entered them, ProBoard
+         will create all non-existing directories and start the
+         installation.  When completed, you will be asked to add a line to
+         set the ProBoard environment variable in AUTOEXEC.BAT.
+
+         Now run PROCFG (the ProBoard configuration utility) to review and
+         change all ProBoard settings (e.g. your BBS name, sysop name,
+         etc.).  Don't forget to set your modem parameters (explained in
+         the documentation, chapter "Configuration")
+
+         At this stage, you can run ProBoard locally by running
+         PROBOARD.EXE without any command line parameters.
+
+         To be able to accept modem callers, you have to install a FOSSIL
+         driver if you don't have one installed already.  X00 is a very
+         good one to try.  It can be found on any ProBoard support BBS.
+         To install it, follow the documentation of X00.  A command line
+         that will almost always work is (assuming your modem is on COM1):
+
+                X00 B,0,38400 E
+
+         After you have done this, you will have to install an external
+         protocol driver called CEXYZ which can be downloaded from any
+         support BBS.  Place CEXYZ.EXE in your ProBoard system directory.
+         DO NOT SET THE CEXYZLOG variable (or any other environment
+         variable).  In other words, don't follow the installation
+         instructions of CEXYZ.  Just copy the file CEXYZ.EXE to the
+         ProBoard system directory.  Nothing more, nothing less.
+
+         If you want to be able to use the fullscreen editor for entering
+         messages on your BBS, you will have to download an external full-
+         screen editor from a BBS and install it according to the
+         installation instructions that come with it.  A great full-screen
+         editor PEX (ProBoard EXecutable) is TheEdit by Alain Schellinck.
+
+         Refer to the chapter "Starting ProBoard" in the manual for
+         instructions on how to run ProBoard.
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         The following section is intented for people who don't want to
+         use the automatic installation program for installing
+         ProBoard v2.2.
+
+
+                      ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                      ³ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ ³
+                      ³ ³       ProBoard v2.2       ³ ³
+                      ³ ³         * MANUAL *        ³ ³
+                      ³ ³ Installation Instructions ³ ³
+                      ³ ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ³
+                      ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+         We will assume that you created the directory C:\PB as ProBoard's
+         main system directory.
+
+         1)  Create the following directories:
+
+               C:\PB\MENUS
+               C:\PB\TXTFILES
+               C:\PB\PEX
+               C:\PB\MSGBASE
+               C:\PB\RIP
+               C:\PB\RIP\ICONS
+               C:\PB\SDK
+
+         2)  Unpack ProBoard in the directory C:\PB.
+
+         3)  Move all *.ANS, *.ASC and *.AVT files to the directory
+             C:\PB\TXTFILES.
+
+         4)  Move all *.PBM files to the directory C:\PB\MENUS.
+
+         5)  Move all *.CPP, *.C, *.H, *.HPP, *.OBJ and  *.LIB files from
+             PB_220.ZIP in the directory C:\PB\SDK.
+
+         6)  Move the files _GRAPH.PEX and _LC.PEX to C:\PB\PEX.
+
+         7)  Move all *.RIP files to the directory C:\PB\RIP.
+
+         8)  Move all *.ICN files to the directory C:\PB\RIP\ICONS.
+
+         9)  Run ProCFG and enter the correct modem parameters for your
+             modem (explained in the documentation, chapter
+             "Configuration")
+
+         10) Mark the file PROBOARD.EXE "read only" using the DOS ATTRIB
+             command.  This is important because PROBOARD.EXE is an
+             overlayed executable and to run properly it needs this
+             file attribute set to "read only"
+
+             To do this, change to the C:\PB directory and type the
+             following command.
+
+                  ATTRIB +R PROBOARD.EXE
+
+         11) Next, you have to install a FOSSIL driver if you don't have
+             one installed already.  X00 is a very good one to try.  It
+             can be found on any ProBoard support BBS.  To install it,
+             follow the documentation of X00.  A command line that will
+             almost always work is (assuming your modem is on COM1):
+
+                X00 B,0,38400 E
+
+
+         After these 11 steps you can run ProBoard, but you will not be
+         able to use the fullscreen editor or perform file transfers.
+
+         To log in locally, execute PROBOARD.EXE without any parameters.
+
+         To make ProBoard answer incoming calls, run PROBOARD -S.
+
+
+         11) Run ProCFG and create some file and message areas. (explained
+             in the documentation, chapter "Configuration")
+
+         12) Download an external full-screen editor from a BBS and
+             install it according to the installation instructions that
+             come with it.  A great full-screen editor PEX (ProBoard
+             EXecutable) is TheEdit by Alain Schellinck.
+
+         13) Download CEXYZ from a BBS and copy the file CEXYZ.EXE in the
+             directory C:\PB. (CEXYZ can be found on any ProBoard
+             Support BBS).  DO NOT SET THE CEXYZLOG variable (or any other
+             environment variable).  In other words, don't follow the
+             installation instructions of CEXYZ.  Just copy the file
+             CEXYZ.EXE to the ProBoard system directory.  Nothing more,
+             nothing less.
+
+         Now, you will be able to run ProBoard, use the fullscreen
+         editor, and allow users to perform file transfers using X,Y &
+         Zmodem.
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ

@@ -1,0 +1,14 @@
+MODEL = SMALL
+
+OBJS = error.obj init.obj keyboard.obj misc.obj popmenu.obj \
+       rectang.obj scan.obj select.obj viewlist.obj window.obj \
+       form.obj restore.obj editwin.obj gauge.obj savebuf.obj tsw_vio.obj
+
+TSLIB = 1
+TSWIN = 1
+
+tswinos2.lib: $(OBJS)
+ @erase $@
+ @tlib $@ /c +$(OBJS)
+ @copy $@ $(DIR_TSWIN_LIB)
+ @erase $@
