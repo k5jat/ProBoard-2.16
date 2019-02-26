@@ -1,0 +1,12 @@
+## Makefile for ProCFG
+
+OBJS = install.obj lzhuf.obj editdir.obj readcfg.obj
+
+MODEL   = LARGE
+
+TSLIB = 1
+TSWIN = 1
+PBLIB = 1
+MATH = 1
+
+Install.EXE: $(OBJS)

@@ -1,0 +1,11 @@
+## Makefile for ProBoard's CONVERT.EXE
+
+OBJS = convert.obj racvt.obj pbcvt.obj rasimul1.obj rasimul2.obj qbbscvt.obj maximus.obj sbbs.obj
+
+TSLIB = 1
+PBLIB = 1
+
+MODEL = SMALL
+
+convert.exe : $(objs)
+
