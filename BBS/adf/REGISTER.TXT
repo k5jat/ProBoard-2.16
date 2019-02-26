@@ -1,0 +1,51 @@
+          REGISTRATION OF ADF
+
+          Please print this form and mail it with the cash payment to:
+
+                  Scandinavian Digital Systems AB
+                  Ostra Storgatan 12
+                  S-661 42  Saffle
+                  SWEDEN
+
+          Send cash using your own currency, use an even amount equal to
+          USD 10. Examples of common currencies (July 12, 1999):
+
+                  United States Dollars   USD    10
+                  Australia Dollars       AUD    15
+                  Austria Schillings      ATS   150
+                  Belgium Francs          BEF   400
+                  United Kingdom Pounds   GBP    10
+                  Canada Dollars          CAD    15
+                  Denmark Kroner          DKK    80
+                  Euro                    EUR    10
+                  Finland Markka          FIM    60
+                  France Francs           FRF    60
+                  Germany Deutsche Marks  DEM    20
+                  Greece Drachmas         GRD  3000
+                  Italy Lira              ITL 20000
+                  Japan Yen               JPY  1200
+                  Netherlands Guilders    NLG    20
+                  Norway Kroner           NOK    80
+                  Portugal Escudo         PTE  2000
+                  Spain Pesetas           ESP  1600
+                  Sweden Krona            SEK    80
+                  Switzerland Francs      CHF    15
+
+          NOTE!  PAPER MONEY CASH PAYMENT ONLY!  NOT CHECKS OR COINS!
+
+
+          Name:       __________________________________________________
+
+
+          Payment:    __________________________________________________
+
+          Internet
+          e-mail:     __________________________________________________
+
+
+          Please write your Internet e-mail address and you will get an
+          e-mail receipt of your payment.
+
+          After mailing this form and payment, send an Internet e-mail
+          to reg@digsys.se. Please see the program documentation or
+          http://www.digsys.se for more information.
