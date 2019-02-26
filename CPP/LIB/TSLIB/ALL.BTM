@@ -1,0 +1,7 @@
+del *.obj *.lib
+call m o s f
+call m o l f v
+call m o m f
+call m o c f
+call m o p f
+del *.obj
