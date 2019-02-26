@@ -1,0 +1,5 @@
+OBJS = testcomp.obj lzhuf.obj
+MATH = 1
+TSLIB = 1
+testcomp.exe: $(OBJS)
+
