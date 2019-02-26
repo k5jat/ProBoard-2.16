@@ -1,0 +1,31 @@
+--
+--   JAM(mbp) - The Joaquim-Andrew-Mats Message Base Proposal
+--
+--   HMB to JAM converter
+--
+--   Written by Mats Wallin
+--
+--   ----------------------------------------------------------------------
+--
+--   HMB2JAM.PRJ
+--
+--      TopSpeed C project file for HMB2JAM
+--
+--
+--   Copyright 1993 Joaquim H. Homrighausen, Andrew Milner, Mats Birch, and
+--   Mats Wallin. ALL RIGHTS RESERVED.
+--
+
+make dos exe
+option +case +map +pack +check -vid
+model compact
+
+override *.c /w* /v0 /b- /l+ /a- /e+ /ot+ /ox+ /op0 /j+ /rs-
+
+include %N 
+include hmbsub
+include jamsub
+include initexe
+
+import jamcapi%M
+import %O%M_c %O%M_com
