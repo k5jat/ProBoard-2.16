@@ -1,0 +1,33 @@
+#
+#   JAM(mbp) - The Joaquim-Andrew-Mats Message Base Proposal
+#
+#   JAM Utility
+#
+#   Written by Mats Wallin
+#
+#   ----------------------------------------------------------------------
+#
+#   makefile (JAMmb)
+#
+#   Make file for the JAMUTIL program and Borland C++ 3.x and Borland MAKE
+#   (or MAKER).
+#
+#   Copyright 1993 Joaquim Homrighausen, Andrew Milner, Mats Birch, and
+#   Mats Wallin. ALL RIGHTS RESERVED.
+#
+CMDL    = c
+CC      = bcc
+INCDIR  = c:\h\bc
+CFLAGS  = -c -m$(CMDL) -G -Ox -Z -f- -d -w -I$(INCDIR)
+LINK    = tlink
+LFLAGS  = /m /c
+LJAMLIB = jamcapi$(CMDL).lib
+LIBDIR  = c:\lib\bc
+
+OBJS    = jamutil.obj
+
+.c.obj:
+    $(CC) $(CFLAGS) {$< }
+
+jamutil.exe:   $(OBJS)
+    $(LINK) $(LFLAGS) $(LIBDIR)\c0$(CMDL).obj $(OBJS),$*,$*,$(LJAMLIB) $(LIBDIR)\c$(CMDL).lib

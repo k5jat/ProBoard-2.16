@@ -1,0 +1,7 @@
+PBLIB = 1
+TSLIB = 1
+MODEL = COMPACT
+
+OBJS = genlang.obj
+
+genlang.exe: $(OBJS)

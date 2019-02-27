@@ -1,0 +1,29 @@
+--
+--   JAM(mbp) - The Joaquim-Andrew-Mats Message Base Proposal
+--
+--   JAM utility
+--
+--   Written by Mats Wallin
+--
+--   ----------------------------------------------------------------------
+--
+--   JAMUTIL.PRJ
+--
+--      TopSpeed C project file for JAMUTIL
+--
+--
+--   Copyright 1993 Joaquim H. Homrighausen, Andrew Milner, Mats Birch, and
+--   Mats Wallin. ALL RIGHTS RESERVED.
+--
+
+make dos exe
+option +case +map +pack +check -vid
+model compact
+
+override *.c /w* /v0 /b- /l+ /a- /e+ /ot+ /ox+ /op0 /j+ /rs-
+
+include %N 
+include initexe
+
+import jamcapi%M
+import %O%M_c %O%M_com

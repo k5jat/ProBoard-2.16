@@ -1,0 +1,26 @@
+#
+#   JAM(mbp) - The Joaquim-Andrew-Mats Message Base Proposal
+#
+#   JAM Utility
+#
+#   Written by Mats Wallin
+#
+#   ----------------------------------------------------------------------
+#
+#   makefile (JAMmb)
+#
+#   Make file for the JAMUTIL program and GCC for a Sparc
+#
+#   Copyright 1993 Joaquim H. Homrighausen, Andrew Milner, Mats Birch, and
+#   Mats Wallin. ALL RIGHTS RESERVED.
+#
+
+CC      = gcc
+CLIB    = jamcapi
+CFLAGS  = -ansi
+
+.c.o:
+    $(CC) -c -I.. -ansi $*.c
+
+jamutil:  jamutil.o
+    gcc $? -l$(CLIB) -o $@

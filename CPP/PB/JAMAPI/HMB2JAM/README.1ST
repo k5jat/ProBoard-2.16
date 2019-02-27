@@ -1,0 +1,32 @@
+93-07-01
+
+This archive contains the JAM(mbp) conversion utility that allows
+you to convert Hudson Message Base (HMB) boards to the JAM(mbp)
+format.
+
+The program should compile without warnings with all compilers
+for which we have supplied make files.
+
+The following files should be present in the archive (README.1ST
+not included):
+
+Filename       Original Compressed Ratio DateTime modified CRC-32
+------------ ---------- ---------- ----- ----------------- --------
+HMB.H              3203       1098 0.343 93-07-01 01:00:00 FBF45861
+HMB2JAM.C         10912       2913 0.267 93-07-01 01:00:00 703F54B1
+HMB2JAM.EXE       18876      18591 0.985 93-07-01 01:00:00 D42E5E41
+HMB2JAM.PRJ         652        353 0.541 93-07-01 01:00:00 4D94945C
+HMBSUB.C           4350       1097 0.252 93-07-01 01:00:00 8C5ADE7F
+HMBSUB.H           1225        544 0.444 93-07-01 01:00:00 A454C31A
+JAMSUB.C           4417       1303 0.295 93-07-01 01:00:00 B4DD618A
+JAMSUB.H            801        405 0.506 93-07-01 01:00:00 090B7933
+MAKEFILE.BC         838        442 0.527 93-07-01 01:00:00 7AF52677
+MAKEFILE.MSC        708        394 0.556 93-07-01 01:00:00 8B9C05D4
+MAKEFILE.TC         763        403 0.528 93-07-01 01:00:00 6F8F0809
+MAKEFILE.ZTC        719        397 0.552 93-07-01 01:00:00 9A32CF97
+------------ ---------- ---------- -----
+
+Copyright 1993 Joaquim Homrighausen, Andrew Milner, Mats Birch,
+               Mats Wallin. ALL RIGHTS RESERVED.
+
+// end of file "readme.1st"

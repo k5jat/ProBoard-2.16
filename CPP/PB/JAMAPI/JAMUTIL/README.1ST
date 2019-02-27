@@ -1,0 +1,29 @@
+93-07-01
+
+This archive contains the JAM(mbp) UTILITY for DOS. The
+functionality of this program is identical to that of the Windows
+version apart from the fact that it doesn't requires Windows.
+
+The program should compile without warnings with all compilers
+for which we have supplied make files.
+
+The following files should be present in the archive (README.1ST
+not included):
+
+Filename       Original Compressed Ratio DateTime modified CRC-32
+------------ ---------- ---------- ----- ----------------- ---------
+JAMUTIL.C         16692       3925 0.235 93-07-01 01:00:00 12B55738
+JAMUTIL.EXE       17757      17462 0.983 93-07-01 01:00:00 5AC7C9A0
+JAMUTIL.H          3430       1195 0.348 93-07-01 01:00:00 43130D57
+JAMUTIL.PRJ         611        337 0.552 93-07-01 01:00:00 602343C9
+MAKEFILE.BC         806        427 0.530 93-07-01 01:00:00 3052929C
+MAKEFILE.GCC        546        305 0.559 93-07-01 01:00:00 45AA41B1
+MAKEFILE.MSC        676        378 0.559 93-07-01 01:00:00 C51D6F3F
+MAKEFILE.TC         731        387 0.529 93-07-01 01:00:00 D8BD4DCE
+MAKEFILE.ZTC        692        385 0.556 93-07-01 01:00:00 FBF926BD
+------------ ---------- ---------- -----
+
+Copyright 1993 Joaquim Homrighausen, Andrew Milner, Mats Birch,
+               Mats Wallin. ALL RIGHTS RESERVED.
+
+// end of file "readme.1st"

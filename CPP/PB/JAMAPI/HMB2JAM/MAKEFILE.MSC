@@ -1,0 +1,30 @@
+#
+#   JAM(mbp) - The Joaquim-Andrew-Mats Message Base Proposal
+#
+#   HMB to JAM converter
+#
+#   Written by Mats Wallin
+#
+#   ----------------------------------------------------------------------
+#
+#   makefile (JAMmb)
+#
+#   Make file for the HMB2JAM program and Microsoft C/C++ 7.0
+#
+#   Copyright 1993 Joaquim Homrighausen, Andrew Milner, Mats Birch, and
+#   Mats Wallin. ALL RIGHTS RESERVED.
+#
+CMDL    = C
+CC      = cl
+CFLAGS  = /c -A$(CMDL) /O /W4 /D__MSDOS__
+LINK    = link
+LFLAGS  = /m /noi
+LJAMLIB = jamcapi$(CMDL).lib
+
+OBJS    = hmb2jam.obj hmbsub.obj jamsub.obj
+
+.c.obj:
+    $(CC) $(CFLAGS) $*.c
+
+hmb2jam.exe:    $(OBJS)
+    $(LINK) $(LFLAGS) $(OBJS),$*,$*,$(LJAMLIB);
