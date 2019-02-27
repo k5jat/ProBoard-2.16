@@ -1,0 +1,120 @@
+The following is a list of the ANSI codes.   In the
+examples below, ESC is an escape (ASCII 27) and Pn represents an ASCII
+integer.  Spaces are shown only for clarity and are not to be inserted.
+The special graphics set is supported for charts and graphics (see SCS, SI
+and SO).  When ANSI is on the following keys send different sequences:
+
+Cursor Up = ESC [ A
+
+Cursor Down = ESC [ B
+
+Cursor Right = ESC [ C
+
+Cursor Left = ESC [ D
+
+Control-Home = ESC [ 2 J
+
+Example:
+
+ESC [ 5 ; 40 f
+
+The above example will move the cursor to row 5, column 40.
+
+
+ANSI Code		Meaning
+---------		------------------------------------
+
+ESC c			RIS Reset to Initial State
+
+ESC [ Pn A		CUU Cursor UP Pn lines (Default = 1)
+ESC [ Pn B		CUD Cursor DOWN Pn lines (Default = 1)
+ESC [ Pn C		CUF Cursor RIGHT Pn lines (Default = 1)
+ESC [ Pn D		CUB Cursor LEFT Pn lines (Default = 1)
+
+ESC [ Pn ; Pn H		CUP Direct Cursor Position.  Uses the form Row, Column.
+			Home is position 1,1.  If no parameters are given, the
+			cursor is moved to the home position
+
+ESC [ Pn ; Pn f		HVP Horizontal and Vertical Position.
+			(Same as ESC [ Pn ; Pn H)
+
+ESC [ s			Save Cursor Position.
+ESC 7			Save Cursor Position.
+
+ESC [ u			Restore Cursor Position.
+ESC 8			Restore Cursor Position.
+
+ESC [ Pn J		ED Erase in Display.
+
+		 	Pn = 0	Erase from active position to the end
+				of the screen, inclusive (default).
+			     1	Erase from start of the screen to the
+				active position, inclusive.
+			     2	Erase all of the display.  The cursor
+				does not move.
+
+ESC [ Pn K		EL Erase in Line.
+
+			 Pn = 0	Erase from active position to the end of line,
+				inclusive (default).
+			      1	Erase from start of the screen to the active
+				position, inclusive.
+			      2	Erase all of the line, inclusive.
+
+ESC [ Pn ;...; Pn m	SGR Select Graphics Rendition.
+
+			 Pn = 0	Attributes off
+			      1	Bold or increased intensity
+			      4	Underscore
+			      5	Blink
+			      7	Reverse
+
+
+WHAT ARE YOU?
+
+	Invoked by	ESC [ c
+			 or
+			ESC [ 0 c
+
+	Response is	ESC [ ? 1 ; 2 c   (VT100 with AVO)
+
+
+
+CURSOR REPORT
+
+	Invoked by	ESC [ 6 n
+
+	Response is	ESC [ Pl ; Pc R   (row and column of cursor)
+
+	Where		Pl = row
+			Pc = column
+
+
+STATUS REPORT
+
+	Invoked by	ESC [ 5 n
+
+	Response is	ESC [ 0 n   (terminal is ok)
+
+
+
+SCS Select Character Set
+
+	G0 Set		G1 Set
+
+	ESC (A		ESC )A		United Kingdom Set
+	ESC (B		ESC )B		ASCII Set (default)
+	ESC (0		ESC )0		Special Graphics
+	ESC (1		ESC )1		Same as ASCII Set
+	ESC (2		ESC )2		Same as Special Graphics
+
+
+
+Control		Decimal
+Char		Code		Action taken
+-------		-------		------------
+SO		14		Invoke G1 character set (See SCS Above)
+SI		15		Invoke G0 character set
+XOFF		17		Causes terminal to stop sending
+XON		19		Re-Start data after an XOFF (See FLOW command)
+

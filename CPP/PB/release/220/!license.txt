@@ -1,0 +1,390 @@
+
+                      ProBoard Bulletin Board System
+
+                     Version 2.2 Y2K BETA TEST EDITION
+
+         Copyright (c) 1990-1999  TeleGrafix Communications, Inc.
+                           All rights reserved.
+
+
+This software is published and distributed under license by TeleGrafix
+Communications, Inc.  This software includes proprietary computer code 
+that is the property of TeleGrafix Communications, Inc.
+
+                       TeleGrafix Communications, Inc.
+                       2180 S. Loudoun St. Suite #308
+                       Winchester, VA 22601
+                       United States of America
+                       
+                        Voice:  (540) 678-4050  
+                          Fax:  (540) 678-4052          
+                          WWW:  http://www.telegrafix.com
+                        Email:  sales@telegrafix.com
+                          FTP:  ftp.telegrafix.com
+                       Telnet:  telnet.telegrafix.com
+
+
+DISCLAIMER
+----------
+
+THIS SOFTWARE IS LICENSED TO YOU FOR BETA TESTING PURPOSES ONLY. IT MAY 
+CONTAIN PROGRAMMING ERRORS AND BUGS THAT COULD ADVERSELY AFFECT THE 
+PERFORMANCE OF THE SOFTWARE AND YOUR COMPUTER SYSTEM.  THIS SOFTWARE 
+CONTAINS COMPUTER CODES THAT DISABLES, OR LIMITS THE USE OF THE SOFTWARE 
+AFTER AUGUST 1, 2000.
+
+DO NOT DOWNLOAD OR USE THIS SOFTWARE UNLESS YOU AGREE TO BE BOUND BY THE 
+DEFINITIONS, TERMS AND CONDITIONS OF THIS LICENSE AGREEMENT.
+
+YOU SHOULD READ CAREFULLY THE FOLLOWING TERMS AND CONDITIONS OF THIS 
+LICENSE AGREEMENT IN ITS ENTIRETY BEFORE DOWNLOADING THIS SOFTWARE.  IF 
+YOU DO NOT AGREE WITH ALL OF THESE TERMS AND CONDITIONS, YOU SHOULD NOT
+DOWNLOAD OR USE THIS SOFTWARE. ANY DOWNLOADING, INSTALLING, LOADING OR 
+USING THIS SOFTWARE INDICATES YOUR ACCEPTANCE OF THE TERMS AND CONDITIONS 
+OF THIS LICENSE AGREEMENT. 
+
+
+1 - INTRODUCTION
+----------------
+
+The ProBoard Bulletin Board System Version 2.2 Y2K Beta Test Edition is a 
+RIPscrip (Remote Imaging Protocol scripting language) enabled computer 
+bulletin board system.  THIS SOFTWARE PROGRAM IS NOT "FREEWARE" AND IS NOT
+IN THE PUBLIC DOMAIN. It is copyrighted commercial software owned by 
+TeleGrafix Communications Inc., a Virginia corporation ("TeleGrafix"). 
+"ProBoard BBS" is a trademark of TeleGrafix Communications Inc. RIPscrip 
+(TM) is a trademark of TeleGrafix Communications Inc.
+
+
+2 - DEFINITIONS
+---------------
+
+The term "License" shall refer to this Beta Test License Agreement. The 
+term "Software" shall refer to the files supplied via electronic download
+or on diskette(s), and/or to any and all copies, upgrades, modifications,
+functionally-equivalent derivatives, or any parts or portions thereof,
+including any electronic, online or printed documentation. The terms "You"
+and "Your" shall refer to the organization, person and/or business entity
+who downloaded or purchased this License to use this Software or for whom
+such License was downloaded or purchased. You and TeleGrafix agree that
+You will participate in the ProBoard BBS Y2K beta test under the terms of
+this License. 
+
+
+3 - NONEXCLUSIVE LICENSE
+------------------------
+
+TeleGrafix Communications Inc. ("TeleGrafix"), a Virginia corporation, 
+licenses You to use this Software in binary executable form only on a 
+non-exclusive, non-sublicensable and terminable basis. All other rights 
+are reserved by TeleGrafix. Your License is personal to You. You shall not
+permit other individuals or entities to operate or use the Software except
+under such terms as are authorized by this License. The Software is
+licensed for Your use as a single product and You may not separate its 
+component parts for use on other computers. You have a limited license to 
+use the Software solely for the purpose and duration of the beta test. 
+
+
+4 - AGREEMENT OF TESTER TO TEST AND REPORT
+-------------------------------------------
+
+You agree to report to TeleGrafix any flaws, errors, bugs or other
+problems with the Software. Such reports may be made by telephone
+(540-678-4050), fax (540-678-4052), by e-mail to support@telegrafix.com,
+or by United States mail to TeleGrafix Communications Inc., 2180 S.
+Loudoun Street, Suite #308, Winchester, VA 22601 U.S.A. Attn: ProBoard
+Beta Test. The beta test will end on August 1, 2000, or on the date of
+first commercial sale of the Software, whichever comes first. Tester
+understands that prompt and accurate reports are of great value to
+TeleGrafix, and promises best efforts to provide such reports.
+
+
+5 - DISCOUNTED COPIES OF PRODUCT TO BETA TESTERS
+------------------------------------------------
+
+TeleGrafix offers to all beta testers who complete and return a signed
+copy of this Agreement AND submit reports as provided by this Agreement,
+the released version of the Software (when available) at a forty percent 
+(40%) discount from the initial list price (plus shipping and any 
+applicable taxes). Such copy will be provided subject to TeleGrafix's 
+standard License Agreement (copy available on request).
+
+
+6 - INTELLECTUAL PROPERTY PROTECTION
+------------------------------------
+
+(a) You acknowledge that TeleGrafix owns the Software, its copyright, its 
+    trademark, and any other intellectual property rights in the Software.
+    You acquire no ownership of the Software from this License and no 
+    right to use the Software beyond the term of the beta test.  You 
+    acquire no right to copy or disseminate the Software, prepare 
+    derivative works or participate in development, manufacturing,
+    marketing, and maintenance of the Software.
+
+(c) You are permitted to install and use one (1) copy of this Software on 
+    a single computer used by You, but must remove such copy from such 
+    computer at the end of the beta test or upon TeleGrafix's request, 
+    whichever is sooner. 
+
+(c) You acknowledge that the structure, organization and code of the 
+    Software are valuable trade secrets of TeleGrafix and/or its 
+    suppliers.  You acknowledge that the Software in source code form 
+    remains a confidential trade secret of TeleGrafix and/or its 
+    suppliers and cannot be disclosed by You to any other party. You 
+    agree not to attempt to discover the source code of the Software.
+    You shall not use, copy, merge, modify, translate, reverse engineer, 
+    decompile, disassemble, rent, lease or transfer this Software (or 
+    any copy, modification, or merged portion, in whole or in part) 
+    except to the extent applicable laws specifically prohibit such 
+    restriction without the possibility of contractual waiver or as 
+    expressly provided for in this License or in amendments signed by an
+    officer of TeleGrafix. You shall not create derivative works based on
+    this Software unless authorized in writing by an officer of 
+    TeleGrafix. You shall not remove any proprietary notices or legends, 
+    including copyright notices, from this Software or archival backup 
+    copies. 
+
+(d) You shall not circumvent any software protection devices used in this 
+    software. You agree that any security codes (including keycodes, 
+    serial numbers or activation codes) that are used to permit the 
+    operation of this Software are to remain confidential information 
+    between You and TeleGrafix.  You shall not under any circumstances
+    broadcast, publish, disclose or disseminate to any other person or
+    party any information about TeleGrafix software security protection
+    devices including security codes.  You acknowledge that violations of
+    the U.S. Copyright laws may result in criminal and civil penalties, 
+    including fines of up to $100,000. Title, ownership rights and 
+    intellectual property rights in and to the Software and any security 
+    codes or protection devices used to permit operation of this Software 
+    shall remain exclusively with TeleGrafix.
+
+(e) This License is a legal agreement between You and TeleGrafix and it 
+    shall continue for as long as You use the Software. You agree that we
+    need not sign this License in order for it to take effect. You assume
+    all responsibility for the installation, use and results obtained from
+    this Software. 
+
+
+7 - INJUNCTIVE RELIEF
+----------------------
+
+You acknowledge that the Software embodies trade secrets of TeleGrafix, 
+the unauthorized use or disclosure of which would cause substantial harm 
+to TeleGrafix that could not be remedied by the payment of damages alone. 
+Accordingly, TeleGrafix shall be entitled to preliminary and permanent 
+injunctive relief and other equitable relief for any breach of this
+License. The parties agree that in the event of a breach or threatened 
+breach of this License (including unauthorized reproduction or 
+dissemination of Software or security codes), that immediate injunctive 
+relief shall be appropriate, and TeleGrafix may seek that injunctive 
+action. The parties agree that TeleGrafix shall be released from any 
+requirement to post any bond, cash or security as a condition of obtaining
+injunctive relief, to the extent permitted by law. TeleGrafix's right to
+obtain injunctive relief shall not limit its right to seek any other
+remedies to which it may be entitled.
+
+
+8 - RISKS FROM THE PRODUCT
+--------------------------
+
+You acknowledge that the Software is in unfinished beta testing form and 
+may have errors and may produce unexpected results. You agree that any use
+of the beta version of the Software, whether as part of this beta test or
+otherwise, will be entirely at Your own risk. You agree to backup data and
+take other appropriate measures to protect programs and data. You agree
+not to allow any third party to use the Software and to indemnify and hold
+TeleGrafix harmless from any damages or claims arising from use by any
+third party.
+
+
+9 - NO WARRANTY
+---------------- 
+
+THE SOFTWARE AND ANY SUPPORT FROM TELEGRAFIX ARE PROVIDED "AS IS" AND 
+WITHOUT WARRANTY, EXPRESS OR IMPLIED. YOU AGREE THAT THIS IS EXPERIMENTAL 
+SOFTWARE AND THAT ANY USE OF THIS SOFTWARE BY YOU IS ENTIRELY AT YOUR OWN 
+RISK. TELEGRAFIX SPECIFICALLY DISCLAIMS ANY IMPLIED WARRANTIES OF 
+MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. YOU AGREE THAT IN NO
+EVENT WILL TELEGRAFIX BE LIABLE FOR ANY DAMAGES, INCLUDING BUT NOT LIMITED
+TO ANY LOST PROFITS, LOST SAVINGS OR ANY INCIDENTAL OR CONSEQUENTIAL
+DAMAGES, WHETHER RESULTING FROM IMPAIRED OR LOST DATA, SOFTWARE OR
+COMPUTER FAILURE OR ANY OTHER CAUSE, EVEN IF TELEGRAFIX IS ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGES, OR FOR ANY OTHER CLAIM BY TESTER OR FOR ANY
+THIRD PARTY CLAIM. 
+
+
+10 - NO FINANCIAL OBLIGATION FOR TESTER INFORMATION
+---------------------------------------------------
+
+TeleGrafix does not want to receive, and You agree not to disclose to 
+TeleGrafix, any information that is confidential, proprietary or 
+constitutes trade secrets to You or others. You agree that the contents of
+all oral and written reports to TeleGrafix and any other materials, 
+information, ideas, concepts, and know-how provided by You (including 
+corrections to problems in the Software and documentation) become the 
+property of TeleGrafix and may be used by TeleGrafix for all business 
+purposes, without any accounting or any payment to You. Under no 
+circumstances will TeleGrafix become liable for any payment to You for any
+information that You provide, whether concerning the Software or 
+otherwise, no matter how such information is used or exploited by 
+TeleGrafix or anyone else.
+
+
+11 - PUBLICITY
+--------------
+
+You grant TeleGrafix the right, to be exercised in TeleGrafix's sole 
+discretion, to use the facts, contents and outcome of the beta test, Your 
+comments, and Your individual name, the names of Your employees and agents
+participating in the test, and Your trade name and trademark in 
+TeleGrafix's promotions, press releases, public relations, advertisements,
+and other sales and marketing activities.  Such right shall be unlimited
+in duration, and no compensation shall be required for TeleGrafix's
+exercise of such right.
+
+
+12 - EXPORT CONTROLS
+--------------------
+
+None of the Software or underlying information or technology may be
+downloaded or otherwise exported or re-exported (1) into (or to a national
+or resident of) Cuba, Iraq, Libya, Yugoslavia, North Korea, Iran, Syria or
+any other country to which the U.S. has embargoed goods; or (2) to anyone
+on the U.S. Treasury Department's list of Specially Designated Nationals
+or the U.S. Commerce Department's Table of Deny Orders; or (3) any end
+user who will use the Software in the design, development or production of
+biological, chemical or nuclear weapons. By downloading or using the
+Software, You are agreeing to the foregoing and You are representing and
+warranting that You are not located in the prohibited countries; You are
+not under the control of, or a national or resident of any such country;
+You are not on any such list; and You are not engaged in prohibited
+weapons activities.
+
+
+13 - HIGH-RISK ACTIVITIES
+-------------------------
+
+The Software is not fault-tolerant. It is not designed, manufactured or
+intended for use with, or resale as, online control equipment in hazardous
+environments requiring fail-safe performance (such as nuclear facilities,
+aircraft navigation or communications systems, aircraft traffic control
+systems, life support machines, or weapons systems) in which the failure
+of the Software could lead directly to death, personal injury or severe
+physical or environmental damage ("High Risk Activities"). TELEGRAFIX
+SPECIFICALLY DISCLAIMS ANY EXPRESS OR IMPLIED WARRANTY OF FITNESS FOR
+HIGH-RISK ACTIVITIES.
+
+
+14 - U.S. GOVERNMENT END-USER RESTRICTIONS
+------------------------------------------
+
+All U.S. Government end users license the Software with only those rights 
+set forth herein. This Software is licensed only with "restricted rights" 
+when used by or on behalf of an agency or unit of the United States 
+Government. This Software is "restricted computer software" as defined by 
+the Federal Acquisition Regulations. This Software is "commercial computer
+software" and "commercial computer software documentation" that was
+developed at private expense. This Software is not in the public domain
+and in all respects is proprietary data belonging to Searchlight and/or
+TeleGrafix. Title to and ownership of this Software shall remain with
+TeleGrafix Communications Inc.  All unpublished rights are reserved by
+TeleGrafix under the copyright laws of the United States of America. Any
+use, duplication or disclosure by the U.S. Government is subject to 
+restrictions set forth in subparagraphs (a) through (d) of the Commercial 
+Computer-Restricted Rights clause at FAR 52.227-19 when applic able, or in
+subparagraph (c)(1)(ii) of the Rights in Technical Data and Computer
+Software clause at DFARS 252.227-7013, and in similar clauses in the NASA
+FAR Supplement. The U.S. Government is prohibited from changing or
+removing any insignia, logo or lettering from the Software or any 
+accompanying written materials that are provided, and from producing 
+copies of any manuals or disks (except one for backup purposes). Use of 
+this Software and any documentation shall be limited to the government 
+facility for which it is acquired. This Software is a trade secret of 
+TeleGrafix Communications Inc. for all purposes of the Freedom o 
+Information Act.  Contractor/manufacturer is TeleGrafix Communications 
+Inc., 2180 S. Loudoun Street, Suite #308, Winchester, VA 22601.
+
+
+15 - LEGAL
+----------
+
+The official language of this License and all documents used in its
+connection shall be English. All agreements covering this Software
+(including but not limited to any and all updates, upgrades, and
+enhancements to this Software or any portion thereof, bearing the same
+registration number) shall be deemed to be counterparts of one and the
+same License instrument. This License shall be governed by and construed
+under the laws of the Commonwealth of Virginia and the United States of
+America, and the applicable international treaties.  The parties agree
+that jurisdiction and venue for any dispute arising from this License or
+relating to the Software shall be in the United States District Court 
+and/or the courts of the Commonwealth of Virginia that serve the locality 
+in which the corporate headquarters of TeleGrafix Communications Inc. is 
+located.  By using this software, You expressly confer jurisdiction over 
+You to  these Virginia courts. In the event that TeleGrafix is the 
+prevailing party in any litigation between the parties arising from this 
+License, TeleGrafix shall be entitled to recover, in addition to any other
+relief awarded, its reasonable costs and expenses including attorneys'
+fees, court costs and collection costs incurred in the proceeding. The
+failure of either party to enforce any rights granted by this License o to
+take action against the other party in the event of any breach of this
+License shall not be deemed a waiver by that party of its right to enforce
+such rights in the future. If any provision of this License is held to be
+unenforceable for any reason by a court of competent jurisdiction, such
+provision shall be reformed only to the extent necessary to make it
+enforceable, and the rest of this License shall remain in full force and
+effect. This License will not be governed by the United Nations Convention
+of Contracts for the International Sale of Goods and its application is
+expressly excluded.  All questions concerning this License shall be
+addressed to:  TeleGrafix Communications Inc., 2180 S. Loudoun Street,
+Suite #308, Winchester, VA 22601, United States of America, Attention:
+Legal Department.
+
+
+16 - GENERAL PROVISIONS
+-----------------------
+
+Neither You nor TeleGrafix have any obligation to purchase anything under
+this License. No agency, partnership, joint venture, or other joint
+relationship is created by this License.  TeleGrafix may enter into the
+same or similar Licenses with others.
+
+
+17 - TERM AND TERMINATION
+-------------------------
+
+This License is effective until terminated, and it will terminate
+automatically and immediately without notice if You fail to comply with
+any of its provisions. In the case of beta test Software, this License
+will terminate automatically at the expiration of the beta test period or
+on August 1, 2000, whichever is earlier.  You may terminate it at any
+time by destroying all copies of the Software covered by this License. If
+You transfer possession of any copy of this software (or any 
+Functionally-equivalent derivative) or any portion or modification thereof
+to another party, or remove any copyright or proprietary notices or labels
+on the software or any copy, or disclose any software codes, Your License
+is automatically terminated. You may not sublicense, assign or otherwise
+transfer this License or Software except as expressly provided in this
+License. Any attempt to otherwise sublicense, assign, or transfer any of
+the rights, duties or obligations hereunder is expressly prohibited and
+will terminate this License immediately. In addition, TeleGrafix may
+terminate this License at any time by delivering notice to You. On
+termination, You must destroy all copies of the Software.  Your obligation
+to pay any accrued charges or fees shall survive any termination of this
+License.  The provisions of Paragraphs 6 through 15 shall also survive any
+termination of this License.
+
+BY INSTALLING OR USING THIS SOFTWARE, YOU ACKNOWLEDGE THAT YOU HAVE READ 
+THIS LICENSE, UNDERSTAND IT, AND AGREE TO BE BOUND BY ITS TERMS AND 
+CONDITIONS. YOU FURTHER AGREE THAT IT IS THE COMPLETE AND EXCLUSIVE 
+STATEMENT OF THE LICENSE BETWEEN US AND SUPERSEDES ANY PROPOSAL OR PRIOR 
+AGREEMENT, ORAL OR WRITTEN, AND ANY OTHER COMMUNICATIONS BETWEEN US 
+RELATING TO THE LICENSING OF THIS SOFTWARE. THIS LICENSE MAY BE AMENDED 
+ONLY IN WRITING SIGNED BY BOTH PARTIES.
+
+
+
+
+
+
+

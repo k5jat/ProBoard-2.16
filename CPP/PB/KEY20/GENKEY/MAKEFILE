@@ -1,0 +1,6 @@
+TSLIB = 1
+TSWIN = 1
+
+OBJS = genkey.obj compkey.obj
+
+genkey.exe : $(OBJS)

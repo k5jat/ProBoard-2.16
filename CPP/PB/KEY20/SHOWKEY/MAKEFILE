@@ -1,0 +1,5 @@
+TSLIB = 1
+
+OBJS = showkey.obj deckey.obj
+
+showkey.exe : $(OBJS)

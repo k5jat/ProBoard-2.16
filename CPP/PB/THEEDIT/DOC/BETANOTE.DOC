@@ -1,0 +1,226 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+      Þฑฑฑฑฑฑ Þฑฑฑ              Þฑฑฑฑฑฑฑ     Þฑฑ    Þฑฑ       Þฑ       Þฑฑ
+      ÞฑÞฑฑÞฑ  Þฑฑ               Þฑฑ  Þฑ     Þฑฑ             Þฑฑ       Þฑฑ
+        Þฑฑ    Þฑฑ      Þฑฑฑฑ    Þฑฑ         Þฑฑ   Þฑฑฑ     Þฑฑฑฑ      Þฑฑ
+        Þฑฑ    Þฑฑฑฑฑ  Þฑฑ Þฑฑ   Þฑฑฑฑ    Þฑฑฑฑฑ    Þฑฑ      Þฑฑ       Þฑฑ
+        Þฑฑ    Þฑฑ Þฑฑ Þฑฑฑฑฑฑ   Þฑฑ     Þฑฑ Þฑฑ    Þฑฑ      Þฑฑ       Þฑฑ
+        Þฑฑ    Þฑฑ Þฑฑ Þฑฑ       Þฑฑ  Þฑ Þฑฑ Þฑฑ    Þฑฑ      ÞฑฑÞฑ
+       Þฑฑฑฑ   Þฑฑ Þฑฑ  Þฑฑฑฑฑ  Þฑฑฑฑฑฑฑ  ÞฑฑฑÞฑฑ   Þฑฑฑ      Þฑฑ      Þฑฑ
+  ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+
+               ProBoard Advanced Message Editor version 2.10แ2
+
+                      Copyright (C) 1994 and written by
+                              Alain Schellinck
+
+
+
+                             All Rights reserved
+
+
+                          ** SHAREWARE SOFTWARE **
+
+
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor version 2.10แ2 ฐฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บ              Beta testers (alphabetically) and abbreviations               บ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+    David Silver        ( Silverado BBS     )  <I think...>       [DS ]
+    Philippe Leybaert   ( Home Of ProBoard  )                     [PL ]
+    Peter Hampf         ( Granny's Inn      )                     [PH ]
+    Tim De Meyer        ( MultiNet HomeBase )                     [TDM]
+    Alain Schellinck    ( The Happy House   )                     [AS ]
+    Constantin Spiess   ( Dealer's          )                     [CS ]
+
+                                        User's change request     [UCR]
+
+
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บ                                 Welcome...                                 บ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+   First of all, I would like to welcome David as a new member of the beta
+   team and as the registration site for the USA. I hope you will have as much
+   fun here as we had in the past.
+
+
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บ                      Beta 2 (released on 6 nov 1995)                       บ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+   Oops, that took a long time for a next beta. Anyway, there are not so many
+   new features...
+
+
+  Changes in beta 2
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+   *  (AS)  The key to enable/disable the abbreviations is changed from ALT-A
+            to CTRL-J. Now, users can enable or disable abbreviations too.
+
+   *  (AS)  The abbreviations are now multi-language. Create an DUTCH.ABR
+            file for the dutch abbreviations, GERMAN.ABR for germany, ... If
+            the [LANGUAGE].ABR file is missing, TheEdit will use THEEDIT.ABR
+
+   *  (AS)  The sysop and user can now press CTRL-E to list the abbreviations
+            on the screen.
+
+
+
+
+
+
+
+
+
+
+
+
+                                   -=๐ 2 ๐=-                                    
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor version 2.10แ2 ฐฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+  WARNING!!!
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+   The language and help files are changed. The two new prompts for the
+   abbreviations (title and error if no abbrevs found) are included. Please
+   update your files!
+
+
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บ                      Beta 1 (released on 23 aug 1995)                      บ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+    Ok, we are back in beta. TheEdit 2.0x was a great success (especially in
+    Germany! Thanks Constantin, how was the beer?). There will be a few new
+    options in TheEdit 2.10. The first one that is added is abbreviations.
+    Read the enclosed TheEdit.Doc file to find out about them.
+
+    If you have some idea's or you think something is missing in TheEdit,
+    please let me know. We have some time now before we release this one,
+    because TheEdit 2.03 seams to be very stable!
+
+    As far as it is possible, we wil have a few beta's of TheChat at the same
+    time. People like the "Eliza" mode from TheMin, so I will add this option
+    to TheChat too.
+
+    Ok, that's all for this first beta. Have fun!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   -=๐ 3 ๐=-                                    
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor version 2.10แ2 ฐฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บ                                   INDEX                                    บ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+  Beta testers (alphabetically) and abbreviations ......................   2
+
+  Welcome... ...........................................................   2
+
+  Beta 2 (released on 6 nov 1995) ......................................   2
+      Changes in beta 2 ................................................   2
+      WARNING!!! .......................................................   2
+
+  Beta 1 (released on 23 aug 1995) .....................................   3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   -=๐ 4 ๐=-                                    

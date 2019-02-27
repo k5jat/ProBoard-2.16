@@ -1,0 +1,1216 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+      Þฑฑฑฑฑฑ Þฑฑฑ              Þฑฑฑฑฑฑฑ     Þฑฑ    Þฑฑ       Þฑ       Þฑฑ
+      ÞฑÞฑฑÞฑ  Þฑฑ               Þฑฑ  Þฑ     Þฑฑ             Þฑฑ       Þฑฑ
+        Þฑฑ    Þฑฑ      Þฑฑฑฑ    Þฑฑ         Þฑฑ   Þฑฑฑ     Þฑฑฑฑ      Þฑฑ
+        Þฑฑ    Þฑฑฑฑฑ  Þฑฑ Þฑฑ   Þฑฑฑฑ    Þฑฑฑฑฑ    Þฑฑ      Þฑฑ       Þฑฑ
+        Þฑฑ    Þฑฑ Þฑฑ Þฑฑฑฑฑฑ   Þฑฑ     Þฑฑ Þฑฑ    Þฑฑ      Þฑฑ       Þฑฑ
+        Þฑฑ    Þฑฑ Þฑฑ Þฑฑ       Þฑฑ  Þฑ Þฑฑ Þฑฑ    Þฑฑ      ÞฑฑÞฑ
+       Þฑฑฑฑ   Þฑฑ Þฑฑ  Þฑฑฑฑฑ  Þฑฑฑฑฑฑฑ  ÞฑฑฑÞฑฑ   Þฑฑฑ      Þฑฑ      Þฑฑ
+  ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+
+                      ProBoard Advanced Message Editor
+
+                                version 2.10
+
+           Copyright (C) 1994, 1995 Nephilim software development
+                         written by Alain Schellinck
+
+               Documentation partially written by Tim De Meyer
+
+                             All Rights reserved
+
+                         -=๐ SHAREWARE SOFTWARE ๐=-
+
+
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor PEX version 2.10 ฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บ                               READ ME FIRST!                               บ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+ณ  All new lines in this document are marked with a leading 'ณ'. Read those
+ณ  lines carefully to find out the new things!
+
+
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บ                                 DISCLAIMER                                 บ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+    - TheEdit (to include all executables and documentation files) is
+      copyrighted material of Nephilim Software Development.
+
+    - You can use TheEdit for a period of 30 days, free of charge.  If you
+      use the software after the evaluation period of 30 days, you MUST
+      register.  (For registration information, see the appropriate section
+      of this manual).
+
+    - We reserve the right to quit giving support or releasing updates of the
+      software.  We also reserve the right to charge a nominal upgrade fee
+      for future versions.
+
+    - The software and other materials included in the distribution archive
+      are provided "AS IS" without warranty of any kind.  We do not guarantee
+      the correct functioning and/or reliability of the software.  The
+      authors, or any agent of the authors will not be liable for any direct
+      or indirect damages, resulting from the use of the software.
+
+    - You may not reverse-engineer TheEdit in any way and you may not add,
+      change or delete any files in the distribution archive.
+
+    - You are free to distribute the original, unmodified TheEdit archive
+      provided no fee is charged for its distribution.  This excludes charges
+      for online time on electronic bulletin boards or other communication
+      services.
+
+    - Your registration key is personal. You (and only you!) may use the key
+      you will receive after registerering TheEdit.
+
+   -  You cannot sell or give your license away, unless the new owner can
+      work with the same key. In that situation, you (as the previous owner)
+      are no longer allowed to use the license.
+
+
+
+
+
+
+
+
+
+
+
+                                   -=๐ 2 ๐=-                                    
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor PEX version 2.10 ฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บ                                INTRODUCTION                                บ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+    TheEdit 1.00 was the first available message editor as a PEX. It had a
+    lot of functions still not found in any other editor.
+
+    There were some things that could be better. Users asked me for a better
+    layout, multi language support, more functions and more speed.
+
+    TheEdit 2.10 has it all. It is completely rewritten from scratch, using
+    highly optimized C++ and assemble code. Even with the extra functions,
+    TheEdit 2.10 is about 20Kb smaller than 1.xx!
+
+    The multi-language support is very easy to use. Every prompt on the
+    screen can be translated in any language you wish. Even the header and
+    help screens can be translated.
+
+    Due to the use of highly optimized assemble code for the critical parts
+    in TheEdit, the editor is much faster than 1.xx
+
+    TheEdit uses also optimized screen code depending on the terminal mode
+    you (or the user) are using.
+
+    If you are using TheEdit in local mode, all screen output is handled by
+    Direct Video Ram Access (fully desqview aware!). Depending on the remote
+    terminal mode (ANSI or AVATAR), TheEdit will send different terminal
+    commands to the user his terminal program to scroll the screen, move the
+    cursor, change the color, ...  An example? If your user is using AVATAR
+    and is in 50-lines mode, scrolling one line up means that +/- 44 lines
+    (50 - header) needs to be redrawed. TheEdit will send only 11 bytes to
+    the terminal program and the scrolling will be handled by the user his
+    terminal program! In other situations, programs should send the 44 lines
+    back to the terminal program.  If every line has something around 50
+    characters, that would be +/- 3 Kb (cursor and color codes included). Can
+    you imagine how fast scrolling is handled in Avatar mode ?
+
+    Other editors need to constantly (after every keystroke) update the
+    cursor position. Depending on the terminal mode, this means that for
+    every character you type, these editors will send between 5 and 10
+    characters to the modem.
+
+    TheEdit remembers the last cursor position and uses optimized code to
+    move the cursor. In most situations, only one character is send to the
+    modem after a keystroke!
+
+    Unlike TheEdit 1.x and the other editors, TheEdit 2.10 has no default
+    layout. The header displayed at the top of the screen is a ANSI file
+    which can be modified with programs like TheDraw.
+
+
+
+
+
+
+                                   -=๐ 3 ๐=-                                    
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor PEX version 2.10 ฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บ                                REGISTRATION                                บ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+    TheEdit is SHAREWARE.  This means that you are granted a 30-day
+    evaluation period, after which you must register. You will receive a
+    registration key file through netmail or it will be uploaded to your BBS
+    if you don't have a FidoNet node number.
+
+    If none of this is possible, please indicate this on your registration
+    form. We will send you a fax or a letter with your key code.
+
+
+  Warning!
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+ณ  The registrationkey can be re-created if required, but the registration
+ณ  site may ask up to 20% of the price you payed for the license to handle
+ณ  the cost.  The key is based on the name of the BBS and the name of the
+ณ  sysop.  You may change the name of the BBS and ask for a new key, but you
+ณ  can't change the name of the sysop.  As stated above, the license is
+ณ  personal, so if another sysop is running the BBS, you have to buy a new
+ณ  license.
+
+ณ   It is your responsibility that the information on the registration form
+ณ   is correct. If the key isn't working because you made a mistake, the
+ณ   registration site will create a new key, but may ask for a fee as stated
+ณ   above.
+
+    Registration fees for commercial and non-commercial use are as
+    follows:
+
+                        ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤยฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤยฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ
+                        ณNon-commercial ณCommercial     ณTo send the keyณ
+                        ณRegistration   ณRegistration   ณon a disk, add ณ
+   ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤด
+   ณ USA & Canada       ณ        20 US$ ณ       100 US$ ณ        10 US$ ณ
+   รฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤด
+   ณ Belgium & Luxembrg ณ       500 BEF ณ      2500 BEF ณ       300 BEF ณ
+   รฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤด
+   ณ The Netherlands    ณ        35 FL  ณ       175 FL  ณ        15 FL  ณ
+   รฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤด
+   ณ Germany            ณ        30 DM  ณ       150 DM  ณ        15 DM  ณ
+   ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู
+
+ณ  One note about the difference between the commercial and non-commercial
+ณ  (personal) registration: non-commercial (personal) registrations are ONLY
+ณ  for individuals who run a BBS as a HOBBY.  Registrations for all other
+ณ  BBSs require a commercial registration.
+
+
+
+
+
+
+                                   -=๐ 4 ๐=-                                    
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor PEX version 2.10 ฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+  Special promotion!
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+ณ   Until the end of december 1995, you can buy TheEdit and TheChat together
+ณ   for a cheaper price! If you register these two pex'es at the same time,
+ณ   for the same BBS and sysop, you can use these prices:
+
+ณ                       ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤยฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤยฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฟ
+ณ                       ณNon-commercial ณCommercial     ณTo send the keyณ
+ณ                       ณRegistration   ณRegistration   ณon a disk, add ณ
+ณ  ฺฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤด
+ณ  ณ USA & Canada       ณ        35 US$ ณ       175 US$ ณ        10 US$ ณ
+ณ  รฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤด
+ณ  ณ Belgium & Luxembrg ณ       900 BEF ณ      4400 BEF ณ       300 BEF ณ
+ณ  รฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤด
+ณ  ณ The Netherlands    ณ        62 FL  ณ       305 FL  ณ        15 FL  ณ
+ณ  รฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤลฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤด
+ณ  ณ Germany            ณ        53 DM  ณ       263 DM  ณ        15 DM  ณ
+ณ  ภฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤู
+
+ณ   This deal is valid until 31-dec-1995. We will check the date you send the
+ณ   registration form and posted the money on our account, so don't wait
+ณ   'till the last day!
+
+    To register, print the registration form on the next page, fill it out,
+    and send it together with your payment to one of the registration sites
+    listed below.
+
+    If you want to register by transferring money to any of the registration
+    accounts, be certain you don't forget to mail a registration form to the
+    address listed along with the account number, or you can upload/FAX it to
+    the registration site for your area.
+
+
+  Warning!
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+    We can not and will not be responsible for any money received without a
+    complete registration form or if you send us cheque that we can't accept.
+
+
+  For the U.S.A. and Canada
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+ณ       Silverado Computer Services
+ณ       NSD Registrations
+ณ       1412 Winterville St
+ณ       Deltona, FL 32725
+ณ       USA
+
+
+
+
+
+
+                                   -=๐ 5 ๐=-                                    
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor PEX version 2.10 ฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+ณ       Fax #       1-407-532-1221
+ณ       BBS #'s     1-407-532-1158 (ZyXEL 19.2)  Fido 1:3618/11
+ณ                   1-407-532-1177 (v.34  28.8)  Fido 1:3618/22
+ณ
+
+ณ   ALL FUNDS MUST BE IN USD ($) ONLY!
+
+ณ   If you want to register by transferring money via our online checking or
+ณ   credit card door, be certain you don't forget to mail a registration form
+ณ   to the below listed address and mark an X in the box below telling us how
+ณ   you made your payment.
+
+ณ   We accept US checks/Visa MasterCards online and through the USPS; We also
+ณ   accept US /money orders via the mail as well. Credit card charges will be
+ณ   billed by "Silverado Computer Services"
+
+ณ   Please remember to CRASH netmail, USPS, or upload your registration form
+ณ   directly to our BBS if using our online purchases.
+
+ณ   We also accept US /money orders via the mail as well.
+
+ณ   Fax is available for credit card orders only!
+
+
+  For Germany
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+        ProBoard Deutschland
+        c/o Constantin Spiess
+        Orchideenweg 15
+        D-70736 Fellbach
+        GERMANY
+
+        Fax # +49-711-95182-76
+        BBS # +49-711-95182-77 (Zyxel) or -78 (V32B/ISDN)
+        Fido  2:246/1013
+
+        Bank Account Number:
+        KSK Fellbach , KtoNr: 2076692 , BLZ: 602 500 10
+
+    Send money order or check in German currency (DM) only please!  You can
+    also transfer the money to our account number listed above. We also
+    accept Visa and MasterCard.
+
+    You may send the registration form by normal mail or fax, but I prefer to
+    receive it as a netmail message...
+
+
+
+
+
+
+
+
+
+
+                                   -=๐ 6 ๐=-                                    
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor PEX version 2.10 ฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+  For all other countries
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+        Nephilim Software Development
+        Alain Schellinck
+        Nekkersvijverstraat 10
+        B-9040 Gent
+        BELGIUM
+
+        Fax # +32-9-238.16.10
+        BBS # +32-9-238.16.10
+        Fido  2:291/1900
+
+        Bank Account Number      :  ASLK 001-2799949-23
+
+    Send international money order or check (EuroCheque preferred) in Belgian
+    currency (BEF) only please! You can also transfer the money to our
+    account number listed above.
+
+   If you send me a cheque, I'll have to pay some taxes and handling cost. In
+   some situations, I loose more than 50% of the money. I have to ask you to
+   add 200 BEF if you use a normal (non-Eurocheque) cheque.
+
+   Please note that the prices for Belgium are excluding VAT/BTW! If you need
+   an invoice, please add 20.5% VAT/BTW and don't forget to specify your
+   VAT/BTW number on the registrationform!
+
+
+  Warning!
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+    You can't send a Visa or MasterCard registration to Alain Schellinck. If
+    you want to use one of these cards, send your registration form to the
+    German registration site. You have to use the prices listed for Germany.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   -=๐ 7 ๐=-                                    
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑ Registration Form ฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑฑบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+         Your Name    :  _______________________________________________
+
+         Company      :  _______________________________________________
+
+         Sysop Name   :  _______________________________________________
+
+         BBS name     :  _______________________________________________
+
+         Address      :  _______________________________________________
+
+                         _______________________________________________
+
+                         _______________________________________________
+
+         Voice Phone# :  _______________________________________________
+
+         Fax Phone#   :  _______________________________________________
+
+         BBS Phone#   :  _______________________________________________
+
+         Hours of operation       : ____________________________________
+
+
+         Is your system part of FidoNet?   ( ) - Yes          ( ) - No
+
+         If so, what is your network address?  _________________________
+
+         Type of registration:   ( ) Personal           ( ) Commercial
+
+         I'm registereing        ( ) TheEdit            ( ) TheChat
+
+         I want my key send on a ( ) 5 1/4" disk        ( ) 3 1/2" disk
+
+         ( ) I want to download my key from the registration site BBS
+
+         Payment method: ( ) Check/Cash            ( ) VISA
+                         ( ) Bank Transfer         ( ) Mastercard/Eurocard
+
+         (USA only)      ( ) OnLine Check          ( ) US Money Order
+
+         Credit Card #: ____________________________________
+
+         Name on Card : ___________________________________
+                        (EXACTLY as it appears on the card!)
+
+         Exp. Date    : ___/___
+
+         Signature    : ____________________________________
+
+         Amount       : ____________________________________
+
+
+
+
+
+
+                                   -=๐ 8 ๐=-                                    
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor PEX version 2.10 ฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+    Please double check your phone number and address. Don't forget to
+    specify the international and zone dial code. Use the "+CC-ZZ-NNNNNNN"
+    (Country, Zone, Number) format to specify the phone numbers.
+
+    If you didn't receive the key after 2 weeks, please call the registration
+    site BBS. We received some registrations that where very difficult to
+    handle (wrong BBS number, no address, ...)
+
+
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor PEX version 2.10 ฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บ                                  Support                                   บ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+            For problems, bug-reports, etc. please write to:
+            ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+               Alain Schellinck
+               Nekkersvijverstraat 10
+               B-9040 Gent
+               BELGIUM
+
+        or contact your local registration site.
+
+    You can also reach the author by:
+        - sending E-mail to Alain Schellinck, FidoNet 2:291/1900
+        - sending E-mail to my internet account, schelli@ibm.net
+        - calling The Happy House BBS, +32-9-2381610.
+        - sending a fax to +32-9-2381610 (same number as the BBS).
+        - sending mail trough the PROBOARD echomail area
+
+
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บ                           WHAT'S NEW -- FEATURES                           บ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+    *   TheEdit is completely rewritten from scratch, using highly-optimized
+        C++ and assembly code, resulting in a smaller and faster PEX file.
+
+    *   Multi language support! TheEdit 2.10 will detect the language used by
+        the user and try to find the TheEdit control files for this language.
+        All prompts can be translated in any language. Even the help screen
+        can be translated.
+
+    *   New quote system. TheEdit 2.10 has two quote systems: the
+        GoldEd-alike (complete original message quoted and the user has to
+        remove the lines he doesn't need) and a quote window (original
+        message in another window and the user has to select the lines he
+        wants in his answer).
+
+    *   TheEdit can now be used to edit other files than messages. A user
+        asked me to add code to import an ASCII file, let the user edit it
+        and print it to the printer when he/she saves it. You can use the
+        command line parameters to specify the file TheEdit should load when
+        it is started and the filename it should use to save the text to.
+
+    *   The messagebuffer in TheEdit 1.xx was only limited by the available
+        memory. In some situations, ProBoard had troubles saving large
+        messages (due to some problems in the original Squish API code).
+        TheEdit 2.10 has a 32K limit for the messages.
+
+
+
+
+
+                                   -=๐ 10 ๐=-                                   
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor PEX version 2.10 ฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+    *   User-definable layout. You can change the layout for TheEdit as you
+        like it. All colors can be redefined. Even the header at the top of
+        the screen can be redefined.
+
+    *   Enhanced import system. You can link up to 10 files to your ALT-Fxx
+        keys. Pressing such a key will import the linked files in the message
+        window.  Great for default answers on frequently asked questions.
+
+    *   TheEdit has a very fast WordWrap function.Most often, the Wordwrap
+        function is the bottleneck of editors. TheEdit uses an optimized
+        piece of assemble code to perform the WordWrap. Fast!
+
+ณ   *   TheEdit supports abbreviations. You can type a few characters and
+ณ       press a key to replace the characters with a whole word or sentence.
+
+
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บ            INSTALLATION - PREPARING FOR MULTI LANGUAGE SUPPORT             บ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+  Configuring Proboard
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+    The distribution archive contains the following files:
+
+        TheEdit.Pex : the program
+        TheEdit.Doc : this file
+        TheEdit.Ini : example ini file
+        TheEdit.Hed : Default header file
+        TheEdit.Lng : Default Language file
+        TheEdit.Hlp : Default help file
+
+        Dutch.Hed   : Example header file for the "DUTCH" language
+        Dutch.Lng   : Example language file for the "DUTCH"language
+        Dutch.Hlp   : "DUTCH" help file
+
+    Your distribution site may have changed the last three files to more
+    appropriate languages. There may be other languages available at the
+    support boards too.
+
+    Unpack the distribution archive in a separate directory for TheEdit.
+    Don't use your default PEX directory, because new releases of my other
+    PEX'es (like TheChat) will use the same name for the language files!
+
+    Start ProCFG. Choose [F1] Options. In the "Paths" window, specify the
+    complete path to TheEdit as the editor command; i.e.
+
+    Editor Cmd  : @M:\PB\PEX\THEEDIT\THEEDIT.PEX
+
+
+
+
+
+
+
+                                   -=๐ 11 ๐=-                                   
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor PEX version 2.10 ฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+  Note about quoters
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+    There are some PEX'es available to add a one-line quote at the end of
+    every message. Most of them don't support PEX message editors. For that
+    reason, you can't use ProTag together with TheEdit. There is nothing I
+    can do about it, the author of ProTag has to change his code to fix this
+    bug.
+
+    One of my other PEX'es, TheQuote, has the same functions as ProTag, and
+    has more than 7.000 quotes. TheQuote (starting from 1.10) fully support
+    TheEdit and other PEX message editors. TheQuote is freeware software!
+
+
+  Multi-language support
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+    As far as I know, TheEdit is the only message editor for ProBoard that
+    supports multi-language. You can (but don't have to) redefine every
+    prompt in every language you wish.
+
+    Unlike ProBoard, TheEdit doesn't use binary language files. The language
+    file is a pure ASCII file with the language as basename and .LNG as
+    extension.
+
+    Whenever TheEdit is started, it will try to load the <language>.LNG file
+    (i.e. DUTCH.LNG). If the file doesn't exist, it will load the THEEDIT.LNG
+    file (english prompts). Please note that there are no defaults, so if
+    there's no language file, TheEdit won't run!
+
+
+  Format of the LANGUAGE file
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+    As previously mentioned, a language file is a pure ASCII file, using one
+    line for every prompt. All prompts should be defined, because there are
+    no defaults.
+
+    You can include comments in the language file. Comment lines should start
+    with the ';' character, unless the comment is added after a prompt. In
+    that case, you should insert a ";" between the prompt and the comment.
+
+    You can't change the order of the prompts in the language file, unless
+    you want the wrong prompts on the wrong places ;-)
+
+    Even the menubar can be redefined. The hotkey for every option should be
+    between brackets ([]). TheEdit will display the hotkey in uppercase.
+
+
+
+
+
+
+
+
+                                   -=๐ 12 ๐=-                                   
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor PEX version 2.10 ฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+    Be sure that the redefined menu-items fit on one line. TheEdit doesn't
+    check the length of the items and will overwrite parts of the screen if
+    the line is too long!
+
+    You will find two examples in the archive: THEEDIT.LNG (the default
+    prompts) and DUTCH.LNG (but the registrations site of your country may
+    have changed this).
+
+
+  Format of the HEADER file
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+    The header file is a ANSI file (i.e. created by TheDraw) with the header
+    as it should appear on top of the screen. The header file should have the
+    labels for the data fields displayed by TheEdit.
+
+    TheEdit will check for a <language>.HED file. It this can't be found,
+    TheEdit will use the TheEdit.Hed file. There's no default in TheEdit, so
+    if there's no file, you will get no header. The *.HED files should be in
+    the same directory as TheEdit, not in the TEXT directory!
+
+    A few hints when creating a header file:
+
+    *   Make it as small as possible. The less lines you use for your header,
+        the more lines there are available for the editor.
+
+    *   Don't use the full 80 characters width. Some terminal programs will
+        wrap the cursor and TheEdit will screw up.
+
+    *   Don't add clear-screen codes to the ANSI file. If you use TheDraw,
+        save it with "Home Cursor" codes instead of "Clear screen".
+
+
+  Format of the HELP file
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+    The help file is a ANSI file (i.e. created by TheDraw) with the help as
+    it should appear on the screen when the user select [H]elp from the menu.
+
+    TheEdit will check for a <language>.HLP file. It this can't be found,
+    TheEdit will use the TheEdit.Hlp file. There's no default in TheEdit, so
+    if there's no file, you will get no help. The *.HLP files should be in
+    the same directory as TheEdit, not in the TEXT directory!
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   -=๐ 13 ๐=-                                   
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor PEX version 2.10 ฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+  Format of the ABBREVIATION file
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+ณ   TheEdit can replace abbreviations with another word or a complete
+ณ   sentence. For example, you can type "SY" and press the ALT-A
+ณ   (A=Abbreviation) to replace the "SY" with "Alain Schellinck, Sysop of The
+ณ   Happy House BBS.".
+
+ณ   The abbreviations and the text to replace is specified in the THEEDIT.ABR
+ณ   file. This is a flat ASCII file.
+
+
+  Example Abbreviation file
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+ณ   ;-----------------------------------------------------------------------
+ณ   ; The 1st line is the abbreviation. The 2nd line is the text used to
+ณ   ; replace the abbreviation.
+ณ   ;
+ณ   ; Don't add blank lines in this file. If you want to separate two lines
+ณ   ; add a line starting with a ';'
+ณ   ;-----------------------------------------------------------------------
+ณ   NSD
+ณ   Nephilim Software Development
+ณ   ;-----------------------------------------------------------------------
+ณ   SYSOP
+ณ   Alain Schellinck, Sysop of The Happy House BBS
+ณ   ;-----------------------------------------------------------------------
+ณ   PB
+ณ   ProBoard
+
+
+  The INI File
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+    In order to keep the configuration file readable and clear to understand,
+    TheEdit uses the DOMAIN principle of windows for the INI file. Within the
+    distribution archive, you will find a sample INI file, to show this
+    principle.
+
+
+  [GENERAL] domain
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+    StopBanner  =  Yes/No       In registered version, you can stop the
+                                banner at the bottom of the screen. If you
+    (No)                        choose to stop the banner, you can still
+                                switch between all the lines in the banner by
+                                pressing ALT-B (b = banner).
+
+
+
+
+
+
+                                   -=๐ 14 ๐=-                                   
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor PEX version 2.10 ฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+    FastScroll  =  Yes/No       FastScroll will scroll the text a whole
+                                window when to top or bottom of the screen
+    (Yes)                       is reached. This will speed-up the screen in
+                                ANSI mode. FastScroll is always disabled in
+                                LOCAL or AVATAR mode, because it isn't needed
+                                in these modes.
+
+    InsertMode  = On/Off        Set Insert-mode at startup ON or OFF. In
+                                insert mode, text will be inserted at the
+    (On)                        current cursor position.  In overwrite mode,
+                                the text at the current cursor position will
+                                be overwritten by the new characters you
+                                type.  Here you specify the startup value.
+                                Once you are in TheEdit, you can choose
+                                between INSERT and OVERWRITE with the INSERT
+                                or ^V key.
+
+ณ   AllowFullQuote = On/Off     If FullQuote is enabled, a user can choose to
+ณ                               use the GoldEd-style quoting system
+ณ   (On)                        (described in this documentation).  When
+ณ                               replying to a message, the user can select to
+ณ                               import the whole quote in the message or to
+ณ                               use a quote window.  When AllowFullQuote is
+ณ                               disabled, the quote is always loaded in the
+ณ                               quote window.
+
+ณ   Printer = LPT1              You can print the message from within TheEdit
+ณ                               by pressing the ALT-P (P=PRINT) key. TheEdit
+ณ                               will print the message to the port specified
+ณ                               with this variable.
+
+    BannerText  = ...           If the banner is enabled (StopBanner = No),
+                                the information displayed at the bottom of
+    (no default)                the screen is changed every 30 seconds. In
+                                this variable, you can add one line for the
+                                banner.  You can use the ProBoard text
+                                macro's (like @<FIRSTNAME>@) too.
+
+   AddTag       = Yes/No        TheEdit will add a "___TheEdit v<version>"
+                                line at the bottom of each message written
+   (Yes)                        with TheEdit.  You can disable this line by
+                                settings this variable to NO.  This will only
+                                work in the REGISTERED version!
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   -=๐ 15 ๐=-                                   
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor PEX version 2.10 ฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+  [SHAREWARE] domain
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+    RegisterKey = 0             When registering TheEdit, you will receive a
+                                key-number, which you have to fill in here.
+
+                                Warning: due to a bug in the keyroutine used
+                                for TheEdit 1.xx, some keys will no longer
+                                work with TheEdit 2.xx.  You should contact
+                                the registration site where you have received
+                                your key from, to get another key.  Don't
+                                contact another registration site!!
+
+
+  [IMPORTFILES] domain
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+    ALT-F1      = <filename>    You can link a filename to a ALT-Fxx function
+    ...                         key. Whenever the sysop is using TheEdit in
+    ALT-F10                     local mode, he/she can press the ALT-Fxx key
+                                to import the file.
+                                In unregistered mode, only F1 thru F3 will
+                                work.
+
+                                When pressing a ALT-Fx key, TheEdit will
+                                check if there's a file linked with the key.
+                                If not, TheEdit will get the sysop-macro
+                                defined in ProCFG. If the macro is a
+                                "display" macro (if macro starts with a `
+                                character), the macro will be copied in the
+                                message window at the current cursor
+                                position. For example, you can define the
+                                string "`||CUL8R|@<SYSOPNAME>@||" to a macro.
+                                TheEdit will translate this macro to "<enter>
+                                <enter>CUL8R<enter><your full name>".
+
+
+  [TEXTWINDOW] domain
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+    A little note on COORDINATES...
+
+    As stated at the beginning of this document, you can change the layout
+    completely. TheEdit has to know the coordinates for the data fields and
+    editor part. The following domains let you specify these coordinates
+
+    Please note that:
+
+
+
+
+
+
+
+
+                                   -=๐ 16 ๐=-                                   
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor PEX version 2.10 ฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+    - the upper/left corner of the screen is 0/0, not 1/1!
+    - there are NO defaults for these fields, so if you don't include the
+      definitions for these fields in your configuration file, you will have
+      an empty header, no colors and no text window!
+
+    Row         = 5             The Y coordinate where TheEdit should
+                                start the editor part. Remember that
+                                coordinates start at 0, so 5 means the
+                                6th line!
+
+    ForeGround  = +White        You can specify the foreground color
+                                for the normal text. You can use the full
+                                english name of the color (BLACK, BLUE,
+                                GREEN, RED, CYAN, MAGENTA, BROWN and WHITE).
+                                To use the highlighted equivalent of the
+                                color, add a '+' sign at the start of the
+                                name. So, use +BROWN if you want to use
+                                YELLOW.
+
+    BackGround  = Black         Specify the background color for the normal
+                                text.
+
+                                To use the blinking equivalent of the
+                                foreground color, you must add the '+' sign
+                                to the background. Seems not so logical, but
+                                that's the same way the BIOS and VIDEORAM
+                                works.
+
+                                So, if you specify FOREGROUND = +RED and
+                                BACKGROUND = +CYAN, you will get
+                                highlighted-blinking-red characters on a
+                                CYAN background.
+
+    QForeGround = +Magenta      Foreground color for quoted text.
+
+    QBackGround = Black         Background color for quoted text.
+
+
+  [MENUBAR] domain
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+    ForeGround  = Black         Foreground color for the menubar.
+
+    BackGround  = White         Background color for the menubar
+
+
+  Datafields
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+    All DATA fields (from, to, subject, ...) are defined as separate domains.
+
+
+
+
+
+
+                                   -=๐ 17 ๐=-                                   
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor PEX version 2.10 ฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+    These are the valid domain names:
+
+    [FROM]       : Message 'From' data field    (name of the user           )
+    [TO]         : Message 'To' data field      (name of the recipient      )
+    [SUBJECT]    : Message 'Subject' field
+    [AREA]       : Message 'Area' field         (name of the message area   )
+    [MSGNUMBER]  : Message 'Number' field       (the number of the message  )
+    [PRIVATEMSG] : Message 'Private' field      (Private message? YES or NO )
+    [INSERTMODE] : Editor 'Insert' mode         (in INSERT or OVERWRITE mode)
+    [RAWKEYS]    : Editor 'Raw' mode            (in RAW or NORMAL mode      )
+    [ESCFORMENU] : 'Press ESC for menu' prompt
+
+
+    Each of the above mentioned DOMAINS -MUST- contain following keywords
+
+
+    ROW         = 0             This is the row (Y coordinate) where TheEdit
+                                will write the data for the current field.
+                                Remember that coordinates start at 0,0!
+
+    COLUMN      = 0             This is the column (X coordinate) where
+                                TheEdit will write the data for the current
+                                field.
+
+    LENGTH      = 14            This is the maximum size TheEdit should use
+                                to display the current field. Use this to
+                                make sure TheEdit won't overwrite other text
+                                in your header. If you want to disable a
+                                field, set his length to 0
+
+    FOREGROUND  = White         For valid parameters, refer to the FOREGROUND
+                                keyword in the TEXTWINDOW domain.
+
+    BACKGROUND  = BLUE          For valid parameters, refer to the BACKGROUND
+                                keyword in the TEXTWINDOW domain.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                   -=๐ 18 ๐=-                                   
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor PEX version 2.10 ฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บ                               USING THEEDIT                                บ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+    We have tried to keep things as simple as possible, so there are really
+    no special skills involved when using TheEdit. Every possible function is
+    explained in the (language specific) help files.
+
+    Following is a list of all 'special' functions supported by TheEdit. An
+    on-line user can see these codes by pressing Ctl-N (= show helpscreen)
+
+    Local and Remote:
+    ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+    ณCtl-A  ^Left      Word Left        ณCtl-N          Show This Screen    ณ
+    ณCtl-B             Center Line      ณCtl-O  Escape  Command menu        ณ
+    ณCtl-C  Page Down  Page Down        ณCtl-P  End     Cursor End Of Line  ณ
+    ณCtl-D  Right      Cursor Right     ณCtl-Q          Toggle Quote/Msg    ณ
+    ณCtl-E  Up         Cursor Up        ณCtl-R  Page Up Page Up             ณ
+    ณCtl-F  ^Right     Word Right       ณCtl-S  Left    Cursor Left         ณ
+    ณCtl-G  Del        Del Current Char ณCtl-T          Delete Word Right   ณ
+    ณCtl-H  Backspace  Del Char To Left ณCtl-U          Paste Line          ณ
+    ณCtl-I  Tab        Goto Next TabstopณCtl-V  Insert  Toggle Insert Mode  ณ
+    ณCtl-J                              ณCtl-W  Home    Cursor Start Of Lineณ
+    ณCtl-K             Open/Close Quote ณCtl-X  Down    Cursor Down         ณ
+    ณCtl-L             Redraw The ScreenณCtl-Y          Cut Current Line    ณ
+    ณCtl-M  Enter      Goto Next Line   ณCtl-Z  Esc, S  Save Message        ณ
+
+ณ   Local only:
+ณ   ฤฤฤฤฤฤฤฤฤฤฤ
+ณ
+ณ   ALT-A       Replace abbreviation with the full word or sentence
+ณ   ALT-B       Toggle the banner text (even if banner is disabled)
+ณ   ALT-K       Toggle between RAW and NORMAL mode
+ณ   ALT-P       Print message to the printer
+
+
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บ                             RAW OR NORMAL MODE                             บ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+    ProBoard uses the cursor keys (together with the CONTROL key) to change
+    the user's level and online time. The PageUp, PageDown and Home keys are
+    used to scroll the banner.
+
+    TheEdit uses these keys too for the word-processing actions. Due to that,
+    you can't change a user's level or time if TheEdit is started.
+
+
+
+
+
+
+
+
+                                   -=๐ 19 ๐=-                                   
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor PEX version 2.10 ฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+    To make these functions available, TheEdit 2.10 has a so called RAW mode.
+    That is the mode that TheEdit won't handle the special keys from the
+    sysop's keyboard. So, if you are using TheEdit in RAW mode, you can use
+    the cursor keys to change the level and time and the PageUp/PageDown keys
+    to scroll banner (ProBoard status line) at the bottom of the screen.
+
+    Once TheEdit is started, you can toggle between RAW and NORMAL mode with
+    the ALT-K (K = KEYBOARD) key.
+
+    TheEdit will startup in NORMAL mode is you are using TheEdit locally. If
+    a user is starting TheEdit, it will startup in RAW mode.
+
+
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บ                       USING THEEDIT AS A TEXT EDITOR                       บ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+    You can use TheEdit to load a file, let the user edit it and save it to a
+    file or device, or as a message.
+
+
+  Loading and saving to a file or device
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+    You can force TheEdit to load an ASCII file and save it to an ASCII file
+    or to a device. To use it this way, you should start TheEdit as a PEX
+    (ProBoard menu function 60) and use the command line parameters:
+
+        -L <filename>  : load <filename>
+        -S <filename>  : save message as <filename>.
+
+        If you specify a device name (i.e. -S LPT1), the message will be
+        printed to that device.
+
+
+  Loading a file and save as a message
+ ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+
+    Because ProBoard is actually posting the message, you can't use the
+    previously described method to post the edited file as a message.
+
+    If you want to load a file and save it to a message, you have to copy the
+    file you want to load to the node startup directory as THEEDIT.TMP. If
+    TheEdit is started in WRITE mode (not in REPLY mode), TheEdit will check
+    for this file and if it exist it will be loaded in the message
+    window. When saving the message, ProBoard will post the file as a message.
+
+    Please note that TheEdit will delete the THEEDIT.TMP file after it is
+    loaded!
+
+
+
+
+
+
+
+                                   -=๐ 20 ๐=-                                   
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บฐฐฐฐฐฐฐฐฐฐฐฐ ProBoard Advanced Message Editor PEX version 2.10 ฐฐฐฐฐฐฐฐฐฐฐฐฐบ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+ ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+ บ                                   INDEX                                    บ
+ ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+  READ ME FIRST! .......................................................   2
+
+  DISCLAIMER ...........................................................   2
+
+  INTRODUCTION .........................................................   2
+
+  REGISTRATION .........................................................   3
+      Warning! .........................................................   4
+      Special promotion! ...............................................   4
+      Warning! .........................................................   5
+      For the U.S.A. and Canada ........................................   5
+      For Germany ......................................................   6
+      For all other countries ..........................................   6
+      Warning! .........................................................   7
+
+  Support ..............................................................  10
+
+  WHAT'S NEW -- FEATURES ...............................................  10
+
+  INSTALLATION - PREPARING FOR MULTI LANGUAGE SUPPORT ..................  11
+      Configuring Proboard .............................................  11
+      Note about quoters ...............................................  11
+      Multi-language support ...........................................  12
+      Format of the LANGUAGE file ......................................  12
+      Format of the HEADER file ........................................  13
+      Format of the HELP file ..........................................  13
+      Format of the ABBREVIATION file ..................................  13
+      Example Abbreviation file ........................................  14
+      The INI File .....................................................  14
+      [GENERAL] domain .................................................  14
+      [SHAREWARE] domain ...............................................  15
+      [IMPORTFILES] domain .............................................  16
+      [TEXTWINDOW] domain ..............................................  16
+      [MENUBAR] domain .................................................  17
+      Datafields .......................................................  17
+
+  USING THEEDIT ........................................................  18
+
+  RAW OR NORMAL MODE ...................................................  19
+
+  USING THEEDIT AS A TEXT EDITOR .......................................  20
+      Loading and saving to a file or device ...........................  20
+      Loading a file and save as a message .............................  20
+
+
+
+
+
+
+
+
+
+                                   -=๐ 21 ๐=-                                   

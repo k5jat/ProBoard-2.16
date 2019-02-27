@@ -1,0 +1,51 @@
+# ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
+# º Makefile for THEEDIT               Release archive                      º
+# ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
+
+# ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+AREA        = PEX_BETA
+ARCNAME     = TED
+VERSION     = 210B2
+
+PROJECT     = THEEDIT
+TITLE       = $(PROJECT) RELEASE
+COMMENT     = (PEX) $(PROJECT) R$(VERSION) : ProBoard advanced full screen message editor
+
+# ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+DOCDIR      = ..\DOC
+.PATH.TXT   = $(DOCDIR)
+
+# ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+DOCS        =                           \
+              $(DOCDIR)\BETANOTE.DOC    \
+              $(DOCDIR)\$(PROJECT).DOC  \
+
+# ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+DUTCH       =  DUTCH.HED      DUTCH.HLP      DUTCH.LNG
+GERMAN      =  GERMAN.HED     GERMAN.HLP     GERMAN.LNG
+ENGLISH     =  $(PROJECT).HED $(PROJECT).HLP $(PROJECT).LNG
+
+# ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+P:\$(AREA)\$(ARCNAME)$(VERSION).ZIP :  $(DOCS)        $(DUTCH)       \
+                                       $(GERMAN)      $(ENGLISH)     \
+                                       $(PROJECT).INI $(PROJECT).PEX \
+                                       $(PROJECT).ABR
+
+# ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+.txt.doc:
+    %do HEADER MESSAGE="$(TITLE) : Parsing $(.IMPLICIT,F)"
+
+    SOFTMAN $(.IMPLICIT) $(.TARGET)
+
+# ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+%.zip:
+    %do HEADER MESSAGE="$(TITLE) : Creating $(.TARGET,F)"
+
+    @if exist $(.TARGET) erase $(.TARGET) >nul
+
+    @echo $(.SOURCES,W\n) > ARCHIVE.LST
+    @PkZip $(.TARGET) @ARCHIVE.LST
+    @del ARCHIVE.LST > NUL
+
+    (@M:\Tick\Hatch /CM:\Tick\Tic.Cfg /R0 /A$(AREA) /F$(.TARGET,F) /D$(COMMENT))

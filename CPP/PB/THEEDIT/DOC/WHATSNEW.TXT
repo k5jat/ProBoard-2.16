@@ -1,0 +1,123 @@
+// ==========================================================================
+// GLOBAL DOCUMENT SPECIFICATIONS
+// ==========================================================================
+
+HeaderText  : ProBoard Advanced Message Editor PEX version 2.03
+PageSize    : 60
+
+
+// ==========================================================================
+// THE FRONT PAGE
+// ==========================================================================
+
+WholePage   :
+SkipIndex   :
+Paragraph   :
+{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+      Þ±±±±±± Þ±±±              Þ±±±±±±±     Þ±±    Þ±±       Þ±       Þ±±
+      Þ±Þ±±Þ±  Þ±±               Þ±±  Þ±     Þ±±             Þ±±       Þ±±
+        Þ±±    Þ±±      Þ±±±±    Þ±±         Þ±±   Þ±±±     Þ±±±±      Þ±±
+        Þ±±    Þ±±±±±  Þ±± Þ±±   Þ±±±±    Þ±±±±±    Þ±±      Þ±±       Þ±±
+        Þ±±    Þ±± Þ±± Þ±±±±±±   Þ±±     Þ±± Þ±±    Þ±±      Þ±±       Þ±±
+        Þ±±    Þ±± Þ±± Þ±±       Þ±±  Þ± Þ±± Þ±±    Þ±±      Þ±±Þ±
+       Þ±±±±   Þ±± Þ±±  Þ±±±±±  Þ±±±±±±±  Þ±±±Þ±±   Þ±±±      Þ±±      Þ±±
+  ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+
+                      ProBoard Advanced Message Editor
+
+                                version 2.03
+
+           Copyright (C) 1994, 1995 Nephilim software development
+                         written by Alain Schellinck
+
+               Documentation partially written by Tim De Meyer
+
+                             All Rights reserved
+
+                         -=ð SHAREWARE SOFTWARE ð=-
+}
+
+
+MainTitle   :  What's new in version 2.03
+Paragraph   :
+{
+   The only change in this version is that the keyboard routine will release the
+   current time slice when there's no key to handle. So, if the user isn't typing,
+   TheEdit will release the time slice. I've tested this onder OS/2 Warp and it
+   seems to work. Let me know if there is any problem with it!
+}
+
+MainTitle   :  What's new in version 2.02
+Paragraph   :
+{
+   A small but nasty bug slipped trough the beta and gamma testing and needed to
+   be fixed as soon as possible. Version 2.02 has no new features.
+}
+
+SubTitle    : ProBoard in 132-columns mode
+Paragraph   :
+{
+   When ProBoard is running in 132 columns mode, TheEdit had some severe
+   problems (making noise and a QEMM exception failure). This is fixed now in
+   this version.
+}
+
+SubTitle    : "___TheEdit 2.02" tagline
+Paragraph   :
+{
+   In the registered version, you can add the variable "AddTag = No" in the
+   [GENERAL] domain to disable the "___TheEdit 2.02" tagline at the bottom of
+   the message. This will not work in the unregistered version.
+}
+
+MainTitle   :  What's new in version 2.01
+Paragraph   :
+{
+   A few small bugs slipped trough the beta and gamma testing and needed to
+   be fixed as soon as possible. Version 2.01 has no new features.
+}
+
+SubTitle    : Registration key
+Paragraph   :
+{
+   Due to a small bug in the registration key check routine, the regis-
+   tration key wasn't accepted if the sysop or BBS names has characters
+   higher than ASCII 127 in it (like Gilles Hemberg, Thä Church BBS).
+                                                       ^
+}
+
+SubTitle    : Local keys > 127
+Paragraph   :
+{
+   Almost the same bug resulted in a problem on the local side. TheEdit
+   didn't accept keys with ASCII code higher than 127 (like ‚, „, ”, ...)
+}
+
+SubTitle    : Upload in local mode
+Paragraph   :
+{
+   While testing TheEdit, I forced the program to show the <U>pload item
+   even in local mode. I forgot to remove it in the final release. Now it
+   will only appear in the menu bar if there is a remote user.
+}

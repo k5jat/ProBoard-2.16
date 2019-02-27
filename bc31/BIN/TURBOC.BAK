@@ -1,0 +1,5 @@
+-IT:\BC31\INCLUDE;E:\CPP\LIB;E:\CPP\PB\LIB
+-LT:\BC31\LIB
+-w-inl
+-w-pin -w-amb -w-asm -w-def -w-nod -w-pro
+-w-stv -w-use -w-sig -w-pre

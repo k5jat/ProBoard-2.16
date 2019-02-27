@@ -1,0 +1,41 @@
+; ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+; TheEdit language file.                      !!! NO BLANK LINES PLEASE !!!
+; ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+;
+; ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Y                                                       ; Character to answer 'Y'ES
+YES                                                     ; Full text for "YES"
+N                                                       ; Character to answer 'N'O
+NO                                                      ; Full text for "NO"
+; ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+Press [ESCAPE]                                          ; "Press [escape] prompt to display the menu
+Enter filename:                                         ; "Enter filename:" prompt to import/export
+Saving message...                                       ; "Saving message..." prompt
+Sorry @<FIRSTNAME>@, no help available...               ; "Sorry, no help" prompt
+Press any key to continue.                              ; "Press any key" prompt
+@<FIRSTNAME>@, do you want to quote the whole message ? ; "Wanna load the quote" prompt
+Warning: Almost out of memory!                          ; "Almost out of memory" prompt
+Oops! Out of memory!                                    ; "Out of memory" prompt
+Please save your message NOW!                           ; "Save your message now!" prompt
+Quote Window ÄÄ CTRL-K to open or close or CTRL-Q to toggle between the windows
+File has binary characters! Function canceled!          ; "File has binary characters! Function canceled!" prompt
+Abbreviations:                                          ; Abbreviations:
+No abbreviations found!                                 ; No abbreviations found!
+; ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+INSERT                                                  ; When we are in INSERT mode
+OVERWRITE                                               ; When we are in OVERWRITE mode
+ÄÄ RAW Ä                                                ; When PB should handle local keys
+ÄÄÄÄÄÄÄÄ                                                ; When TheEdit should handle them
+ÄABBREVSÄ                                               ; When TheEdit handles abbreviations
+ÄÄÄÄÄÄÄÄÄ                                               ; When TheEdit handles no abbreviations
+; ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+[S]ave                                                  ; [S]ave menu option.
+[A]bort                                                 ; [A]bort menu option
+[H]elp                                                  ; [H]elp menu option
+[R]edraw                                                ; [R]edraw menu option
+[U]pload                                                ; [U]pload menu option
+[I]mport                                                ; [I]mport menu option
+[E]xport                                                ; [E]xport menu option
+[Q]uote                                                 ; [Q]oute
+[M]essage                                               ; [M]essage
+

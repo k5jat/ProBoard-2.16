@@ -1,0 +1,2048 @@
+
+
+
+
+
+
+
+
+
+
+      ±±±±±±±±±Ü                 ±±±±±±±±±Ü
+       ±±Ûßßß±±Û                  ±±Ûßßß±±Û
+       ±±Û   ±±Û ±±±±±±Ü ±±±±±±Ü  ±±Û   ±±Û ±±±±±±Ü ±±±±±±Ü ±±±±±±Ü ±±±±±±±Ü
+       ±±±±±±±±Û ±±Ûß±±Û ±±Ûß±±Û  ±±±±±±±Ûß ±±Ûß±±Û ±±Ûß±±Û ±±Ûß±±Û  ±±Ûß±±Û
+       ±±Ûßßßßßß ±±±±±±Û ±±Û ±±Û  ±±Ûßßß±±Û ±±Û ±±Û ±±±±±±Û ±±±±±±Û  ±±Û ±±Û
+       ±±Û       ±±Û±±Ûß ±±Û ±±Û  ±±Û   ±±Û ±±Û ±±Û ±±Ûß±±Û ±±Û±±Ûß  ±±Û ±±Û
+      ±±±±Û      ±±Û ±±Û ±±±±±±Û ±±±±±±±±±Û ±±±±±±Û ±±Û ±±Û ±±Û ±±Û ±±±±±±±Û
+       ßßßß       ßß  ßß  ßßßßßß  ßßßßßßßßß  ßßßßßß  ßß  ßß  ßß  ßß  ßßßßßßß
+
+                           "The Choice of Professionals"
+
+
+                             Software Developer's Kit
+                                   Version 2.16
+
+                               ++ May 19 , 1997 ++
+
+
+                   Copyright (c) 1990-1996 Philippe Leybaert
+                              All rights reserved
+
+
+
+
+        ÕÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¸
+        ³°°°°°°°° PROBOARD SOFTWARE DEVELOPMENT KIT VERSION 2.16 °°°°°°°°°°³
+        ÔÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¾
+
+
+         Included with ProBoard is a C library that allows you to write
+         your own extensions to ProBoard in C or C++. All you need is an
+         ANSI-compatible C or C++ compiler. The programs you create can be
+         run within ProBoard by executing a new menu function.
+
+         The ProBoard SDK files included with ProBoard are free software,
+         so anyone who does not use ProBoard to run a BBS on a regular
+         basis, but wants to write extension files, is allowed to do so
+         without registering ProBoard. You can distribute any ProBoard
+         extension files (PEX files) royalty-free. As far as we are
+         concerned, any program you develop with the ProBoard SDK is your
+         property.
+
+
+
+        ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+        ³ Requirements                                                     ³
+        ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+         To create your own programs you need:
+
+         - An ANSI compatible C or C++ compiler. Compilers known to be
+           compatible with the ProBoard SDK are:
+
+              - Zortech C/C++ 2.0 - 3.0
+              - Microsoft C/C++ 5.1 - 7.0
+              - Borland C++ 2.0 - 4.5
+              - Turbo C++ 1.0
+              - Turbo C 1.0 - 2.0
+
+           Other compilers may work too, but were not tested.
+
+         - An MS-compatible linker (usually the one that came with your
+           compiler).
+
+           Linkers known to work with the ProBoard SDK are:
+
+              - All Microsoft Linkers (LINK.EXE)
+              - Borland's Turbo Link (TLINK)
+              - Zortech's BLINK
+
+         - The ProBoard SDK include file PB_SDK.H
+
+         - The ProBoard SDK library PB_SDK.LIB (for non-Borland compilers)
+         - The ProBoard SDK file PB_SDK.OBJ (for Borland 3.x compilers)
+
+
+                                      - 1 -
+
+
+
+        ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+        ³ Creating ProBoard Executables (PEX-files)                        ³
+        ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+         To create your own ProBoard executable (.PEX file), you first
+         create a source file, say MYPROG.C. When ProBoard loads a PEX
+         file, it executes the function main() in your program. This
+         function is defined as:
+
+         void
+         main(int argc,char *argv[])
+         {
+          ...
+         }
+
+         The parameters 'argc' & 'argv' contain optional data that can be
+         given to your program at load time (exactly like C's argc and argv
+         parameters).  Creating this main() function is the only thing you
+         need to do to write a valid ProBoard executable. From this point
+         on, it's just like writing a regular C program.  Most of the ANSI
+         standard library functions are available, plus many ProBoard-
+         specific functions and global variables, used for interfacing
+         between your program and the ProBoard environment.  As in a regular
+         executable, you can build your program from several source files.
+
+         This is a tiny sample ProBoard program:
+
+         #include "pb_sdk.h"
+
+         void
+         main()
+         {
+            printf("You have %d minutes left.\n",TimeLeft());
+
+            AddTime(10);
+
+            printf("Now you have %d minutes left.\n",TimeLeft());
+         }
+
+
+         Included with ProBoard are a few example programs (in source form
+         of course).
+
+
+
+
+
+
+
+
+
+
+                                      - 2 -
+
+
+
+        ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+        ³ Compiling and Linking                                            ³
+        ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+         ProBoard executables have to be compiled using the LARGE memory
+         model.
+
+         For example (Turbo C++) : tcc -c -ml myprog.c
+
+         Once you have your .OBJ file (in this case MYPROG.OBJ), you have
+         to link it with the ProBoard SDK library (PB_SDK.LIB). You have to
+         specify a filename as output filename. The linked executable must
+         have extension .PEX. It is important to disable linking of the
+         default compiler libraries!! It is also required to turn on
+         case sensitivity.
+
+         e.g.   Turbo C++ :  TLINK MYPROG,MYPROG.PEX,,PB_SDK /N /C
+                Microsoft :  LINK MYPROG,MYPROG.PEX,,PB_SDK /NOD /NOI;
+                Zortech   :  BLINK MYPROG,MYPROG.PEX,,PB_SDK /NOD /NOI;
+
+         That's all there is to it. Now you can run your program through
+         ProBoard's menu function 60.
+
+         I will now give the compiler syntax for some popular compilers:
+
+          Zortech C/C++ : ztc -c -a -ml myprog.c
+          Microsoft C   : cl -Zep -Gs -c -AL myprog.c
+          Turbo C/C++   : tcc -c -ml myprog.c
+          Borland C++   : bcc -c -ml myprog.c
+
+         And linker syntax:
+
+          Borland       : TLINK PB_SDK MYPROG,MYPROG.PEX /N /C
+          Microsoft     : LINK MYPROG,MYPROG.PEX,,PB_SDK /NOD /NOI;
+          Zortech       : BLINK MYPROG,MYPROG.PEX,,PB_SDK /NOD /NOI;
+
+         Note that the syntax for Borland C++ has changed from previous
+         versions of the SDK. It is required that you specify PB_SDK.OBJ
+         BEFORE your object files, and don't link PB_SDK.LIB.
+
+
+
+        ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+        ³ Restrictions                                                     ³
+        ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+         There are few restrictions in writing ProBoard executables. For C
+         programs there are actually only two major restriction: long math
+         & floating point operations.
+
+
+
+                                      - 3 -
+
+
+
+         Due to the fact that all compilers generate function calls to
+         multiply, divide and shift long integers, and that every compiler
+         vendor uses its own array of functions, it is impossible to
+         include these functions in the ProBoard SDK. As a result, it is
+         not directly possible to perform these operations on long values
+         (eg. long1 = long2 * long3). However, we did include functions to
+         perform these operations, but you will have to call these
+         functions explicitly (eg. long1 = l_mul(long2,long3)).  People who
+         know their compiler well, can work around this problem by
+         extracting the long math functions from the standard library, and
+         linking them with the PEX file. For example, the long math
+         functions used by the Zortech compiler are in the module
+         LMATH.OBJ, located in the library ZLC.LIB. Extracting this module
+         is as simple as :  ZORLIB ZLS *LMATH;
+
+         These are the ProBoard long math functions that you can use:
+
+         long l_mul(long1,long2)   Multiply 2 long values   = long1 * long2
+         long l_div(long1,long2)   Divide 2 long values     = long1 / long2
+         long l_mod(long1,long2)   Modulo of 2 long values  = long1 % long2
+         long l_shl(long1,int1)    Left shift a long value  = long1 << int1
+         long l_shr(long1,int1)    Right shift a long value = long1 >> int1
+
+         The functions l_div(), l_mod(), l_shl() and l_shr() are also
+         available for unsigned long values: ul_div(), ul_mod(), ul_shl()
+         and ul_shr().
+
+         Floating point operations are NOT supported. So it is not possible
+         to use 'double' and 'float' variables & constants.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      - 4 -
+
+
+
+         Another major restriction only affects C++ programs that are
+         compiled with some other compiler than Borland C/C++ 3.x or
+         Zortech C++ 3.0.  In a ProBoard C++ program that is not compiled
+         with one of the compilers mentioned, you can't declare global
+         variables that have constructors or destructors (ie. no static
+         constructors & destructors). So this will compile fine, but will
+         certainly crash your machine:
+
+         class myclass
+            {
+                int a;
+            public:
+                x() { .... some action .... }
+               ~x() { .... some action .... }
+            };
+
+         myclass some_global_object;
+
+         main()
+         {
+         ...
+         }
+
+         You can, however, use objects with constructors and destructors,
+         as long as they are declared within a function. So this would
+         work:
+
+         main()
+         {
+          myclass some_local_object;
+          ....
+         }
+
+
+
+        ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+        ³ Library functions supported                                      ³
+        ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+         Almost all standard library functions are supported. Note that all
+         functions that write to the standard output device (printf,
+         putchar,...) write their output to the ProBoard window and to the
+         user (through the modem).  Functions that read from the standard
+         input device and from the keyboard are NOT supported.
+         (scanf,getch,gets,...) We provide substitutes for these functions.
+
+
+
+
+
+
+
+                                      - 5 -
+
+
+
+         Functions supported:
+
+              fopen , freopen , fseek , ftell , fgets , fgetc , fflush
+              fclose , fputs , getc , getchar , gets , fputc , putc ,
+              putchar , puts , fread , fwrite , printf , fprintf ,
+              vfprintf , vprintf , sprintf , vsprintf , setbuf ,
+              setvbuf , remove , rename , rewind , clearerr , feof ,
+              isalpha , iscntrl , isdigit , isgraph , islower ,
+              isprint , ispunct , isspace , isupper , isxdigit ,
+              toupper , tolower , int86x , intdos , intdosx ,
+              dos_findfirst , dos_findnext , write , open , creat ,
+              close , unlink , chsize , dup , dup2 , lseek , access ,
+              filesize , filelength , isatty , atoi , atol , strtol ,
+              rand , srand , calloc , free , malloc , realloc , putenv
+              getenv , abs , labs , memcpy , memmove , strcpy , strncpy ,
+              strcat , strncat , memcmp , strcmp , strncmp , memchr ,
+              strchr , strcspn , strpbrk , strrchr , strspn , strstr ,
+              strtok , memset , strlen , memicmp , stpcpy , strcmpl ,
+              strnicmp , strdup , strlwr , strupr , strnset , strrev ,
+              strset , swab , strncmpl , strnicmp , clock , time , mktime ,
+              asctime , ctime , localtime , gmtime , strftime , sleep ,
+              usleep , msleep , difftime, mkdir(), chdir(), rmdir()
+
+
+         For information on these functions, consult your compiler's
+         library reference manual.
+
+         In the string output functions (printf and puts), you can use the
+         following control codes in your string:
+
+         \001 or \x01   Set output color to red
+         ::::    ::::
+         ::::    ::::
+         \007 or \x07   Set output color to white
+
+         \x11 to \x17   Same as \1 to \7, but blinking colors
+
+         \t             Stops output of string until user presses [Enter]
+         \f             Clears the user's screen (if enabled in the user's
+                        record)
+
+
+         NOTE: Do NOT include any standard include files from your
+         compiler. The only include file you can use is PB_SDK.H.
+         THAT'S IT!!
+
+
+
+
+
+
+
+                                      - 6 -
+
+
+
+        ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+        ³ ProBoard Interface Functions                                     ³
+        ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+         This is a list of all the functions that can be used to interface
+         with ProBoard.
+
+         Several types have been defined in the file PB_SDK.H
+
+           bool    : a boolean value that can have the values TRUE or FALSE
+           byte    : an unsigned character (8 bits)
+           word    : an unsigned short integer (16 bits)
+           dword   : an unsigned long integer (32 bits)
+           KEY     : used for key scan codes (for sysopkey handlers and the
+                     ScanKey() function).
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void AddTime(int min);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Adds 'min' minutes to the user's time left. If 'min' is negative,
+         the number of minutes will be subtracted from the time left.
+
+         Examples:    AddTime(10);         /* Adds 10 minutes */
+                      AddTime(-5);         /* Subtracts 5 minutes */
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         int TimeLeft(void);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Returns the time left in minutes for the current user.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         int TimeOnline(void);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Returns the time in minutes that the current user is online.
+
+
+
+
+
+
+
+
+
+
+                                      - 7 -
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void SuspendTimer(void);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Suspends the online-timer for the current user. No time will be
+         subtracted until RestartTimer() is called.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void RestartTimer(void);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Restarts the timer after a call to SuspendTimer().
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void AdjustTime(void);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Call this function if you changed the user's level. This
+         recalculates all limits (time,download,...).
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void MsgEd(void);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Fires up the internal message editor or the fullscreen editor,
+         depending on the settings of the user. The message will be stored
+         in the file MSGTMP in the current directory. If a message is
+         aborted, the file MSGTMP will be deleted by the message editor.
+         If you create a MSGTMP file before invoking the message editor,
+         this file will be used as a 'quote' message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      - 8 -
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         int PostMessage(char *from,char *to,char *subject,int area,
+                         bool pvt);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Posts a message to a user.
+
+            from    = Name of the sender
+            to      = Name of the user you're sending the message to
+            subject = Subject of the message
+            area    = Message area number where the message has to
+                      be posted in.
+            pvt     = Private status (TRUE=private, FALSE=public)
+
+         No checking is performed on any of the parameters!
+
+
+         Return value: -1 on error
+                        0 if ok
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         int PostNetmail(char *from,char *to,char *subject,int area,
+                         FIDO_NODE *address,bool attach,bool crash,
+                         bool kill);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Posts a netmail message.
+
+            from    = Name of the sender
+            to      = Name of the user you're sending the message to
+            subject = Subject of the message
+            area    = Message area number where the message has to
+                      be posted in
+            address = Destination node number of this message.
+            attach  = TRUE for a file attach message
+            crash   = TRUE if this message is a crashmail message
+            kill    = TRUE if the message has to be deleted after it is
+                      sent
+
+
+
+
+
+
+
+
+
+
+
+
+                                      - 9 -
+
+
+
+         FIDO_NODE is a structure with the following fields:
+
+           struct
+             {
+              unsigned zone;  /* Zone number  */
+              unsigned net;   /* Net number   */
+              unsigned node;  /* Node number  */
+              unsigned point; /* Point number */
+             }
+
+         No checking is performed on any of the parameters!
+
+         Return value: -1 on error
+                        0 if ok
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         bool ReadMsgArea(int area,MSGAREA *ma);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Reads data about a message area.
+
+              area  = Message area number (1-200)
+              ma    = Pointer to a MSGAREA structure to be filled
+
+         Check the file PB_SDK.H for details about the MSGAREA structure
+         definition.
+
+         Return value:  FALSE if not defined
+                        TRUE  if read ok
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         bool ReadMessage(MESSAGE *msg,long msgid,int areanum);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Reads message id <msgid> from area numer <areanum> into the
+         MESSAGE structure.  To access the text of the message, use the
+         function CreateMessageText().  See the file PB_SDK.H for a
+         description of the MESSAGE structure.
+
+         Return value: FALSE if the message does not exists
+                       TRUE  if the message is read ok
+
+
+
+
+
+
+
+                                      - 10 -
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void WriteMSGTMP(char *text);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Writes the string <text> to the file MSGTMP. The file is always
+         recreated when using this function. To append text to MSGTMP,
+         use the function AppendMSGTMP(). You have to insert your own CR/LF
+         pairs in the text if you want to force a newline.  Lines can be
+         longer than 80 characters.  The message processing functions will
+         do a word-wrap if necessary.  Do NOT insert a single CR or LF in
+         the text. (\r or \n).
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void AppendMSGTMP(char *text);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Same as WriteMSGTMP(), but adds text to an EXISTING file.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void ShowMessage(MESSAGE *msg);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Shows the message <msg> to the user, including header and message
+         text.
+         See the file PB_SDK.H for an description of the MESSAGE structure.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void CreateMessageText(MESSAGE *msg);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Reads the text that belongs to message <msg>, and stores it in a
+         file called MSGTMP in the current directory. This file can then be
+         accessed as an ordinary textfile.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void CreateMessageTextString(MESSAGE *msg,char *text,int max);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Reads the text that belongs to message <msg>, and stores it in the
+         string <text>. The text will be terminated by a '\0' character.
+         You have to specify a maximum number of characters that can be
+         stored in <text>.
+
+
+                                      - 11 -
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         bool FirstMessage(MESSAGE *msg,int area,int order,long first);
+         bool NextMessage(MESSAGE *msg,int area,int order);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         These functions are used to read messages in forward or reverse
+         order. To start scanning messages, you have to call the
+         FirstMessage() function first, and the NextMessage() function to
+         read more messages.
+
+         msg   = MESSAGE structure where the message has to be stored.
+         area  = area number to read messages in
+         order = 1 for forward order, -1 for reverse order
+         first = message to start reading from. This message does NOT
+                 need to exist. The first non-deleted message following
+                 this message will be read first.
+
+         See the file PB_SDK.H for an description of the MESSAGE structure.
+
+         Return value: FALSE  No more messages found.
+                       TRUE   Message was found and read ok.
+
+
+         This is an example on how to use these functions:
+
+         result = FirstMessage(msg,5,+1,1);
+         while(result == TRUE)
+           {
+            /* Do something with the message */
+            result = NextMessage(msg,5,+1);
+           }
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void DeleteMessage(MESSAGE *msg);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Deletes message <msg>.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void MarkMessage(long msgid);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Marks message <msgid> for later retrieval. Up to 200 messages can
+         be marked.
+
+
+
+
+                                      - 12 -
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void ReadMarkedMessages(void);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Shows all marked messages to the user, with the option to wait
+         after each message. If the user selected to wait after each
+         message, the standard message options menu will be shown to the
+         user. (Next,Prev,Stop,...).
+         In fact, this function is identical to menu function "Read
+         Messages", with the user selecting "Marked".
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void ListMarkedMessages(void);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Is similar to ReadMarkedMessages(), but this function acts as a
+         "QuickScan Messages" with the user selecting "Marked".
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void UnMarkAllMessages(void);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Unmarks all messages that were previously marked. You have to call
+         this function before marking any messages, because the list of
+         marked messages is remembered until a user logs off.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         int NumMsgAreas(void);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Returns the highest message area number that is not empty.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         long GetLastRead(int areanum , long user_recno);
+         void SetLastRead(int areanum , long user_recno , long msgid);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Reads / Sets the lastread pointer for a specific user and message
+         area.  If GetLastRead() returns -1, an error occurred.
+
+
+
+
+
+                                      - 13 -
+
+
+
+         <areanum> ..... The area number (1-10000)
+         <user_recno> .. The record number of the user (0 - ...)
+         <msgid> ....... The id of the message you want to set the
+                         lastread pointer to.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         int FuzzySearch(char *text,char *string,int degree);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Performs a fuzzy search for <string> in <text>. <degree> is the
+         percentage of the characters in <string> that have to match.
+
+         Return value: -1 if not found
+                       >0 percentage of characters matched
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         IO_... functions
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         All functions starting with IO_ are low-level functions to access
+         the serial port directly. Do NOT use these functions for ordinary
+         I/O operations. They are intended for writing file transfer
+         protocols. See the file PB_SDK.H for the prototypes of these
+         functions.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         char WaitKey(void);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Waits for a character to be read from the modem or local keyboard.
+
+         Return value: the character read.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      - 14 -
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         char WaitKeys(char *keylist);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Waits for any character specified in <keylist>.
+
+         Return value: the key from the list that was pressed (converted to
+                       uppercase if the key is a letter).
+
+         Example : c = WaitKeys("ABC\r\x1b");
+                   /* Waits for A,B,C,<Enter> or <Esc> */
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void Input(char *buf,int len,int readmode);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Asks for a string from the user. The string is stored in <buf>,
+         and the user will not be allowed to enter more than <len>
+         characters.
+
+         <readmode> :  INPUT_ALL      : All characters are allowed
+                       INPUT_UPFIRST  : First character of each word is
+                                        converted to uppercase.
+                       INPUT_UPALL    : All characters are converted to
+                                        uppercase.
+                       INPUT_DIGITS   : Only digits are accepted.
+
+                       INPUT_NOFIELD  : OR together with any of the
+                                        previous modes if you don't want an
+                                        input-field background to be
+                                        displayed.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         bool Ask(bool default);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Asks for a Yes or No response from the user. Pressing 'Y' returns
+         TRUE and outputs "Yes". Pressing 'N' returns FALSE and sends "No"
+         to the user. Pressing <Enter> returns <default>, and sends "Yes"
+         or "No", depending on <default>.
+
+
+
+
+
+
+
+
+                                      - 15 -
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         char PeekChar(void);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Checks if a character is available in the input buffer, and
+         returns that character if there is.
+
+         Return value:     0 if no character available
+                        != 0 the character read (key pressed by user)
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void SetColor(char color);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Changes the current output color. All text that is output after
+         this function is called will be displayed in the specified color.
+         This function does nothing when the user does not have ANSI or
+         AVATAR enabled.
+
+         <color> can be one of the following:
+
+            BLACK , RED , GREEN , YELLOW , MAGENTA , BLUE , CYAN , WHITE
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void SetfullColor(unsigned char color);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Changes the current foreground & background color. The color code
+         is an IBM-type screen color code. This function does nothing when
+         the user does not have ANSI or AVATAR enabled.
+
+         Some examples:
+
+             0x1E : Bright yellow on dark blue background.
+             0x87 : Blinking white on a black background.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void GotoXY(int x,int y);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Moves the cursor to position (x,y). The upper left corner of the
+         screen is (1,1). This function does nothing when the user does
+         not have ANSI or AVATAR enabled.
+
+
+
+                                      - 16 -
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void ClrEol();
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Clears from the current cursor position to the end of the
+         line. This function does nothing when the user does not have ANSI
+         or AVATAR enabled.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void EnableStop(void);
+         void DisableStop(void);
+         bool Stopped(void);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Enables stopping of output by pressing 'S'. When enabled, a user
+         can press 'S' to stop incoming text. When this happens, any
+         string output function will immediately return to the caller, en
+         the function Stopped() will return TRUE to indicate that the user
+         requested to stop output.
+
+         EnableStop()       Enables this feature and sets the "stopped"
+                            status to FALSE .
+         DisableStop()      Disables the stop feature.
+         Stopped()          Returns the "stopped" flag (TRUE or FALSE).
+
+
+         Example:
+
+              EnableStop();
+              for(i=0;i<100;i++)
+                {
+                 printf("...something...");
+                 if(Stopped()) break;
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      - 17 -
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         char ShowHotkeyFile(char *filename,char *hotkeys);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Shows the file <filename> to the user, and watches for incoming
+         keys that are specified in <hotkeys>. If one of these keys is
+         detected, the function stops output, and returns the hotkey. The
+         "stop" feature will be enabled when sending the file.
+
+         Return value:    0 : File sent completely and no hotkeys pressed.
+                          1 : 'S' pressed (output stopped)
+                          2 : File not found
+                        !=2 : Hotkey detected
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         char ShowHotkeyANSIFile(char *filename,char *hotkeys);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         This function is identical to ShowKotkeyFile(), except for the
+         fact that no extension and path can be specified. Depending on the
+         setting of the user, <filename>.ANS/ASC in the textfiles
+         directory will be sent. If no .ANS file is found, it will try to
+         send the .ASC file. If that fails too, 2 will be returned.
+
+         Return value:    0 : File sent completely and no hotkeys pressed.
+                          1 : 'S' pressed (output stopped)
+                          2 : File not found
+                        !=2 : Hotkey detected
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void InitLineCounter(void);
+         bool LineCounter(void);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         These functions are used to support page pausing ("More Y/N").
+         Calling InitLineCounter() initializes the line counter to 0.
+         Every time you call LineCounter(), the line counter is incremented
+         by one. If the counter reaches the screen length, the user will be
+         asked if he wants to continue reading. If he selects "No", the
+         LineCounter() function will return FALSE.
+
+
+
+
+
+
+
+
+                                      - 18 -
+
+
+
+         Example:
+
+             InitLineCounter();
+             for(;;)
+               {
+                printf("...something...\n");
+                if(!LineCounter()) break;
+               }
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         bool ExternalInput(void);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Returns TRUE when the last character that was read through any of
+         the input routings originated from the remote keyboard (ie. the
+         sysop did not type it).
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         int ReadUser(USER_REC *rec,int recnr);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Reads user record number <recnr> (0-...) from the user file and
+         stores it in <rec>.
+
+         Return value:  -1 if record does not exist.
+                         0 if record is read ok.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void WriteUser(USER_REC *rec);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Writes user record <rec> to the user file.  The record number is
+         stored in the USER_REC structure.  If you want to write a
+         user record to a different position in the user file, you have to
+         change the 'record' field in the USER_REC structure.
+
+
+
+
+
+
+
+
+
+
+
+                                      - 19 -
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         bool SetUser(long recnr);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Sets the internal ProBoard user record to record number <recnr>.
+         This function should ONLY be called from _LOGIN.PEX !!
+
+         Return value:  TRUE on success
+                        FALSE on error
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         char PlayMusic(char *filename,char *hotkeys);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Plays a .MUS file. The file has to be located in the ProBoard
+         system directory. Do not include a path and extension in
+         <filename>. The music can be stopped if the sysop presses one of
+         the keys specified in <hotkeys>.            ^^^^^
+
+         Return value:   0   Music file played till the end
+                         1   Music file not found
+                         >1  The hotkey pressed by the SYSOP
+                                                       ^^^^^
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void PostInfo(char *filename);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Does exactly the same as the POSTINFO statement in a .Q-A file.
+         No path and extension is allowed in <filename>. The file where
+         the information will be written to will have the extension .ASW
+         and will be placed in the ProBoard system directory.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         int ReadFileArea(int areanum,FILEAREA *fa);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Reads information about file area number <areanum> in the <fa>
+         structure.
+         Check the file PB_SDK.H for details about the FILEAREA structure.
+
+         Return value:   -1   File area does not exist
+                          0   Ok
+
+
+
+
+                                      - 20 -
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void MenuFunction(int function,char *data);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Executes menu function <function> with <data>. For details, see
+         the menu functions description in this file.
+         There are named constants declared for each function in the file
+         PB_SDK.H. It is recommended that you use these constants instead
+         of numbers.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void Log(int loglevel,char *fmt,...);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         With this function you can write information to the ProBoard
+         logfile. The log entry will be written if the user has a loglevel
+         that is greater than <loglevel> .
+
+         <loglevel> can be one of the following:
+
+             LOG_FRIEND , LOG_NORMAL , LOG_SUSPICIOUS , LOG_DANGEROUS
+
+         If you want a log entry to be written regardless of the user's
+         loglevel, use LOG_FRIEND.
+
+         The Log() function works like the printf function: you can use
+         format specifiers in the <fmt> string, and pass extra parameters.
+
+         Example:   Log(LOG_NORMAL,"User's name = %s",CurUser->name);
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void HangUp();
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Hangs up the phone, logging off the user. It is exactly the same
+         as pressing Alt-H.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         bool CheckAccess(int level,long flags);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Checks if the current user can access something that requires
+         <level> and <flags>. Returns TRUE if the user has access, FALSE if
+         not.
+
+
+                                      - 21 -
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         KEY ScanKey(void);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Checks the LOCAL keyboard for a key, and returns the scan code for
+         that key. If no key is available, 0 will be returned.
+
+         For a list of defined values for scan codes, check the file
+         PB_SDK.H.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         bool GetFlag(long flags,char flagchar);
+         void SetFlag(long flags,char flagchar);
+         void ClearFlag(long flags,char flagchar);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Access flags are stored in a long integer (32 bits). You have 3
+         macros at your disposal to manipulate access flags:
+
+            GetFlag   : Returns TRUE if flag <flagchar> is set
+            SetFlag   : Turns flag <flagchar> on
+            ClearFlag : Turns flag <flagchar> off
+
+         <flagchar> must be a value from 1 to 32. 1-26 correspond to A-Z,
+                    while 27-32 are the same as 1-6.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         int ErrorLevel(void);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Returns the errorlevel of the last executed shell command (Through
+         MenuFunction(MENU_SHELL,...))
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         bool GetIniVar(char *fname,char *varname,char *value,int max);
+         bool SetIniVar(char *fname,char *varname,char *value);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         These functions can be used to read and write to .INI files. These
+         files are similar to the files used by MS Windows. They can be
+         used to store settings for your application (PEX). An example
+         of a .INI file:
+
+
+
+
+                                      - 22 -
+
+
+
+               DataPath = C:\PB\PEX\MYPEX\DATA
+               ProgPath = C:\PB\PEX\MYPEX
+               MaxUsers = 10
+
+         This is a standard ASCII file, with each line in the form
+            <varname> = <value>
+
+         The value of a specific variable can be read by calling the
+         function GetIniVar(). Setting a variable (writing to the .INI file
+         or createing it if it doesn't exist yet) can be done by calling
+         SetIniVar().
+
+         The parameters for the functions are:
+
+             <fname>      Name of the .INI file. The extension of the file
+                          will always be changed to .INI by ProBoard.
+             <varname>    Name of the variable (case INsensitive)
+             <value>      For GetIniVar() : a pointer to a buffer where the
+                                            variable's contents will be
+                                            stored.
+                          For SetIniVar() : a pointer to the value of the
+                                            variable.
+             <max>        Maximum number of characters that can be copied
+                          in <value> (including trailing '\0')
+
+
+         Return value: FALSE if the file could not be opened or the
+                       variable does not exist.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void exit(void);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Exits the current pex-program, and unloads it from memory.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      - 23 -
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void ExitTSR(void);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Exits the current pex-program, and leaves it resident. This has
+         some important implications:
+
+          - All global and static variables keep their values for
+            subsequent executions.
+          - When the same pex-file is run again through menu function 60,
+            the resident copy will be executed. This will result in faster
+            loading.
+          - Any handlers that were installed will be called.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void InstallHandler(int handler,function);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         This is probably the most advanced and complicated function in the
+         ProBoard SDK. With this function you can set up a "handler" for a
+         specific action. Right now, only two types of handlers are
+         supported: a replacement for the sysopkey-handler and a handler
+         to intercept loss of carrier. This way you can create your own
+         sysopkeys, or change the behaviour of existing sysopkeys. You could
+         create a handler that intercepts the Alt-J key, and write your own
+         flavor. In future versions you will be able to set up handlers for
+         low-level I/O operations. So you could replace all I/O routines by
+         your own functions. This way you can support your own exotic
+         hardware or something like that. Anything goes!
+
+            handler   : Handler type. At this time, only HANDLER_SYSOPKEY
+                        and HANDLER_HANGUP are supported.
+            function  : A pointer to the handler function you created.
+
+         You can install as many handlers as you want.  When the PEX is
+         removed from memory (when the PEX exits), all handlers that were
+         installed will be removed by ProBoard.
+
+         The handler function is a function that returns an integer. The
+         parameters depend on the type of handler you are creating.
+
+
+
+
+
+
+
+
+
+
+                                      - 24 -
+
+
+
+         For HANDLER_SYSOPKEY the handler function has to be declared like
+         this:
+
+         int sysopkeyhandler(KEY k)
+         {
+         ...
+         }
+
+         A sysopkey handler intercepts any special key that is pressed by the
+         sysop. (like F1,Alt-H,...). You can redefine any key, or add your
+         own.
+
+
+
+         For HANDLER_HANGUP, the handler functions has to be declared like
+         this:
+
+         int hanguphandler(void)
+         {
+         ...
+         }
+
+         The hangup handler works a little different: it is called whenever
+         ProBoard exits (carrier lost, sysop hung up,...). It can be used to
+         perform some cleanup for your running PEX file (like closing
+         files, writing data, etc..). You can install the handler at the
+         start of your program and remove it before the program is
+         finished.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      - 25 -
+
+
+
+         If a handler function decides to do anything, it has to return
+         HANDLED. If the handler wants to leave it up to ProBoard, it must
+         return NOT_HANDLED.
+
+         This asks for an example I suppose:
+
+         int keyhandler(KEY k)
+         {
+          if(k == KEY_ALTJ)
+            {
+             printf("\7\rHang on %s! I'm shelling to DOS...",UserFirstName);
+             MenuFunction(MENU_SHELL,"*N*Q*X*!");
+             printf("I'm back!!\n");
+
+             return HANDLED;
+            }
+           else return NOT_HANDLED;
+         }
+
+         main(int argc,char *argv[])
+         {
+          InstallHandler(HANDLER_SYSOPKEY,keyhandler);
+
+          ExitTSR();    /* IMPORTANT */
+         }
+
+         So what does it do?  It intercepts the sysopkey-function, and
+         checks if the key pressed is Alt-J. If it is, it shells to DOS
+         with swapping ON, and it writes its own messages to the screen.
+         When the sysop returns, the handler returns HANDLED to let
+         ProBoard know that it does not have to process the key. You could
+         use this example in an INIT.PEX file.
+         Is this powerful or what?
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void RemoveHandler(int handler,function);
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Removes handler number <handler> which has been installed by
+         InstallHandler().  <function> is the pointer to the handler that
+         should be removed.
+
+
+
+
+
+
+
+
+
+                                      - 26 -
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         long MsgNum(int area, long id)
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Returns the message number for message 'id', in area 'area'.  For
+         Hudson and *.MSG, this is identical to the message id (but DO NOT
+         rely on that).  Returns a value < 1 if there is no message number
+         for 'id'.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         long MsgId(int area, long n)
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Returns the message id for message number 'n', in area 'area'. For
+         Hudson and *.MSG, this is identical to the message number (but DO
+         NOT rely on that).  Returns a value < 1 if there is no message
+         number 'n'.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         long HighMsg(int area)
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Returns the message id of the last message in the given area.
+         Note: if the lastread pointer is higher than what this function
+         returns, DO NOT use FirstMessage()!  The FirstMessage() function
+         does not support reading past the end of the area. (if you know
+         what I mean :-)
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         long NumMsgs(int area)
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Returns the total number of active messages in the given area.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void LocalDisplay(bool showlocal)
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Enables/Disables local echo of text.  A parameter of TRUE means
+         "enable local display".  FALSE means "disable local display". See
+         _GRAPH.CPP for an example.
+
+
+
+                                      - 27 -
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void RemoteDisplay(bool showremote)
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Enables/Disables remote echo of text.  A parameter of TRUE means
+         "enable remote display".  FALSE means "disable remote display".
+         See _GRAPH.CPP for an example.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         bool RIP()
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Returns TRUE if RIP was detected and enabled.  FALSE if not...
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void ShowRIPscrip( char *name )
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         This will send a RIP file located in the RIP directory.  No file
+         extension should be given.  (.RIP is assumed)  The file will not
+         be shown on the local screen.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void ResetInactivity( void )
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Resets the internal inactivity timeout counter.  This function can
+         be used when returning from a shell or after a time-consuming
+         function has been called.  It will prevent the user from being
+         logged off because of inactivity.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         bool AddTaggedFile( TAGGED_FILE *tag )
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Adds a file to the internal list of tagged files.  Returns TRUE if
+         the was successfully added, or FALSE if the file was already
+         tagged.
+
+
+
+
+
+
+                                      - 28 -
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         bool RemoveTaggedFile( TAGGED_FILE *tag )
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Removes a file from the internal list of tagged files.  Returns
+         TRUE if the tagged file was found and deleted from the list, or
+         FALSE if the tagged file was not in the list.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         void ClearTaggedFiles( void )
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Clears the internal list of tagged files (all tags are removed).
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         bool IsTagged( TAGGED_FILE *tag )
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Returns TRUE if the given file is in the internal list of tagged
+         files, FALSE if not.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         int GetTaggedFiles( TAGGED_FILE *tagarray , int maxitems )
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Fills the given array <tagarray> with all the files in the
+         internal list of tagged files (up to a maximum of <maxitems>).
+         This function returns the number of tagged files copied to the
+         array <tagarray> (<= maxitems).
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         bool PutTaggedFiles( TAGGED_FILE *tagarray , int nitems )
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Fills the internal list of tagged files with the files in the
+         given array <tagarray>. <nitems> is the number of items in the
+         array.  Returns TRUE on success, FALSE on error.
+
+
+
+
+
+
+
+                                      - 29 -
+
+
+
+        ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+        ³ Global ProBoard Variables                                        ³
+        ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+         You have access to some important ProBoard system variables
+         through global variables defined in PB_SDK.H.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         word PBVersion;
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         The version number of ProBoard. The high byte is the major version
+         number (eg. 1). The low byte is the minor version number in
+         hex (eg. 0x30). So if you're using ProBoard v1.30, PBVersion will
+         be set to 0x0130 .
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         word Beta;
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         The beta version number of ProBoard. If this number is 0xFFFF,
+         it means that the release version is running. Beta numbers
+         start from 1.
+         For example, when running ProBoard 1.40 Beta/19, PBVersion will be
+         set to 0x0140, and Beta will be set to 19.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         long BaudRate
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         The current bps rate of the caller. 0 means local.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      - 30 -
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         USER_REC * CurUser;
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Pointer to the current user record. You can change any of the
+         field values in the record, but this will not result in any
+         immediate action by ProBoard. For example, if you change the
+         user's level, ProBoard will not know that you changed it, so you
+         will have to tell it by calling AdjustTime();
+
+         Check the file PB_SDK.H for a description of the USER_REC
+         structure.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         int UserRecNr;
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         The record number of the current user's record in the file
+         USERS.BBS, starting from 0. This value cannot be changed.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         int NumLimits;
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         The number of user levels defined in ProCFG. You can access the
+         limit-values through the global array 'Limits'.  This value
+         cannot be changed.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         LIMIT * Limits;
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         Is an array of all user levels defined, with download and time
+         limits. Check the file PB_SDK.H for information on the LIMIT
+         structure.
+         You are not allowed to change any values! (A good compiler should
+         generate an error or warning if you try to do so)
+
+
+
+
+
+
+
+
+
+                                      - 31 -
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         char * LoginDate;
+         char * LoginTime;
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         This is the login date & time of the current user.
+
+           LoginDate[0] : Day portion of login date
+           LoginDate[1] : Month portion of login date
+           LoginDate[2] : Year portion of login date (00-99)
+           LoginTime[0] : Hour portion of login time
+           LoginTime[1] : Minute portion of login time
+           LoginTime[2] : Second portion of login time
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         bool NetEntered;
+         bool EchoEntered;
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+  {}
+         These READ-ONLY variables tell you if netmail and/or echomail has
+         been entered during this session.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         int NumUsers;
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         This READ-ONLY variable is the number of users currently available
+         in the file USERS.BBS.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         int NodeNumber;
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         This READ-ONLY variable is the current node number.
+
+
+
+
+
+
+
+
+
+
+
+
+                                      - 32 -
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         char * CurMenu;
+         char * UserFirstname;
+         char * PrevUser;
+         char * StartupPath;
+         char * SysPath;
+         char * PageReason;
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         CurMenu       : Current menu name
+         UserFirstName : First name of current user
+         PrevUser      : Name of previous user
+         StartupPath   : Name of the directory where ProBoard was started
+                         from (with trailing '\')
+         SysPath       : Name of the ProBoard system directory (with
+                         trailing '\')
+         PageReason    : Reason for paging the sysop (as entered by the
+                         user)
+
+         These are READ-ONLY strings! (except PageReason)
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         word * PageCount;
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         POINTER to the number of sysop pages done by the user.  This value
+         can be changed by changing the unsigned integer pointed to by
+         'PageCount'.
+
+
+
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+         CONFIG * Config;
+         ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ
+
+         A pointer to the current ProBoard configuration structure. See the
+         file PB_SDK.H for a description of the CONFIG structure.
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      - 33 -
+
+
+
+         ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+         ³ Special-purpose PEX-files                                      ³
+         ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+         Several pex-files will be loaded automatically (if present). They
+         perform certain actions like edit a message, set up handlers, etc.
+
+               INIT.PEX      : Will be loaded and executed before any I/O
+                               has been done.  Use this to set up any
+                               handlers (sysopkey handlers, ...)
+
+               INIT_1.PEX -
+               INIT_9.PEX    : Is the same as INIT.PEX, but will be loaded
+                               in the order of the numbers. So you can have
+                               up to 10 initialization pex-files.
+
+               _LOGIN.PEX    : Is run instead of the normal login
+                               procedure.  See the section explaining this
+                               PEX for more information.
+
+               LOGIN.PEX     : No longer supported!
+
+               BIRTHDAY.PEX  : Is run after showing NEWS.ANS/ASC if today
+                               is the user's birthday.
+
+               NEWUSER.PEX   : Is run before the file NEWUSER.A?? is shown.
+
+               NEWUSER1.PEX  : Is run before the file NEWUSER1.A?? is
+                               shown.
+
+               NEWUSER2.PEX  : Is run before the file NEWUSER2.ANS/ASC is
+                               shown.
+
+               WELCOME.PEX   : Is run before the file WELCOME.ANS/ASC is
+                               shown
+
+               WELCOMEx.PEX  : Is run before the file WELCOMEx.ANS/ASC is
+                               shown (x = 1 to 9)
+
+               SECxx.PEX     : Executed when a user with security level xx
+                               logs in. Is run before SECxx.ANS/ASC is
+                               shown.
+
+               EXPIRED.PEX   : Is run before EXPIRED.ANS/ASC is shown, and
+                               after a user's level is lowered because the
+                               subscription date was reached. ProBoard will
+                               send one parameter to this PEX: the original
+                               level, before it was changed by ProBoard.
+
+               GOODBYE.PEX   : Is run before GOODBYE.ANS is displayed.
+
+
+                                      - 34 -
+
+
+
+               GOODBYE2.PEX  : Is run after GOODBYE.ANS is displayed.
+
+               MSGED.PEX     : Is a replacement of the built-in message
+                               editor. It will be executed with no
+                               parameters. The message that you create has
+                               to be written to a file called MSGTMP.
+                               ProBoard will then read this file and create
+                               a message from it. To let ProBoard know that
+                               the user has aborted a message, delete
+                               MSGTMP.
+
+               FSED.PEX      : Is similar to MSGED.PEX, but will be
+                               executed if the user has selected the
+                               fullsrceen editor. It works the same way as
+                               MSGED.PEX, but ProBoard will create a MSGTMP
+                               file with the original message if a user is
+                               replying to a message.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      - 35 -
+
+
+
+
+         ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+         ³ Using the _LOGIN PEX                                           ³
+         ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+          By writing a _LOGIN.PEX, ProBoard allows you to replace the
+          normal login procedure (not including the new user procedure)
+          with your own.  It is the PEX's responsibility to check for
+          validity of the name entered and to do password checking!
+
+          Once you determined the record number of the user, you have to
+          call the function SetUser() with the record number as parameter,
+          and exit the PEX immediately.
+
+          If the user is not in the user database yet, you should exit
+          without calling SetUser(), and set the name that was entered by
+          the user in a memory region supplied by ProBoard to your PEX as
+          the only parameter.  This parameter is a 'dword' in decimal form,
+          so you have to convert it to a pointer using the following
+          procedure:
+
+          /*----------------------------*/
+          char *pName;
+          dword dwName = 0;
+          char *s;
+
+          for(s = argv[1] ; *s ; s++)
+             dwName = l_mul(dwName,10L) + (dword)(*s - '0');
+
+          pName = (char *)dwName;
+          /*----------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                      - 36 -

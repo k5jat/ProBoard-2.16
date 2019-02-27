@@ -1,0 +1,5 @@
+TSLIB = 1
+
+OBJS = reginfo.obj deckey.obj
+
+reginfo.exe : $(OBJS)

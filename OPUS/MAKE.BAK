@@ -1,0 +1,175 @@
+.SUFFIXES :
+.SUFFIXES : .exe .pex .lib .obj .cpp .c .asm
+
+.RESPONSE_LINK: tlink
+.RESPONSE_LIB : tlib
+
+DIR_BC_LIB    = C:\BC31\LIB
+DIR_BC_INC    = C:\BC31\INCLUDE
+DIR_BC_BIN    = C:\BC31\BIN
+
+DIR_PEX_LIB      = M:\CPP\LIB\PEX
+DIR_PEX_INC      = M:\CPP\LIB\PEX
+DIR_TSLIB_LIB    = M:\CPP\LIB\BUILD
+DIR_TSLIB_INC    = M:\CPP\LIB\TSLIB
+DIR_TSWIN_LIB    = M:\CPP\LIB\BUILD
+DIR_TSWIN_INC    = M:\CPP\LIB\TSWIN
+DIR_TOOLS_LIB    = M:\CPP\LIB\BUILD
+DIR_TOOLS_INC    = M:\CPP\LIB\TOOLS
+DIR_PWS_LIB      = M:\CPP\LIB\BUILD
+DIR_PWS_INC      = M:\CPP\LIB\PWS
+DIR_PBLIB_LIB    = M:\CPP\LIB\BUILD
+DIR_PBLIB_INC    = M:\CPP\PB\LIB
+DIR_PB2LIB_LIB   = M:\CPP\LIB\BUILD
+DIR_PB2LIB_INC   = M:\CPP\PB2\LIB\PBLIB
+DIR_PBSERIAL_LIB = M:\CPP\LIB\BUILD
+DIR_PBSERIAL_INC = M:\CPP\PB2\LIB\SERIAL
+DIR_SQUISH_LIB   = M:\CPP\LIB\BUILD
+DIR_SQUISH_INC   = M:\CPP\LIB\SQUISH\INCLUDE
+
+
+####### These can be redefined in 'MAKEFILE' ##################################
+
+MODEL    = SMALL
+OVERLAY  = 0
+COMPOVL  = 0
+OPTIMIZE = 0
+MAPFILE  = 0
+DEBUG    = 0
+MATH     = 0
+FP87     = 0
+TOOLS    = 0
+TSLIB    = 0
+TSWIN    = 0
+PWS      = 0
+PBLIB    = 0
+PB2LIB   = 0
+PBSERIAL = 0
+PEX      = 0
+SQUISH   = 0
+
+CFLAGS   =
+AFLAGS   =
+LFLAGS   =
+
+OBJS     =
+OVLOBJS  =
+
+LIBS     =
+
+###############################################################################
+
+M   = $(MODEL,SMALL=s,COMPACT=c,MEDIUM=m,LARGE=l,HUGE=h)
+EXT = $(PEX,0=$(MODEL,SMALL=s,COMPACT=c,MEDIUM=m,LARGE=l,HUGE=h),1=p)
+
+! if $M != s  &&  $M != c  &&  $M != m  &&  $M != l  &&  $M != h
+!   abort Unknown memory model: $(MODEL)
+! endif
+
+CF      =
+LF      =
+AF      =
+
+A_CF    = -c -m$M \
+          $(PEX,0=,1=-DPEX) \
+          $(OPTIMIZE,M^[012]$$,0=,1=-O1,2=-O2) \
+          $(DEBUG,M^[01]$$,0=,1=-v) \
+          $(FP87,M^[01]$$,0=,1=-f287) \
+          $(OVERLAY,M^[01]$$,0=,1=-Y) \
+          $(COMPOVL,M^[01]$$,0=,1=-Y)
+
+A_AF    = /mx /jIDEAL /DMEM_MOD=$(MODEL) \
+          $(DEBUG,M^[01]$$,0=,1=/zi) \
+          $(OVERLAY,M^[01]$$,0=,1=/o) \
+          $(COMPOVL,M^[01]$$,0=,1=/o)
+
+A_LF    = /c/n \
+          $(DEBUG,M^[01]$$,0=,1=/v) \
+          $(MAPFILE,M^[01]$$,0=,1=/s)
+
+STDLIBS = $(MATH,M^[01]$$,0=,1=EMU MATH$(EXT)) \
+          $(FP87,M^[01]$$,0=,1=FP87 MATH$(EXT)) \
+          C$(EXT) \
+          $(OVERLAY,M^[01]$$,0=,1=OVERLAY) \
+          $(TOOLS,M^[01]$$,0=,1=$(DIR_TOOLS_LIB)\TOOLS_$(EXT)) \
+          $(PWS,M^[01]$$,0=,1=$(DIR_PWS_LIB)\PWS_$(EXT)) \
+          $(PBLIB,M^[01]$$,0=,1=$(DIR_PBLIB_LIB)\PBLIB_$(EXT)) \
+          $(PB2LIB,M^[01]$$,0=,1=$(DIR_PB2LIB_LIB)\PB2LIB_$(EXT)) \
+          $(PBSERIAL,M^[01]$$,0=,1=$(DIR_PBSERIAL_LIB)\PBSERIAL) \
+          $(TSLIB,M^[01]$$,0=,1=$(DIR_TSLIB_LIB)\TSLIB_$(EXT)) \
+          $(TSWIN,M^[01]$$,0=,1=$(DIR_TSWIN_LIB)\TSWIN_$(EXT)) \
+          $(OVERLAY,M^[01]$$,0=,1=/o) \
+          $(SQUISH,M^[01]$$,0=,1=$(DIR_SQUISH_LIB)\SQSH_$(EXT)) \
+          $(OVERLAY,M^[01]$$,0=,1=/o-) \
+
+PEXLIBS = $(PWS,M^[01]$$,0=,1=$(DIR_PWS_LIB)\PWS_$(EXT)) \
+          $(TSLIB,M^[01]$$,0=,1=$(DIR_TSLIB_LIB)\TSLIB_$(EXT)) \
+          $(TSWIN,M^[01]$$,0=,1=$(DIR_TSWIN_LIB)\TSWIN_$(EXT)) \
+          $(DIR_PEX_LIB)\PEX_MATH.LIB
+
+INCDIRS = $(DIR_BC_INC) \
+          $(TOOLS,M^[01]$$,0=,1=$(DIR_TOOLS_INC)) \
+          $(PWS,M^[01]$$,0=,1=$(DIR_PWS_INC)) \
+          $(PEX,M^[01]$$,0=,1=$(DIR_PEX_INC)) \
+          $(TSLIB,M^[01]$$,0=,1=$(DIR_TSLIB_INC)) \
+          $(TSWIN,M^[01]$$,0=,1=$(DIR_TSWIN_INC)) \
+          $(PBLIB,M^[01]$$,0=,1=$(DIR_PBLIB_INC)) \
+          $(PB2LIB,M^[01]$$,0=,1=$(DIR_PB2LIB_INC)) \
+          $(PBSERIAL,M^[01]$$,0=,1=$(DIR_PBSERIAL_INC)) \
+          $(SQUISH,M^[01]$$,0=,1=$(DIR_SQUISH_INC))
+
+STDOBJS = C0$M
+
+LINKCMD = tlink
+COMPCMD = bcc
+ASMCMD  = tasm
+
+CPP = $(COMPCMD) $(CFLAGS) $(CF) $(A_CF)
+ASM = $(ASMCMD) $(AFLAGS) $(AF) $(A_AF)
+
+WARNINGS = bbf eas pin amb amp asm def nod pro stv use cln sig pre
+
+.AFTER :
+ @del /q turboc.cfg
+
+.BEFORE :
+ @%do CreateCFG
+
+CreateCFG :
+ @echo $(WARNINGS,<-w,W\n) >turboc.cfg
+ @echo -I$(INCDIRS,W;) -X >>turboc.cfg
+
+DoLink:
+ @$(LINKCMD) $(STDOBJS) $(OBJLIST),$@,,$(LIBS) $(STDLIBS) $(LFLAGS)$(LF)$(A_LF)
+
+.asm.obj:
+ $(ASM) $(.IMPLICIT)
+
+.cpp.obj:
+ $(CPP) $(.IMPLICIT)
+
+.c.obj:
+ $(CPP) $(.IMPLICIT)
+
+.obj.pex:
+ @$(LINKCMD) $(DIR_PEX_LIB)\PB_SDK $(OBJS),$@,,$(LIBS) $(PEXLIBS) $(LFLAGS)$(LF)$(A_LF)
+
+.obj.exe:
+  !if null(OBJS)
+    @%set OBJS = $(.IMPLICIT)
+  !endif
+
+  @%set LINKOBJS = $(OBJS)
+
+  !if $(OVERLAY)
+    @%set LINKOBJS =
+    !foreach TMPOBJ $(OBJS)
+      !if '$(OVLOBJS:F,M^$(TMPOBJ:F,S;\.;\\.;)$$)' == ''
+        @%set LINKOBJS = $(LINKOBJS) $(TMPOBJ)
+      !else
+        @%set LINKOBJS = $(LINKOBJS) /o $(TMPOBJ) /o-
+      !endif
+    !end
+  !endif
+
+  %do DoLink OBJLIST="$(LINKOBJS)"

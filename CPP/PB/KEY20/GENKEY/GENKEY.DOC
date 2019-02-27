@@ -1,0 +1,52 @@
+ProBoard Key Generator
+----------------------
+
+Sysop Name            - Name of the sysop as set in ProCFG/Options/Site
+                        Info
+
+BBS Name              - Name of the BBS as set in ProCFG/Options/Site Info
+
+Alpha Test            - Allow alpha-testing (don't set this for regular
+                        beta sites)
+
+Beta Test             - Allow beta-testing (set this for regular beta
+                        sites)
+
+Gamma Test            - Allow gamma-testing (set this for regular beta
+                        sites)
+
+Distr. Site           - Key for a distribution site (official ProBoard
+                        distributors)
+
+Registr. Site         - Key for registration sites.  Should not be set by
+                        regional registration sites.
+
+Commercial            - Commercial registration. Yes/No
+
+Expiration Date       - Key expires on this date (only use to issue
+                        temporary keys).  Format DD/MM/YY
+
+Expiration Version    - Version number for which the key should no longer
+                        work.  Leave this to "0.00" for normal keys and
+                        "0.00" for commercial keys.
+
+
+After you press [Esc] to exit the key generator, a key will be placed in
+the current directory (REGKEY.PB).
+
+The file GENKEY.RND should be located in the same directory as the key
+generator EXE file. (it is required to run the key generator)
+
+
+Note: When zipping up the key for someone, make sure you don't accidently
+      zip up the key generator with it.  I've had it happen! :-)
+      So make sure you do "PKZIP <zipname> REGKEY.PB" instead of
+      "PKZIP <zipname>" (because that will default to *.*).  DANGEROUS!
+
+!! -> A better way (and I would like to ask you all to follow this
+      rule!!) is to start the key generator from a directory where the key
+      generator is NOT located.
+      For example, place the key generator in C:\PBKEYGEN and run it from
+      C:\TMP with the following command line: C:\PBKEYGEN\GENKEY.EXE
+
+

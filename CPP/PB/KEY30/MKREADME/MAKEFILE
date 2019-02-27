@@ -1,0 +1,5 @@
+TSLIB = 1
+
+OBJS = mkreadme.obj deckey.obj
+
+mkreadme.exe : $(OBJS)

@@ -1,12 +1,4 @@
-## Makefile for Huffman.exe
-
-OBJS = huffman.obj 
-
-MODEL   = LARGE
-
-TSLIB = 0
-TSWIN = 0
-PBLIB = 0
-MATH = 0
-
-Huffman.EXE: $(OBJS)
+OBJS = testcomp.obj lzhuf.obj
+MATH = 1
+TSLIB = 1
+testcomp.exe: $(OBJS)

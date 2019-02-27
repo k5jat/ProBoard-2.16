@@ -1,0 +1,7 @@
+PB_SDK.LIB: PB_SDK.OBJ
+ @del pb_sdk.lib
+ @tlib pb_sdk +pb_sdk
+
+
+PB_SDK.OBJ: PB_SDK.ASM
+ @tasm /DBORLANDC /w-res /ml pb_sdk.asm

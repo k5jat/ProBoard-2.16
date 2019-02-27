@@ -1,0 +1,20 @@
+ProBoard 1.31 key algorithm
+---------------------------
+
+*Encoding*
+
+Fill key structure with data
+Calculate 32 version dwords
+Duplicate structure 20 times
+Encode array with random string of 100 bytes
+Compress encoded array + random string + 32 dwords
+Encode compressed data with hard-coded string of 100 bytes
+
+
+*Decoding*
+
+Decode key file with hard-coded string of 100 bytes
+Decompress result
+Get previously stored array of 100 random bytes
+Decode array of encoded key structures with this array
+Check if resulting structures are identical

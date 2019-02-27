@@ -1,0 +1,13 @@
+MODEL = LARGE
+TSLIB = 1
+PBLIB = 1
+
+OBJS = pb_lib.obj lang.obj user.obj
+
+pblib_$(EXT).lib : $(OBJS)
+ @erase $@
+ @(tlib $@ /c +$(OBJS))
+ @copy $@ $(DIR_PBLIB_LIB)
+ @erase $@
+
+$(OBJS) : pb_lib.cpp pb_lib.hpp
